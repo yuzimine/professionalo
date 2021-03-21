@@ -1,0 +1,32 @@
+.tasks-column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content:stretch;
+  padding: 1rem;
+  border: 1px solid $color-primary;
+  width: 40rem;
+  min-height: 80rem;
+  margin : {
+    top: 3rem;
+    bottom: 3rem;
+  }
+
+  &:not(:last-child) {
+    margin-right: 2rem;
+  }
+
+  &-title {
+    font-size: 1.6rem;
+    color: $color-primary;
+  }
+
+  &-container {
+    flex-grow: 1;
+    padding: 0.8rem;
+
+    &.drag-color {
+      background-color: lighten($color-primary, 31%);
+    }
+  }
+}

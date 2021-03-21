@@ -1,0 +1,71 @@
+.container {
+  font-size: 2rem;
+
+  &.with-padding {
+    padding: 5rem 2rem;
+
+    @include respond(lg) {
+      padding: 0;
+    }
+  }
+
+  &.with-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    &.center {
+      align-items: center;
+    }
+
+    &.middle {
+      justify-content: center;
+    }
+  }
+}
+
+.with-menubar {
+  margin-top: 5rem;
+}
+
+.full-page {
+  @extend .container;
+  position: relative;
+  min-height: 100vh;
+
+  .padding {
+    padding: 0 3rem;
+  }
+}
+
+.page-layout {
+  @extend .container;
+}
+
+.layout {
+  &__header {
+    padding: 10rem 3rem 0;
+
+    @include respond(sm) {
+      padding: 7rem 0.8rem 0;
+    }
+
+    &__button {
+      @include respond(sm) {
+        font-size: 3.6rem;
+      }
+      padding-right: 1rem;
+    }
+
+    &__title {
+      @include respond(sm) {
+        font-size: 3.6rem;
+      }
+    }
+  }
+
+  &__body {
+    position: relative;
+    flex-grow: 1;
+  }
+}

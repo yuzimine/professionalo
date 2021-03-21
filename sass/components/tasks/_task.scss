@@ -1,0 +1,13 @@
+.tasks-task {
+  padding: 0.8rem;
+  border: 1px solid $color-primary;
+  background-color: $color-white;
+
+  &:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  &.drag-color {
+    background-color: lighten($color-primary, 25%);
+  }
+}

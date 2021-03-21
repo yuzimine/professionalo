@@ -1,0 +1,56 @@
+.login {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30rem;
+
+    @include respond(xs) {
+      width: 100%;
+      padding: 0 1rem;
+    }
+    // max-width: 50rem;
+    // padding: 0.5rem;
+  }
+
+  &__logo {
+    &__box {
+      width: 15rem;
+
+      @include respond(xs) {
+        width: 10rem;
+      }
+    }
+
+    &__image {
+      width: 100%;
+      path {
+        fill: $color-primary;
+      }
+    }
+  }
+
+  &__form {
+    @extend .login__container;
+    width: 100%;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    padding: {
+      top: 2rem;
+      bottom: 3rem;
+    }
+  }
+
+  &__info {
+    width: 100%;
+    margin-bottom: 2rem;
+    
+  }
+
+  &__providers {
+    // width: 60%;
+  }
+}

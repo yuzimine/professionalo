@@ -1,0 +1,85 @@
+.mlabel {
+  font-family: $util-fonts;
+  background-color: $color-accent;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  margin-left: 1rem;
+
+  &.red {
+    background-color: $color-red;
+    color: $color-purewhite;
+  }
+
+  &.cyan {
+    background-color: $color-cyan;
+    color: $color-purewhite;
+  }
+
+  &.yellow {
+    background-color: $color-yellow;
+  }
+
+  &.black {
+    background-color: $color-blueblack;
+    color: $color-purewhite;
+  }
+
+  &.light-black {
+    background-color: $color-blueblack-light;
+    color: $color-white;
+  }
+}
+
+.label-list {
+  &__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    font-size: 2rem;
+    list-style: none;
+
+    &>li {
+      transition: all 0.2s;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+      margin-right: 1rem;
+      background-color: $color-blueblack;
+      padding: {
+        top: 0.3rem;
+        left: 1rem;
+        right: 1rem;
+        bottom: 0.1rem;
+      }
+
+      &>a {
+        text-decoration: none;
+        color: $color-white;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0rem 1rem 1.8rem rgba($color-pureblack, .35);
+        border: 2px solid $color-white;
+      }
+    }
+
+    &.tiny {
+      font-size: 1.2rem;
+
+      &>li {
+        margin-bottom: 0.5rem;
+        margin-right: 0.5rem;
+
+        &:hover {
+          transform: none;
+          box-shadow: 0rem 0.5rem 0.9rem rgba($color-pureblack, .35);
+          border: 1px solid $color-white;
+        }
+      }
+    }
+  }
+}

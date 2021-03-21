@@ -1,0 +1,19 @@
+version: "3.7"
+
+x-common-props: &common-props
+  image: node:current-alpine
+  working_dir: /usr/local/src
+  volumes:
+    - .:/usr/local/src:delegated
+
+services:
+  npm:
+    <<: *common-props
+    entrypoint: npm
+  dev:
+    <<: *common-props
+    ports:
+      - "3000:3000"
+    command: npm run dev
+volumes:
+  node_modules:

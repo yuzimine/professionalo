@@ -1,0 +1,47 @@
+.mquote {
+  text-align: right;
+  padding: 3rem;
+  max-width: 100rem;
+
+  &-left {
+    vertical-align: super;
+    font-size: 0.5em;
+  }
+
+  &-right {
+    @extend .mquote-left;
+  }
+
+  &-text {
+    display: block;
+    font-size: 3rem;
+    font-style: italic;
+    text-align: center;
+
+    @media screen and (max-width: $grid-width-md) {
+      font-size: 1.5rem;
+    }
+    @media screen and (min-width: $grid-width-md + 1) and (max-width: $grid-width-lg) {
+      font-size: 2rem;
+    }
+  }
+
+  &-credit {
+    display: block;
+    font-size: 2rem;
+    padding-top: 1rem;
+    color: $color-white;
+
+    @media screen and (max-width: $grid-width-md) {
+      font-size: 1.2rem;
+    }
+    @media screen and (min-width: $grid-width-md + 1) and (max-width: $grid-width-lg) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &.animated {
+    animation: fromBottom .5s ease-out .2s;
+    animation-fill-mode: backwards; /* 0% style gets applied initially */
+  }
+}

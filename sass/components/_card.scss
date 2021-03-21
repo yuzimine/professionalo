@@ -1,0 +1,117 @@
+.mcard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: $color-white;
+  background-color: $color-primary;
+  padding: 2rem;
+  box-shadow: 0rem 1rem 1.8rem rgba($color-pureblack, .35);
+  // max-width: 40rem;
+
+  &.cyan-back {
+    color: $color-purewhite;
+    background-color: $color-secondary;
+  }
+
+  &.black-back {
+    background-color: $color-blueblack;
+  }
+
+  &.white-back {
+    color: $color-blueblack;
+    background-color: $color-white;
+  }
+
+  &.red-text {
+    color: $color-primary;
+  }
+
+  &.black-text {
+    color: $color-blueblack;
+  }
+
+  &.cyan-text {
+    color: $color-secondary;
+  }
+
+  &.white-text {
+    color: $color-purewhite;
+  }
+
+  &.responsive {
+    @include orientation(portrait) {
+      @include respond(lg) {
+        max-width: 40rem;
+        box-shadow: none;
+      }
+    }
+    @include orientation(landscape) {
+      @include respond(md) {
+        box-shadow: none;
+      }
+    }
+  }
+
+  &.wide {
+    width: 80%;
+  }
+
+  &.full-width {
+    width: 100%;
+    box-shadow: none;
+  }
+
+  &.full-height {
+    height: 100%;
+  }
+
+  &__icon {
+    padding: 2rem 1rem 0;
+    font-size: 8rem;
+
+    @include respond(xs) {
+      padding: 0.5rem 0.2rem 0;
+      font-size: 5rem;
+    }
+  }
+
+  &__header {
+    padding: 2rem 0;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+
+    @include respond(xs) {
+      padding: 0.5rem 0;
+      font-size: 2rem;
+    }
+  }
+
+  &__content {
+    font-size: 2rem;
+    text-align: justify;
+    line-height: 1.2;
+
+    @include respond(xs) {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__footer {
+    padding: 3rem 0 0;
+    text-align: center;
+
+    @include respond(xs) {
+      padding: 0.5rem 0 0;
+    }
+  }
+
+
+  @include respond(sm) {
+    min-width: 30rem;
+    min-height: 40rem;
+  }
+
+  @include respond(xs) {
+    min-height: 30rem;
+  }
+}

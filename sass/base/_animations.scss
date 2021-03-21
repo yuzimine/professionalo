@@ -1,0 +1,29 @@
+/*
+  max 2 properties per frame
+*/
+@keyframes fromLeft {
+  0% { opacity: 0; transform: translateX(-100px); }
+  80% { transform: translateX(10px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fromRight {
+  0% { opacity: 0; transform: translateX(100px); }
+  80% { transform: translateX(-10px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fromBottom {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slotUp {
+  0% { transform: translateY(0) }
+  100% { transform: translateY(calc(-100% + 8rem)) }
+}
+
+@keyframes slotDown {
+  0% { transform: translateY(calc(-100% + 8rem)) }
+  100% { transform: translateY(0) }
+}

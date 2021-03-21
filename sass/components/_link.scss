@@ -1,0 +1,46 @@
+.mlink-btn {
+  font-family: $util-fonts;
+  display: inline-block;
+  color: $color-secondary;
+  font-size: inherit;
+  font-weight: 700;
+  padding: 0 0.5rem;
+  transition: all 0.2s;
+
+  &.large {
+    font-size: 3rem;
+  }
+
+  &.medium {
+    font-size: 2rem;
+  }
+
+  &.small {
+    font-size: 1.5rem;
+  }
+
+  &.xsmall {
+    font-size: 1rem;
+  }
+
+  &.red {
+    color: $color-primary;
+  }
+
+  &.black {
+    color: $color-blueblack;
+  }
+
+  &.white {
+    color: $color-purewhite;
+  }
+
+  &.cyan {
+    color: $color-secondary;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    text-shadow: 0 5px 8px rgba($color-blueblack, 0.3);
+  }
+}

@@ -1,0 +1,21 @@
+account: { provider: 'facebook',
+  type: 'oauth',
+  id: '10158160858399067',
+  refreshToken: undefined,
+  accessToken:
+   'EAAbaKn7FYAQBAOv8RzeYvfLVlwpOVzndtS1IVvZCt5G6xJT3EtWYEIHiVCnSwm7xmFkp9y3WYcpzHiC0tEHxXa4KCGNJveOOE6EGXGzlHCE1XR7ffrGQBlZBBw6wic0j7KiJq3bMZCJnJ7BdP0MqflUMXzMMA2d54ZA02uNMFQGF9cVdEiRL',
+  accessTokenExpires: null }
+profile: { email: 'yuzimine@me.com',
+  name: 'Yuzi Minegishi',
+  picture:
+   { data:
+      { height: 50,
+        is_silhouette: false,
+        url:
+         'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=10158160858399067&height=50&width=50&ext=1613619833&hash=AeQRn7bVpMVZRkwYUL4',
+        width: 50 } },
+  id: '10158160858399067' }
+user { name: 'Yuzi Minegishi',
+  email: 'yuzimine@me.com',
+  image:
+   'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=10158160858399067&height=50&width=50&ext=1613619833&hash=AeQRn7bVpMVZRkwYUL4' }

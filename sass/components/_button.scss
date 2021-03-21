@@ -1,0 +1,167 @@
+.mbtn {
+  position: relative;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  margin-right: 0.6rem;
+  min-height: 4.6rem;
+  border-style: none;
+  font-family: $util-fonts;
+  font-weight: 700;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all .2s;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.4;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba($color-pureblack, .1);
+  }
+
+  &:link,
+  &:visited {
+    @include respond(sm) {
+      min-width: 50vw;
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  @include respond(lg, true) {
+    &:hover:not(:disabled) {
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba($color-pureblack, .2);
+      &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+      }
+    }
+
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 0.5rem 1rem rgba($color-pureblack, .2);
+    }
+
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+  }
+
+  &.text {
+    padding: 0;
+    background-color: transparent;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  &.full {
+    width: 100%;
+    text-align: center;
+  }
+
+  &.responsive {
+    @include respond(sm) {
+      width: 100%;
+      font-size: 2.4rem;
+      text-align: center;
+      margin: {
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 1.2rem;
+      }
+      padding: 2.5rem 2rem;
+    }
+  }
+
+  &.large {
+    padding: 1.2rem 2.2rem;
+    font-size: 3rem;
+    min-height: 5.6rem;
+  }
+
+  &.medium {
+    padding: 1.2rem 2.2rem;
+    font-size: 1.6rem;
+    min-height: 4.6rem;
+  }
+
+  &.small {
+    padding: 0.8rem 1.8rem;
+    font-size: 1.2rem;
+    min-height: 3.6rem;
+  }
+
+  &.mbtn-animated {
+    animation: fromBottom .5s ease-out .7s;
+    animation-fill-mode: backwards; /* 0% style gets applied initially */
+  }
+
+  &.mbtn-white {
+    background-color: $color-white;
+    color: $color-blueblack;
+
+    &::after {
+      background-color: $color-white;
+    }
+
+    &:active {
+      background-color: darken($color-white, 10%);
+    }
+  }
+
+  &.mbtn-black {
+    background-color: $color-blueblack;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-blueblack;
+    }
+
+    &:active {
+      background-color: darken($color-blueblack, 10%);
+    }
+  }
+
+  &.mbtn-red {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary;
+    }
+
+    &:active {
+      background-color: darken($color-primary, 10%);
+    }
+  }
+
+  &.mbtn-cyan {
+    background-color: $color-secondary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-secondary;
+    }
+
+    &:active {
+      background-color: darken($color-secondary, 10%);
+    }
+  }
+}

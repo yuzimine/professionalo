@@ -1,0 +1,43 @@
+.register {
+  align-self: center;
+  background-color: $color-purewhite;
+  width: 80vw;
+  text-align: center;
+  margin: 5rem 0;
+  max-width: 120rem;
+  min-height: calc(100vh - 12rem);
+  box-shadow: 0rem 1rem 1.8rem rgba($color-pureblack, .35);
+  padding: 30px;
+  animation: {
+    name: fromBottom;
+    duration: .5s;
+    timing-function: ease-out;
+  }
+
+  @include respond(lg) {
+    min-height: 100vh;
+    min-width: 32rem;
+    width: 100%;
+    padding: 3rem 0;
+    margin: 0;
+}
+
+  &__container {
+    width: 60%;
+    display: inline-block;
+    text-align: center;
+
+    @include respond(lg) {
+      width: 90%;
+    }
+  }
+
+  &__name {
+    // display: block;
+    // width: 90%;
+  }
+
+  &__submit {
+    padding-top: 2rem;
+  }
+}

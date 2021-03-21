@@ -1,0 +1,83 @@
+version: 0.0.1
+constants:
+  statusDraft: 0
+  statusWaiting: 1
+  statusPosted: 2
+  statusExpired: 3
+  statusContracted: 4
+  statusDone: 5
+  finalStatusPending: 0
+  finalStatusInProgress: 1
+  finalStatusCompleted: 2
+  finalStatusCancelled: 3
+  finalStatusAbandoned: 4
+  finalStatusPostponed: 5
+values:
+  status:
+    - value: 0
+      label: Draft
+      color: light-black
+    - value: 1
+      label: Waiting
+      color: yellow
+    - value: 2
+      label: Posted
+      color: cyan
+    - value: 3
+      label: Expired
+      color: black
+    - value: 4
+      label: Contracted
+      color: red
+    - value: 5
+      label: Done
+      color: light-black
+  finalStatus:
+    - value: 0
+      label: Pending
+      color: light-black
+    - value: 1
+      label: In Progress
+      color: red
+    - value: 2
+      label: Completed
+      color: red
+    - value: 3
+      label: Cancelled
+      color: black
+    - value: 4
+      label: Abandoned
+      color: black
+    - value: 5
+      label: Postponed
+      color: yellow
+params:
+  jobId: ''
+  jobTitle: ''
+  jobDescription: ''
+  jobDetail: ''
+  jobCategory: ''
+  jobHireType: individual
+  jobContractType: fixed
+  jobStartDate: ''
+  jobActualStartDate: ''
+  jobEndDate: ''
+  jobActualEndDate: ''
+  jobPostDate: ''
+  jobServerCurrentTime: ''
+  jobTimezone: ''
+  jobPostDuration: 1
+  jobOptionBudget: false
+  jobOptionEndDate: false
+  jobOptionHireType: false
+  jobOptionStartDate: false
+  jobHiree: ''
+  jobStatus: 0
+  jobFinalStatus: 0
+  jobContractStart: ''
+  jobProgress: 0
+  jobCompletion: 0
+  jobSatisfaction: 0
+  jobPostViews: 0
+  jobPostInquiries: 0
+  jobPostProposals: 0

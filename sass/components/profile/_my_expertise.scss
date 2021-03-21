@@ -1,0 +1,5 @@
+.my {
+  &__expertise {
+    @include my-container;
+  }
+}

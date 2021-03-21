@@ -1,0 +1,90 @@
+// Home Page
+.header {
+  background-image: linear-gradient(to right, rgba($color-blueblack, 0.8), rgba($color-blueblack, 0.8)), url('/img/header_background.jpg');
+
+  @include parallax-background;
+  
+  &-block {
+    position: absolute;
+    top: 45%; /* position in relation to parent*/
+    left: 50%; /* position in relation to parent*/
+    transform: translate(-50%, -50%); /* adjust position to center in relation to itself*/
+    text-align: center;
+  }
+}
+
+.logo-box {
+  width: 100%;
+  text-align: center;
+
+  .logo {
+    @media (orientation: landscape) and (max-width: $grid-width-lg) {
+      display: none;
+    }
+    width: 120px;
+  }
+}
+
+.heading {
+  font-weight: 700;
+
+  &-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    margin: 6rem 0 6rem 0;
+    text-align: left;
+    white-space: nowrap;
+
+    &-main {
+      display: block;
+      font-size: 6.2rem;
+      letter-spacing: 2rem;
+      animation: {
+        name: fromLeft;
+        duration: 1s;
+      }
+
+      &.jp {
+        letter-spacing: 2.1rem;
+      }
+
+      @media screen and (max-width: $grid-width-xs) {
+        letter-spacing: 0;
+        font-size: 8vw;
+      }
+
+      @media screen and (min-width: $grid-width-xs + 1) and (max-width: $grid-width-md) {
+        letter-spacing: 0;
+        font-size: 12vw;
+      }
+
+      @media screen and (min-width: $grid-width-md + 1) and (max-width: $grid-width-lg) {
+        letter-spacing: 0.7rem;
+        font-size: 5rem;
+      }
+    }
+
+    &-sub {
+      display: block;
+      font-size: 3rem;
+      letter-spacing: 1.28rem;
+      animation: {
+        name: fromRight;
+        duration: 1s;
+      }
+
+      &.jp {
+        letter-spacing: 0.35rem;
+      }
+
+      @media screen and (max-width: $grid-width-md) {
+        display: none;
+      }
+
+      @media screen and (min-width: $grid-width-md + 1) and (max-width: $grid-width-lg) {
+        letter-spacing: 0.76rem;
+        font-size: 2rem;
+      }
+    }
+  }
+}

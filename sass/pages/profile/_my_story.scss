@@ -1,0 +1,12 @@
+.my {
+
+  &__pr {
+    @include my-container;
+  }
+
+  &__text {
+    text-align: justify;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+  }
+}

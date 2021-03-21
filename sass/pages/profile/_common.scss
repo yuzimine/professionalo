@@ -1,0 +1,15 @@
+.my {
+  &__view {
+    position: relative;
+  }
+  &__title {
+    font-size: 1.4rem;
+    margin: {
+      top: 3rem;
+      bottom: 1rem;
+    }
+    text-transform: uppercase;
+    color: lighten($color-blueblack, 30%);
+    text-align: left;
+  }
+}

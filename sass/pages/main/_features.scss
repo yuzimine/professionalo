@@ -1,0 +1,44 @@
+.features {
+  // background-image: linear-gradient(to right, rgba($color-secondary, 0.8), rgba($color-secondary, 0.8)), url('../../img/guy1.jpg');
+  // background-size: cover;
+  position: relative;
+  padding: 6rem 0 0 0;
+
+  &__header {
+    text-align: center;
+    padding-bottom: 6rem;
+  }
+
+  &__title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: $color-primary;
+    text-transform: uppercase;
+    padding: {
+      left: 3rem;
+      right: 3rem;
+      bottom: 3rem;
+    }
+
+    @include respond(md) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__description {
+    display: inline-block;
+    font-size: 2.2rem;
+    font-weight: 400;
+    max-width: 100rem;
+    padding: 0 3rem;
+
+    &:not(:last-child) {
+      padding-bottom: 10px;
+    }
+
+    @include respond(md) {
+      font-size: 1.8rem;
+      text-align: justify;
+    }
+  }
+}

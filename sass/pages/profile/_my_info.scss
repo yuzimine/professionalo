@@ -1,0 +1,89 @@
+.my {
+  &__identity {
+    padding-bottom: 5rem;
+  }
+
+  &__name {
+    color: $color-primary;
+    font-size: 5rem;
+
+    @include respond(lg) {
+      padding: 3rem;
+      line-height: 1;
+    }
+  }
+
+  &__profession {
+    font-size: 2rem;
+  }
+
+  &__location {
+    font-size: 1.4rem;
+    color: rgba($color-pureblack, 0.5);
+
+    &__icon {
+      @include respond(lg) {
+        visibility: hidden;
+        width: 0;
+      }
+    }
+  }
+
+  &__language {
+    padding-top: 1rem;
+    font-size: 1.4rem;
+    color: $color-blueblack;
+    display: flex;
+    align-items: baseline;
+    
+    @include respond(lg) {
+      justify-content: center;
+    }
+
+    &__icon {
+      @include respond(lg) {
+        visibility: hidden;
+        width: 0;
+      }
+    }
+
+    a {
+      @include respond(lg) {
+        font-size: 1.8rem;
+      }
+    }
+
+    // &> span {
+    //   background-color: $color-blueblack;
+    //   color: $color-white;
+    //   padding: 0.3rem 0.5rem;
+
+    //   &:not(:last-child) {
+    //     margin-right: 0.5rem;
+    //   }
+    // }
+  }
+
+  &__social {
+    padding-top: 1rem;
+    font-size: 2rem;
+
+    a {
+      color: $color-blueblack;
+      font-size: 2.5rem;
+
+      @include respond(lg) {
+        font-size: 4rem;
+      }
+  
+       &:not(:last-child) {
+        margin-right: 1rem;
+      }
+      
+      &:visited,
+      &:active {
+        color: $color-blueblack;
+      }
+    }
+  }
+}

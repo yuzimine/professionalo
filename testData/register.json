@@ -1,0 +1,61 @@
+{
+  "profile": {
+    "firstName": {
+      "pLang": ["en", "ja"],
+      "pValue": {
+        "en": "Yuji",
+        "ja": "裕司"
+      }
+    },
+    "lastName": {
+      "pLang": ["en", "ja"],
+      "pValue": {
+        "en": "Minegishi",
+        "ja": "峰岸"
+      }
+    },
+    "displayName": {
+      "pLang": ["en", "ja"],
+      "pValue": {
+        "en": "Yuzi Minegishi",
+        "ja": "峰岸 裕司"
+      }
+    },
+    "title": {
+      "pLang": ["en", "ja"],
+      "pValue": {
+        "en": "Web Application Visioneer",
+        "ja": "Webアプリケーション・クリエータ"
+    }
+    },
+    "city": {
+      "pLang": ["en"],
+      "pValue": {
+        "en": "Yokohama"
+      }
+    },
+    "state": {
+      "pLang": ["en"],
+      "pValue": {
+        "en": "Kanagawa"
+      }
+    },
+    "country": {
+      "pLang": ["en"],
+      "pValue": {
+        "en": "Japan"
+      }
+    },
+    "myStory": {
+      "pLang": ["en", "ja"],
+      "pValue": {
+        "en": "This is my story",
+        "ja": "これが私のストーリーです"
+      }
+    },
+    "email": "yuzimine@me.com",
+    "password": "",
+    "password2": "",
+    "expertise": []
+  }
+}

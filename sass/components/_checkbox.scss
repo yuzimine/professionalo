@@ -1,0 +1,74 @@
+.mcheckbox {
+  font-family: $util-fonts;
+  display: inline-block;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+
+  &__input {
+    font-size: inherit;
+    color: inherit;
+    display: none;
+  }
+
+  &__label {
+    padding-left: 2.5rem;
+    padding-right: 2rem;
+    cursor: pointer;
+    position: relative;
+  }
+
+  &__button {
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+    display: inline-block;
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: 0.4rem;
+    background-color: $color-purewhite;
+    border: 2px solid $color-primary;
+
+    &::after {
+      content: "";
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      left: 0.4rem;
+      width: 0.7rem;
+      height: 1.2rem;
+      border: solid $color-primary;
+      border-width: 0 0.4rem 0.4rem 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      transition: all 0.2s;
+    }
+  }
+
+  &__input:checked ~ &__label &__button::after {
+    opacity: 1;
+  }
+
+  &__group {
+    display: flex;
+    padding: 1rem 0;
+
+    &__label {
+      color: $color-primary;
+      font-size: 2rem;
+      padding-top: 1rem;
+      padding-bottom: 0.7rem;
+      padding-right: 2rem;
+    }
+
+    &.vertical {
+      flex-direction: column;
+    }
+
+    &.responsive {
+      @include respond(sm) {
+        flex-direction: column;
+      }
+    }
+  }
+}

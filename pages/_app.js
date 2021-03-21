@@ -1,7 +1,19 @@
-import '@styles/globals.css'
+import propTypes from 'prop-types';
+import UserContextComp from 'context/userContext';
+// import 'css/style.css';
+import 'sass/main.scss';
 
-function Application({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function Index({ Component, pageProps }) {
+  return (
+    <UserContextComp pageProps={pageProps}>
+      <Component {...pageProps} />
+    </UserContextComp>
+  );
 }
 
-export default Application
+Index.propTypes = {
+  Component: propTypes.func,
+  pageProps: propTypes.object
+};
+
+export default Index;

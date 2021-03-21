@@ -1,0 +1,74 @@
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($color-blueblack, .8);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s;
+
+  &:target { // jumping to a target opens the popup
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &-content {
+    @include abs-center;
+    padding: 3rem 5rem;
+    width: 80%;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-pureblack, .2);
+    overflow: hidden;
+
+    @include respond(sm) {
+      width: 100%;
+      height: 100vh;
+      padding: 3rem 1rem;
+    }
+  }
+
+  &-text {
+    font-size: 1.8rem;
+    margin-bottom: 4rem;
+    text-align: justify;
+
+    -moz-column-count: 2;
+    -moz-column-gap: 4rem;
+    -moz-column-rule: 1px solid $color-blueblack;
+
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid $color-blueblack;
+
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto; // will automatically hyphenate words
+  }
+
+  &-close {
+    &:link,
+    &:visited {
+      color: $color-blueblack;
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-size: 3rem;
+      text-decoration: none;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

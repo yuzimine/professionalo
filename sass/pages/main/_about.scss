@@ -1,0 +1,72 @@
+.about {
+  &.right {
+    background-image: linear-gradient(to right, rgba($color-white, 0.7), rgba($color-white, 0.83)), url('/img/woman_working.jpg');
+  }
+  &.left {
+    background-image: linear-gradient(to right, rgba($color-white, 0.7), rgba($color-white, 0.83)), url('/img/guy1.jpg');
+  }
+  @include parallax-background;
+  display: flex;
+  align-items: center;
+
+  @include respond(lg) {
+    background-position: 70%;
+  }
+
+  &__container {
+    padding: 3rem;
+    text-align: center;
+    display: inline-block;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include respond(lg) {
+      width: 80%;
+      max-width: 50rem;
+      height: auto;
+      margin: 3rem auto;
+    }
+  }
+
+  &__header {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $color-blueblack;
+    text-align: left;
+
+    @include respond(md) {
+      font-size: 2.2rem;
+    }
+    @include respond(sm) {
+      font-size: 1.8rem;
+    }
+
+    &:not(:last-child) {
+      padding-bottom: 3rem;
+    }
+  }
+
+  &__description {
+    text-align: justify;
+    font-size: 2.4rem;
+
+    @include respond(md) {
+      font-size: 2rem;
+    }
+
+    @include respond(sm) {
+      font-size: 1.8rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+  }
+}

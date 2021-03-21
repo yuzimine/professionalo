@@ -1,0 +1,118 @@
+// Home Page
+.header {
+  background-image: linear-gradient(to bottom, rgba($color-blueblack, 0.95), rgba($color-blueblack, 0.8)), url('/img/header_background.jpg');
+
+  @include parallax-background;
+  
+  &__block {
+    position: absolute;
+    top: 45%; /* position in relation to parent*/
+    left: 50%; /* position in relation to parent*/
+    transform: translate(-50%, -50%); /* adjust position to center in relation to itself*/
+    text-align: center;
+  }
+
+  &__logo-box {
+    width: 100%;
+    text-align: center;
+  
+    &__logo {
+      width: 20rem;
+
+      @include respond(md) {
+        width: 15rem;
+      }
+
+      @include orientation(landscape) {
+        @include respond(md) {
+          display: none;
+        }
+      }
+
+      path {
+        fill: $color-primary;
+      }
+    }
+  }
+
+  &__heading {
+    font-weight: 700;
+  
+    &-primary {
+      color: $color-white;
+      text-transform: uppercase;
+      margin: 6rem 0 6rem 0;
+      text-align: left;
+      white-space: nowrap;
+  
+      &__main {
+        display: block;
+        font-size: 6.2rem;
+        letter-spacing: 0;
+        // letter-spacing: 2rem;
+        animation: {
+          name: fromLeft;
+          duration: 1s;
+        }
+  
+        @include respond(xl, true) {
+          &.en { letter-spacing: 2rem; }    
+          &.ja { letter-spacing: 0.5rem; }
+        }
+
+        @include respond(xl) {
+          &.en { letter-spacing: 1.85rem; }    
+          &.ja { letter-spacing: 0.5rem; }
+          font-size: 4.8rem;
+        }
+
+        @include respond(lg) {
+          &.en { letter-spacing: 1.8rem; }    
+          &.ja { letter-spacing: 0.5rem; }
+          font-size: 4rem;
+        }
+
+        @include respond(md) {
+          &.en { letter-spacing: 0.5rem; }    
+          &.ja { letter-spacing: 0.5rem; }
+          font-size: 3.8rem;
+        }
+
+        @include respond(sm) {
+          font-size: 2.6rem;
+        }
+      }
+  
+      &__sub {
+        display: block;
+        font-size: 3rem;
+        letter-spacing: 0;
+        animation: {
+          name: fromRight;
+          duration: 1s;
+        }
+  
+        @include respond(xl, true) {
+          &.en { letter-spacing: 1.28rem; }
+          &.ja { letter-spacing: 0.3rem; }
+        }
+
+        @include respond(xl) {
+          &.en { letter-spacing: 1.07rem; }
+          &.ja { letter-spacing: 0.05rem; }
+          font-size: 2.5rem;
+        }
+
+        @include respond(lg) {
+          &.en { letter-spacing: .75rem; }
+          &.ja { letter-spacing: 0.05rem; }
+          font-size: 2.5rem;
+        }
+
+        @include respond(md) {
+          display: none;
+        }
+      }
+    }
+  }
+}

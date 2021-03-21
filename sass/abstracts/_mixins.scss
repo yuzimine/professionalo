@@ -1,0 +1,93 @@
+@mixin clearfix() {
+  &::after {
+    content: "";
+    clear:both;
+    display: table;
+  }
+}
+
+@mixin parallax-background {
+  background: {
+    attachment: fixed;
+    position: center;
+    repeat: no-repeat;
+    size: cover;
+  }
+
+  @media screen and (max-width: $parallax-trigger-width) {
+    background-attachment: scroll;
+  }
+}
+
+@mixin my-container() {
+  @media screen and (max-width: $grid-width-lg) {
+    padding: 0 30px;
+  }
+} 
+
+@mixin abs-center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin orientation($orientation) {
+  @media (orientation: $orientation) {
+    @content;
+  }
+}
+
+/*
+  Breakpoint Choices
+
+  - xs
+  - sm
+  - md
+  - lg
+  - xl
+*/
+@mixin respond($breakpoint: xs, $lt: false) {
+  @if $breakpoint == xs {
+    @if $lt == false {
+      @media screen and (max-width: $grid-width-xs) { @content };
+    } @else {
+      @media screen and (min-width: $grid-width-xs) { @content };
+    }
+  }
+  @if $breakpoint == sm {
+    @if $lt == false {
+      @media screen and (max-width: $grid-width-sm) { @content };
+    } @else {
+      @media screen and (min-width: $grid-width-sm) { @content };
+    }
+  }
+  @if $breakpoint == md {
+    @if $lt == false {
+      @media screen and (max-width: $grid-width-md) { @content };
+    } @else {
+      @media screen and (min-width: $grid-width-md) { @content };
+    }
+  }
+  @if $breakpoint == wd {
+    @if $lt == false {
+      @media screen and (max-width: $grid-width-wd) { @content };
+    } @else {
+      @media screen and (min-width: $grid-width-wd) { @content };
+    }
+  }
+  @if $breakpoint == lg {
+    @if $lt == false {
+      @media screen and (max-width: $grid-width-lg) { @content };
+    } @else {
+      @media screen and (min-width: $grid-width-lg) { @content };
+    }
+  }
+  @if $breakpoint == xl {
+    @if $lt == false {
+      @media screen and (max-width: $grid-width-xl) { @content };
+    } @else {
+      @media screen and (min-width: $grid-width-xl) { @content };
+    }
+  }
+}

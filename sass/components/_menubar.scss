@@ -1,0 +1,120 @@
+.menubar {
+  font-family: $util-fonts;
+  position: relative;
+  display: block;
+  background-color: $color-blueblack;
+  width: 100%;
+  color: $color-white;
+  padding: {
+    left: 1rem;
+    right: 1rem;
+  }
+
+  @include clearfix;
+
+  &.responsive {
+    @include respond(lg) {
+      display: none;
+    }
+  }
+
+  &.overlap {
+    background-color: rgba($color-blueblack, 0.65);
+    position: absolute;
+    z-index: 100;
+  }
+
+  &.fixed {
+    position: fixed;
+    z-index: 100;
+    min-height: 4rem;
+
+    &.bottom {
+      top: unset;
+      bottom: 0;
+    }
+  }
+
+  &.red {
+    background-color: $color-primary;
+  }
+
+  &.cyan {
+    background-color: $color-secondary;
+  }
+
+  &.black {
+    background-color: $color-blueblack;
+  }
+
+  &.large {
+    font-size: 2.4rem;
+  }
+
+  &.medium {
+    font-size: 2rem;
+  }
+
+  &.small {
+    font-size: 1.5rem;
+  }
+
+  &.tiny {
+    font-size: 1.2rem;
+  }
+
+  &.top {
+    top: 0;
+  }
+
+  &__menu {
+    float: left;
+    line-height: 1;
+    font-size: 2rem;
+
+    &.left {
+      float: left;
+    }
+
+    &.right {
+      float: right;
+    }
+
+    &.center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    li {
+      display: inline-block;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      &.label {
+        font-weight: 700;
+        cursor: unset;
+        padding: {
+          top: 1rem;
+          bottom: 1rem;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+
+      a {
+        display: block;
+        color: $color-white;
+        padding: 1rem 0.5rem;
+        transition: all 0.4s;
+
+        &:hover {
+          background-color: $color-white;
+          color: $color-blueblack;
+        }
+      }
+    }
+  }
+}

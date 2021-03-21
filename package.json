@@ -1,19 +1,45 @@
 {
-  "name": "next-netlify-starter",
-  "version": "0.3.0",
+  "name": "professional-o",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "compile:sass": "sass sass/main.scss css/style.css",
+    "watch:sass": "sass sass/main.scss css/style.css --watch",
+    "dev-win": "set NODE_OPTIONS='--inspect' && next dev",
+    "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
-    "start": "next start",
-    "export": "next export"
+    "start": "next start"
   },
   "dependencies": {
-    "next": "10.0.9",
+    "@svgr/webpack": "^5.5.0",
+    "classnames": "^2.2.6",
+    "crypto": "^1.0.1",
+    "crypto-random-string": "^3.3.0",
+    "firebase": "^8.2.1",
+    "firebase-admin": "^9.4.2",
+    "gray-matter": "^4.0.2",
+    "i18next": "^19.8.4",
+    "js-cookie": "^2.2.1",
+    "js-yaml": "^4.0.0",
+    "lodash": "^4.17.20",
+    "moment-timezone": "^0.5.33",
+    "nanoid": "^3.1.20",
+    "next": "10.0.4",
+    "next-auth": "^3.1.0",
+    "pondjs": "^0.9.0",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-avatar-editor": "^11.1.0",
+    "react-basecode-sixty-four": "^1.0.4",
+    "react-beautiful-dnd": "^13.0.0",
+    "react-dom": "17.0.1",
+    "react-select": "^3.2.0",
+    "react-timeseries-charts": "^0.16.1",
+    "sass": "^1.32.0",
+    "swr": "^0.4.0"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^3.0.3"
+    "@netlify/plugin-nextjs": "^3.0.3",
+    "eslint": "^7.17.0",
+    "eslint-plugin-react": "^7.22.0"
   }
 }

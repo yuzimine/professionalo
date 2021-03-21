@@ -1,0 +1,26 @@
+- name: Web Development
+  tag: web_development
+- name: Web Design
+  tag: web_design
+- name: Software Development
+  tag: software_deveopment
+- name: Graphic Design
+  tag: graphic_design
+- name: Marketing Consulting
+  tag: marketing_consulting
+- name: Video Production
+  tag: video_production
+- name: Photo Production
+  tag: photo_production
+- name: Music Production
+  tag: music_production
+- name: Business Strategy Consulting
+  tag: business_strategy_consulting
+- name: Presentation Production
+  tag: presentation_production
+- name: Data Analysis
+  tag: data_analysis
+- name: Translation
+  tag: Translation
+- name: Document Creation
+  tag: document_creation

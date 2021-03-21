@@ -1,0 +1,119 @@
+.profile {
+  &__view {
+    position: relative;
+    margin: 10rem auto;
+    min-height: calc(100vh - 12rem);
+    max-width: 120rem;
+    width: 80vw;
+    padding: 2rem 3rem;
+    box-shadow: 0rem 1rem 1.8rem rgba($color-pureblack, .35);
+    background-color: $color-purewhite;
+    animation: {
+      name: fromBottom;
+      duration: .5s;
+      timing-function: ease-out;
+    }
+
+    @include respond(lg) {
+      min-width: 32rem;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      box-shadow: none;
+    }
+  }
+
+  &__loader {
+    display: block;
+    text-align: center;
+  }
+
+  &__settings {
+    display: block;
+    text-align: right;
+    color: $color-primary;
+  }
+
+  &__info {
+    text-align: left;
+    padding: {
+      left: 15rem;
+      top: 3rem;
+    }
+
+    @include respond(lg) {
+      padding: {
+        left: 0;
+        top: 0;
+      }
+      text-align: center;
+    }
+
+    &__image {
+      position: absolute;
+      overflow: hidden;
+      height: 36rem;
+      width: 20rem;
+      top: -3rem;
+      left: -4rem;
+      box-shadow: 0rem 1rem 1.8rem rgba($color-pureblack, .35);
+      outline-offset: 1rem;
+      transition: {
+        property: all;
+        duration: .2s;
+      }
+      animation: {
+        name: fromLeft;
+        duration: .5s;
+        timing-funtion: ease-out;
+        fill-mode: backwards;
+      }
+
+      &__edit {
+        position: absolute;
+        padding: {
+          right: 1rem;
+          bottom: 0.6rem;
+        }
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+        visibility: hidden;
+        @include respond(lg) {
+          visibility: visible;
+        }
+      }
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 2.5rem 4rem rgba($color-pureblack, .5);
+        outline: 1.2rem solid $color-primary;
+
+        &>.profile__info__image__edit {
+          visibility: visible;
+        }
+
+        @include respond(lg) {
+          transform: none;
+          box-shadow: none;
+          outline: none;
+        }
+      }
+  
+      @include respond(xl) {
+        width: 20rem;
+      }
+
+      @include respond(lg) {
+        position:relative;
+        width: 100%;
+        top: 0;
+        left: 0;
+        box-shadow: none;
+        outline: none;
+        transition: none;
+        animation: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+.my {
+  &__services {
+    @include my-container;
+  }
+}

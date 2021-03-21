@@ -1,0 +1,15 @@
+.image-editor {
+  padding: 2rem 0 4rem 0;
+
+  &__images {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+    margin-bottom: 3rem;
+  }
+
+  &__file {
+    border-bottom: 1px solid $color-red;
+    padding-bottom: 1rem;
+  }
+}

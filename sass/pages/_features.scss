@@ -1,0 +1,39 @@
+.features {
+  // background-image: linear-gradient(to right, rgba($color-cyan, 0.8), rgba($color-cyan, 0.8)), url('../../img/guy1.jpg');
+  // background-size: cover;
+  position: relative;
+
+  &-header {
+    text-align: center;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  &-title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: $color-red;
+    text-transform: uppercase;
+    padding-bottom: 30px;
+
+    @media screen and (max-width: $grid-width-xs) {
+      font-size: 10vw;
+    }
+  }
+
+  &-description {
+    display: inline-block;
+    font-size: 2.2rem;
+    font-weight: 400;
+    max-width: 100rem;
+    padding: 0 10px;
+
+    &:not(:last-child) {
+      padding-bottom: 10px;
+    }
+
+    @media screen and (max-width: $grid-width-xs) {
+      font-size: 5vw;
+    }
+  }
+}

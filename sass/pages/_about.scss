@@ -1,0 +1,45 @@
+.about {
+  background-image: linear-gradient(to right, rgba($color-white, 0.7), rgba($color-white, 0.83)), url('/img/guy1.jpg');
+  @include parallax-background;
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: $grid-width-sm) {
+    background-position: 70%;
+  }
+
+  &-container {
+    padding: 30px;
+    text-align: center;
+    display: inline-block;
+  }
+
+  &-header {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $color-blueblack;
+    text-align: left;
+
+    &:not(:last-child) {
+      padding-bottom: 30px;
+    }
+
+    @media screen and (max-width: $grid-width-xs) {
+      font-size: 10vw;
+    }
+  }
+
+  &-description {
+    font-size: 5vw;
+    text-align: left;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    @media screen and (min-width: $grid-width-xl) {
+      font-size: 3rem;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.mradiobox {
+  @extend .mcheckbox;
+
+  &__input {
+    @extend .mcheckbox__input;
+  }
+
+  &__label {
+    @extend .mcheckbox__label;
+  }
+
+  &__button {
+    @extend .mcheckbox__button;
+    border-radius: 50%;
+
+    &::after {
+      border-radius: 50%;
+      height: 1rem;
+      width: 1rem;
+      top: 50%;
+      left: 50%;
+      background-color: $color-primary;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &__group {
+    @extend .mcheckbox__group;
+    &__label {
+      @extend .mcheckbox__group__label;
+    }
+  }
+}

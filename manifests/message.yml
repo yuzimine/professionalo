@@ -1,0 +1,16 @@
+version: 0.0.1
+constants:
+  statusDraft: 0
+  statusUnread: 1
+  statusRead: 2
+  statusDeleted: 3
+values:
+
+params:
+  uid: ''
+  jobid: ''
+  status: 0
+  subject: ''
+  content: ''
+  date: ''
+  attachments: []

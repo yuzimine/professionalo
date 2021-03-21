@@ -1,0 +1,14 @@
+.my {
+
+  &__circles {
+    @include my-container;
+  }
+
+  &__circle__logo {
+    width: 40px;
+    padding: {
+      left: 5px;
+      right: 5px;
+    }
+  }  
+}

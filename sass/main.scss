@@ -1,0 +1,28 @@
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+
+@import 'base/base';
+@import 'base/typography';
+@import 'base/animations';
+@import 'base/utilities';
+
+@import 'components/all';
+@import 'components/tasks/all';
+
+@import 'layout/grid';
+@import 'layout/containers';
+@import 'layout/footer';
+
+@import 'pages/main/all';
+@import 'pages/auth/signin';
+@import 'pages/profile/all';
+@import 'pages/register/register';
+@import 'pages/more/all';
+@import 'pages/work/all';
+@import 'pages/circle/circle';
+
+@import 'vendors/fontawesome/fontawesome.scss';
+@import 'vendors/fontawesome/regular.scss';
+@import 'vendors/fontawesome/solid.scss';
+@import 'vendors/fontawesome/brands.scss';

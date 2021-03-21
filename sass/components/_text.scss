@@ -1,0 +1,57 @@
+.mtext {
+  @extend .minput;
+
+  &__label {
+    @extend .minput__label;
+  }
+
+  &__container {
+    @extend .minput__container;
+  }
+
+  &__input {
+    @extend .minput__input;
+    // TODO: figure out why fonts turn out smaller on Chrome desktop
+    // font-size: 2.46154rem;
+    height: unset;
+    resize: none;
+
+    // TODO: figure out why fonts turn out bigger on Chrome desktop
+    // &::placeholder {
+    //   font-size: 1.3rem;
+    // }
+  }
+
+  &__lang {
+    @extend .minput__lang;
+    top: 1.61rem;
+    border-bottom: 1px solid lighten($color-primary, 20%);
+    max-width: 4rem;
+
+    &__icon {
+      @extend .minput__lang__icon;
+    }
+    &__list {
+      @extend .minput__lang__list;
+
+      ul {
+        display: block;
+      }
+
+      &__item {
+        @extend .minput__lang__list__item;
+      }
+    }
+  }
+
+  @include respond(xl, true) {
+    &__lang:hover {
+      & > .mtext__lang__list {
+        display: block;
+      }
+      & > .mtext__lang__icon {
+        display: none;
+      }
+    }
+  }
+}

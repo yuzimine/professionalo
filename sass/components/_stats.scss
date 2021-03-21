@@ -1,0 +1,89 @@
+.stats {
+  font-family: $util-fonts;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  width: 100%;
+
+  &__item {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: inherit;
+    width: 20rem;
+    line-height: 1;
+    vertical-align: top;
+
+    &.link {
+      cursor: pointer;
+    }
+
+    &__divider {
+      width: 3rem;
+      border-bottom: solid 5px $color-primary;
+      margin: {
+        left: auto;
+        right: auto;
+        top: 0.5rem;
+        bottom: 0.5rem;
+      }
+
+      &.red {
+        border-bottom: solid 5px $color-red;
+      }
+
+      &.cyan {
+        border-bottom: solid 5px $color-cyan;
+      }
+
+      &.yellow {
+        border-bottom: solid 5px $color-yellow;
+      }
+    }
+
+    &__value {
+      display: block;
+      position: relative;
+      height: 8rem;
+      font-size: 8rem;
+      overflow: hidden;
+      font-weight: 700;
+      color: $color-primary;
+
+      &__num {
+        display:inline-block;
+        top: -8rem;
+        animation: slotUp 1s ease-in-out 0.5s normal both;
+
+        &.down {
+          top: calc(-100% +8rem);
+          animation: slotDown 1s ease-in-out 0.5s normal both;
+        }
+      }
+
+      &.red {
+        color: $color-red;
+      }
+
+      &.cyan {
+        color: $color-cyan;
+      }
+    }
+
+    &__label {
+      display:inline;
+      width: 8rem;
+      font-size: 1.5rem;
+      text-align: center;
+      color: $color-blueblack-light;
+
+      &.link {
+        cursor: pointer;
+
+        &:hover {
+          color: $color-red;
+          text-shadow: 0 5px 8px rgba($color-blueblack, 0.3);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+.my {
+  &__courses {
+    @include my-container;
+  }
+}

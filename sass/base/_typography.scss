@@ -1,0 +1,65 @@
+body {
+  font: {
+    family: "Josefin Sans", "Kosugi", -apple-system, BlinkMacSystemFont, sans-serif;
+    weight: 600;
+  }
+  line-height: 1.4;
+  color: $color-blueblack;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 4rem;
+}
+
+*::placeholder {
+  font-family: "Josefin Sans", "Kosugi", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.fnt-japanese {
+  font-family: "Kosugi";
+}
+
+.color-primary {
+  color: $color-primary;
+}
+
+.color-secondary {
+  color: $color-secondary;
+}
+
+.color-accent {
+  color: $color-accent;
+}
+
+.color-red {
+  color: $color-red;
+}
+
+.color-cyan {
+  color: $color-cyan;
+}
+
+.color-yellow {
+  color: $color-yellow;
+}
+
+.color-black {
+  color: $color-blueblack;
+}
+
+.color-white {
+  color: $color-white;
+}
+
+.color-purewhite {
+  color: $color-purewhite;
+}
+
+.color-pureblack {
+  color: $color-pureblack;
+}

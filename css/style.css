@@ -1,0 +1,8991 @@
+@charset "UTF-8";
+/*
+  Breakpoint Choices
+
+  - xs
+  - sm
+  - md
+  - lg
+  - xl
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  padding: 0px;
+  background-color: rgba(54, 79, 107, 0.04);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Josefin Sans", "Kosugi", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #364f6b;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 4rem;
+}
+
+*::placeholder {
+  font-family: "Josefin Sans", "Kosugi", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.fnt-japanese {
+  font-family: "Kosugi";
+}
+
+.color-primary {
+  color: #e65096;
+}
+
+.color-secondary {
+  color: #2ebacc;
+}
+
+.color-accent {
+  color: #ffd000;
+}
+
+.color-red {
+  color: #e65096;
+}
+
+.color-cyan {
+  color: #2ebacc;
+}
+
+.color-yellow {
+  color: #ffd000;
+}
+
+.color-black {
+  color: #364f6b;
+}
+
+.color-white {
+  color: #f5f5f5;
+}
+
+.color-purewhite {
+  color: #fff;
+}
+
+.color-pureblack {
+  color: #000;
+}
+
+/*
+  max 2 properties per frame
+*/
+@keyframes fromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slotUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(calc(-100% + 8rem));
+  }
+}
+@keyframes slotDown {
+  0% {
+    transform: translateY(calc(-100% + 8rem));
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.u-center {
+  align-items: center;
+}
+
+.u-text-red {
+  color: #e65096;
+}
+.u-text-cyan {
+  color: #2ebacc;
+}
+.u-text-blueblack {
+  color: #364f6b;
+}
+.u-text-pureblack {
+  color: #000;
+}
+.u-text-white {
+  color: #f5f5f5;
+}
+.u-text-purewhite {
+  color: #fff;
+}
+.u-text-yellow {
+  color: #ffd000;
+}
+.u-text-bold {
+  font-weight: 700;
+}
+.u-text-center {
+  text-align: center;
+}
+
+.mbtn {
+  position: relative;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  margin-right: 0.6rem;
+  min-height: 4.6rem;
+  border-style: none;
+  font-family: "Share", "Kosugi", -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.mbtn:disabled {
+  opacity: 0.4;
+}
+.mbtn:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 30em) {
+  .mbtn:link, .mbtn:visited {
+    min-width: 50vw;
+  }
+  .mbtn:link:not(:last-child), .mbtn:visited:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 64em) {
+  .mbtn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  }
+  .mbtn:hover:not(:disabled)::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
+  .mbtn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  }
+}
+.mbtn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+.mbtn.text {
+  padding: 0;
+  background-color: transparent;
+}
+.mbtn.text:hover {
+  box-shadow: none;
+}
+.mbtn.full {
+  width: 100%;
+  text-align: center;
+}
+@media screen and (max-width: 30em) {
+  .mbtn.responsive {
+    width: 100%;
+    font-size: 2.4rem;
+    text-align: center;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    padding: 2.5rem 2rem;
+  }
+}
+.mbtn.large {
+  padding: 1.2rem 2.2rem;
+  font-size: 3rem;
+  min-height: 5.6rem;
+}
+.mbtn.medium {
+  padding: 1.2rem 2.2rem;
+  font-size: 1.6rem;
+  min-height: 4.6rem;
+}
+.mbtn.small {
+  padding: 0.8rem 1.8rem;
+  font-size: 1.2rem;
+  min-height: 3.6rem;
+}
+.mbtn.mbtn-animated {
+  animation: fromBottom 0.5s ease-out 0.7s;
+  animation-fill-mode: backwards;
+  /* 0% style gets applied initially */
+}
+.mbtn.mbtn-white {
+  background-color: #f5f5f5;
+  color: #364f6b;
+}
+.mbtn.mbtn-white::after {
+  background-color: #f5f5f5;
+}
+.mbtn.mbtn-white:active {
+  background-color: gainsboro;
+}
+.mbtn.mbtn-black {
+  background-color: #364f6b;
+  color: #f5f5f5;
+}
+.mbtn.mbtn-black::after {
+  background-color: #364f6b;
+}
+.mbtn.mbtn-black:active {
+  background-color: #253649;
+}
+.mbtn.mbtn-red {
+  background-color: #e65096;
+  color: #f5f5f5;
+}
+.mbtn.mbtn-red::after {
+  background-color: #e65096;
+}
+.mbtn.mbtn-red:active {
+  background-color: #e0237b;
+}
+.mbtn.mbtn-cyan {
+  background-color: #2ebacc;
+  color: #f5f5f5;
+}
+.mbtn.mbtn-cyan::after {
+  background-color: #2ebacc;
+}
+.mbtn.mbtn-cyan:active {
+  background-color: #2594a2;
+}
+
+.mcard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #f5f5f5;
+  background-color: #e65096;
+  padding: 2rem;
+  box-shadow: 0rem 1rem 1.8rem rgba(0, 0, 0, 0.35);
+}
+.mcard.cyan-back {
+  color: #fff;
+  background-color: #2ebacc;
+}
+.mcard.black-back {
+  background-color: #364f6b;
+}
+.mcard.white-back {
+  color: #364f6b;
+  background-color: #f5f5f5;
+}
+.mcard.red-text {
+  color: #e65096;
+}
+.mcard.black-text {
+  color: #364f6b;
+}
+.mcard.cyan-text {
+  color: #2ebacc;
+}
+.mcard.white-text {
+  color: #fff;
+}
+@media screen and (orientation: portrait) and (max-width: 64em) {
+  .mcard.responsive {
+    max-width: 40rem;
+    box-shadow: none;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 40em) {
+  .mcard.responsive {
+    box-shadow: none;
+  }
+}
+.mcard.wide {
+  width: 80%;
+}
+.mcard.full-width {
+  width: 100%;
+  box-shadow: none;
+}
+.mcard.full-height {
+  height: 100%;
+}
+.mcard__icon {
+  padding: 2rem 1rem 0;
+  font-size: 8rem;
+}
+@media screen and (max-width: 20em) {
+  .mcard__icon {
+    padding: 0.5rem 0.2rem 0;
+    font-size: 5rem;
+  }
+}
+.mcard__header {
+  padding: 2rem 0;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 20em) {
+  .mcard__header {
+    padding: 0.5rem 0;
+    font-size: 2rem;
+  }
+}
+.mcard__content {
+  font-size: 2rem;
+  text-align: justify;
+  line-height: 1.2;
+}
+@media screen and (max-width: 20em) {
+  .mcard__content {
+    font-size: 1.6rem;
+  }
+}
+.mcard__footer {
+  padding: 3rem 0 0;
+  text-align: center;
+}
+@media screen and (max-width: 20em) {
+  .mcard__footer {
+    padding: 0.5rem 0 0;
+  }
+}
+@media screen and (max-width: 30em) {
+  .mcard {
+    min-width: 30rem;
+    min-height: 40rem;
+  }
+}
+@media screen and (max-width: 20em) {
+  .mcard {
+    min-height: 30rem;
+  }
+}
+
+.mtable {
+  position: relative;
+  display: table;
+  line-height: 1;
+  margin: 2rem 0;
+  vertical-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-indent: 0;
+  text-align: left;
+}
+.mtable.fill {
+  display: inline-table;
+  width: 100%;
+}
+.mtable__row {
+  display: table-row;
+  line-height: 2;
+  border-bottom: 1px solid rgba(54, 79, 107, 0.3);
+  transition: all 0.2s;
+  padding: 0.5rem;
+}
+@media screen and (max-width: 40em) {
+  .mtable__row {
+    line-height: 1.3;
+    margin: 1rem 0;
+  }
+}
+@media screen and (min-width: 64em) {
+  .mtable__row.hoverable:hover {
+    cursor: pointer;
+    background-color: rgba(230, 80, 150, 0.1);
+  }
+  .mtable__row.hoverable:hover.red {
+    background-color: rgba(230, 80, 150, 0.1);
+  }
+  .mtable__row.hoverable:hover.cyan {
+    background-color: rgba(46, 186, 204, 0.1);
+  }
+  .mtable__row.hoverable:hover.black {
+    background-color: rgba(54, 79, 107, 0.1);
+  }
+}
+.mtable__empty {
+  display: block;
+  text-align: center;
+  border-bottom: 1px solid rgba(54, 79, 107, 0.3);
+  color: #98acc2;
+}
+.mtable__cell, .mtable__head {
+  display: table-cell;
+}
+@media screen and (max-width: 40em) {
+  .mtable__cell, .mtable__head {
+    padding: 0 1rem;
+  }
+}
+@media screen and (min-width: 40em) {
+  .mtable__cell.center, .center.mtable__head {
+    text-align: center;
+  }
+  .mtable__cell.right, .right.mtable__head {
+    text-align: right;
+  }
+  .mtable__cell.left, .left.mtable__head {
+    text-align: left;
+  }
+}
+.mtable__head {
+  font-size: 1.5rem;
+  color: rgba(54, 79, 107, 0.5);
+  text-transform: uppercase;
+  padding-bottom: 0.5rem;
+  white-space: nowrap;
+}
+.mtable__header {
+  display: table-row;
+  border-bottom: 1px solid #5b81ac;
+  margin-bottom: 0.5rem;
+}
+@media screen and (max-width: 20em) {
+  .mtable__header {
+    display: none;
+  }
+}
+.mtable__body {
+  display: table-row;
+}
+.mtable tbody tr {
+  height: 5rem;
+  cursor: pointer;
+}
+.mtable th {
+  font-size: 1.2rem;
+  color: #b0c2d7;
+  padding-left: 0.4rem;
+}
+.mtable td {
+  font-size: 1.5rem;
+  padding-right: 0.4rem;
+  padding-left: 0.4rem;
+}
+.mtable td.unhighlight {
+  background-color: #fff;
+}
+
+.mlabel {
+  font-family: "Share", "Kosugi", -apple-system, sans-serif;
+  background-color: #ffd000;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  margin-left: 1rem;
+}
+.mlabel.red {
+  background-color: #e65096;
+  color: #fff;
+}
+.mlabel.cyan {
+  background-color: #2ebacc;
+  color: #fff;
+}
+.mlabel.yellow {
+  background-color: #ffd000;
+}
+.mlabel.black {
+  background-color: #364f6b;
+  color: #fff;
+}
+.mlabel.light-black {
+  background-color: #98acc2;
+  color: #f5f5f5;
+}
+
+.label-list__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  font-size: 2rem;
+  list-style: none;
+}
+.label-list__container > li {
+  transition: all 0.2s;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  background-color: #364f6b;
+  padding-top: 0.3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 0.1rem;
+}
+.label-list__container > li > a {
+  text-decoration: none;
+  color: #f5f5f5;
+}
+.label-list__container > li:hover {
+  transform: scale(1.1);
+  box-shadow: 0rem 1rem 1.8rem rgba(0, 0, 0, 0.35);
+  border: 2px solid #f5f5f5;
+}
+.label-list__container.tiny {
+  font-size: 1.2rem;
+}
+.label-list__container.tiny > li {
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+}
+.label-list__container.tiny > li:hover {
+  transform: none;
+  box-shadow: 0rem 0.5rem 0.9rem rgba(0, 0, 0, 0.35);
+  border: 1px solid #f5f5f5;
+}
+
+.menubar {
+  font-family: "Share", "Kosugi", -apple-system, sans-serif;
+  position: relative;
+  display: block;
+  background-color: #364f6b;
+  width: 100%;
+  color: #f5f5f5;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.menubar::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+@media screen and (max-width: 64em) {
+  .menubar.responsive {
+    display: none;
+  }
+}
+.menubar.overlap {
+  background-color: rgba(54, 79, 107, 0.65);
+  position: absolute;
+  z-index: 100;
+}
+.menubar.fixed {
+  position: fixed;
+  z-index: 100;
+  min-height: 4rem;
+}
+.menubar.fixed.bottom {
+  top: unset;
+  bottom: 0;
+}
+.menubar.red {
+  background-color: #e65096;
+}
+.menubar.cyan {
+  background-color: #2ebacc;
+}
+.menubar.black {
+  background-color: #364f6b;
+}
+.menubar.large {
+  font-size: 2.4rem;
+}
+.menubar.medium {
+  font-size: 2rem;
+}
+.menubar.small {
+  font-size: 1.5rem;
+}
+.menubar.tiny {
+  font-size: 1.2rem;
+}
+.menubar.top {
+  top: 0;
+}
+.menubar__menu {
+  float: left;
+  line-height: 1;
+  font-size: 2rem;
+}
+.menubar__menu.left {
+  float: left;
+}
+.menubar__menu.right {
+  float: right;
+}
+.menubar__menu.center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.menubar__menu li {
+  display: inline-block;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.menubar__menu li.label {
+  font-weight: 700;
+  cursor: unset;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.menubar__menu li:not(:last-child) {
+  margin-right: 2rem;
+}
+.menubar__menu li a {
+  display: block;
+  color: #f5f5f5;
+  padding: 1rem 0.5rem;
+  transition: all 0.4s;
+}
+.menubar__menu li a:hover {
+  background-color: #f5f5f5;
+  color: #364f6b;
+}
+
+.mdivider {
+  display: block;
+  margin: 3rem 0;
+  border-bottom: 1px solid #f3a9cc;
+}
+@media screen and (max-width: 30em) {
+  .mdivider {
+    margin: 1.2rem 0;
+  }
+}
+.mdivider.small {
+  margin: 1rem 0;
+}
+.mdivider.cyan {
+  border-bottom: 1px solid #7ed7e2;
+}
+.mdivider.black {
+  border-bottom: 1px solid #5b81ac;
+}
+.mdivider.red {
+  border-bottom: 1px solid #f3a9cc;
+}
+.mdivider.white {
+  border-bottom: 1px solid white;
+}
+
+.minput, .mtext {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 0 0.7rem 0;
+}
+.minput.vertical, .vertical.mtext {
+  padding: 0.5rem 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.minput__label, .mtext__label {
+  padding: 0.5rem 0;
+  margin-right: 2rem;
+  color: #e65096;
+  text-align: right;
+}
+.minput__label.vertical, .vertical.mtext__label {
+  padding-bottom: 0.2rem;
+  padding-top: 1rem;
+  margin-right: 0;
+  text-align: left;
+}
+.minput__container, .mtext__container {
+  position: relative;
+  display: flex;
+}
+.minput__container.fill, .fill.mtext__container {
+  width: 100%;
+}
+@media screen and (max-width: 30em) {
+  .minput__container.responsive, .responsive.mtext__container {
+    width: 100%;
+  }
+}
+.minput__input, .mtext__input {
+  min-width: 20rem;
+  font-size: 2rem;
+  font-family: inherit;
+  color: inherit;
+  flex-grow: 1;
+  padding: 0.5rem;
+  min-height: 4rem;
+  border: 1px solid #f3a9cc;
+  border-radius: 0.4rem;
+}
+.minput__input:read-only, .mtext__input:read-only {
+  background-color: transparent;
+  border: none;
+}
+.minput__input:read-only:focus, .mtext__input:read-only:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.minput__input:not(textarea), .mtext__input:not(textarea) {
+  line-height: 1;
+  height: 4rem;
+}
+.minput__input.text-right, .text-right.mtext__input {
+  text-align: right;
+}
+.minput__input.text-left, .text-left.mtext__input {
+  text-align: left;
+}
+.minput__input.enable, .enable.mtext__input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.minput__input:focus, .mtext__input:focus {
+  border: 2px solid #e65096;
+  outline: none;
+  box-shadow: none;
+}
+.minput__input:focus:invalid, .mtext__input:focus:invalid {
+  background-color: #fbe5ef;
+}
+.minput__input:disabled, .mtext__input:disabled {
+  background-color: #fff;
+  color: rgba(54, 79, 107, 0.3);
+}
+.minput__input::placeholder, .mtext__input::placeholder {
+  font-style: italic;
+  font-size: 1.5rem;
+  color: #f1a0c6;
+}
+.minput__lang, .mtext__lang {
+  font-family: "Share", "Kosugi", -apple-system, sans-serif;
+  display: none;
+  color: #e65096;
+  padding: 0.5rem;
+  min-width: 3rem;
+  align-self: baseline;
+  background-color: #fff;
+  border: 1px solid #f3a9cc;
+  border-left: transparent;
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+}
+.minput__lang.hidden.hidden, .hidden.hidden.mtext__lang {
+  display: none;
+}
+@media screen and (max-width: 80em) {
+  .minput__lang:hover, .mtext__lang:hover {
+    cursor: pointer;
+  }
+  .minput__lang.show, .show.mtext__lang {
+    border-left: 1px solid #f3a9cc;
+    margin-left: -1px;
+  }
+  .minput__lang.show > .minput__lang__list, .minput__lang.show > .mtext__lang__list, .show.mtext__lang > .minput__lang__list, .show.mtext__lang > .mtext__lang__list {
+    display: block;
+  }
+  .minput__lang.show > .minput__lang__icon, .minput__lang.show > .mtext__lang__icon, .show.mtext__lang > .minput__lang__icon, .show.mtext__lang > .mtext__lang__icon {
+    display: none;
+  }
+}
+.minput__lang.enable, .enable.mtext__lang {
+  display: flex;
+}
+.minput__lang__icon, .mtext__lang__icon {
+  text-align: center;
+  margin: auto;
+}
+.minput__lang__list, .mtext__lang__list {
+  display: none;
+  text-align: right;
+}
+.minput__lang__list ul, .mtext__lang__list ul {
+  display: inline-flex;
+}
+.minput__lang__list__item, .mtext__lang__list__item {
+  display: inline-block;
+  list-style: none;
+  text-decoration: none;
+  min-width: 2.5rem;
+  cursor: pointer;
+  text-align: center;
+}
+.minput__lang__list__item.selected, .selected.mtext__lang__list__item {
+  color: #f5f5f5;
+  font-weight: 700;
+  background: #e65096;
+}
+.minput__lang__list__item:hover, .mtext__lang__list__item:hover {
+  background-color: #f9d6e6;
+  color: #e65096;
+}
+@media screen and (min-width: 80em) {
+  .minput__lang:hover, .mtext__lang:hover {
+    border-left: 1px solid #f3a9cc;
+    margin-left: -1px;
+  }
+  .minput__lang:hover > .minput__lang__list, .minput__lang:hover > .mtext__lang__list, .mtext__lang:hover > .minput__lang__list, .mtext__lang:hover > .mtext__lang__list {
+    display: block;
+  }
+  .minput__lang:hover > .minput__lang__icon, .minput__lang:hover > .mtext__lang__icon, .mtext__lang:hover > .minput__lang__icon, .mtext__lang:hover > .mtext__lang__icon {
+    display: none;
+  }
+}
+
+.mquote {
+  text-align: right;
+  padding: 3rem;
+  max-width: 100rem;
+}
+.mquote-left, .mquote-right {
+  vertical-align: super;
+  font-size: 0.5em;
+}
+.mquote-text {
+  display: block;
+  font-size: 3rem;
+  font-style: italic;
+  text-align: center;
+}
+@media screen and (max-width: 40em) {
+  .mquote-text {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 41em) and (max-width: 64em) {
+  .mquote-text {
+    font-size: 2rem;
+  }
+}
+.mquote-credit {
+  display: block;
+  font-size: 2rem;
+  padding-top: 1rem;
+  color: #f5f5f5;
+}
+@media screen and (max-width: 40em) {
+  .mquote-credit {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 41em) and (max-width: 64em) {
+  .mquote-credit {
+    font-size: 1.5rem;
+  }
+}
+.mquote.animated {
+  animation: fromBottom 0.5s ease-out 0.2s;
+  animation-fill-mode: backwards;
+  /* 0% style gets applied initially */
+}
+
+.mlink-btn {
+  font-family: "Share", "Kosugi", -apple-system, sans-serif;
+  display: inline-block;
+  color: #2ebacc;
+  font-size: inherit;
+  font-weight: 700;
+  padding: 0 0.5rem;
+  transition: all 0.2s;
+}
+.mlink-btn.large {
+  font-size: 3rem;
+}
+.mlink-btn.medium {
+  font-size: 2rem;
+}
+.mlink-btn.small {
+  font-size: 1.5rem;
+}
+.mlink-btn.xsmall {
+  font-size: 1rem;
+}
+.mlink-btn.red {
+  color: #e65096;
+}
+.mlink-btn.black {
+  color: #364f6b;
+}
+.mlink-btn.white {
+  color: #fff;
+}
+.mlink-btn.cyan {
+  color: #2ebacc;
+}
+.mlink-btn:hover {
+  transform: scale(1.2);
+  text-shadow: 0 5px 8px rgba(54, 79, 107, 0.3);
+}
+
+.mselector {
+  font-family: "Share", "Kosugi", -apple-system, sans-serif;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+.mselector.vertical {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.mselector__container {
+  width: 100%;
+}
+.mselector__label {
+  margin-right: 0.5rem;
+  color: #e65096;
+}
+.mselector__label.vertical {
+  padding-bottom: 0.2rem;
+  padding-top: 1rem;
+  margin-right: 0;
+}
+
+.navigation {
+  font-family: "Share", "Kosugi", -apple-system, sans-serif;
+  display: none;
+}
+@media screen and (max-width: 64em) {
+  .navigation {
+    display: unset;
+  }
+}
+.navigation__checkbox {
+  display: none;
+}
+.navigation__button {
+  background-color: #f5f5f5;
+  position: fixed;
+  height: 6rem;
+  width: 6rem;
+  top: 2rem;
+  right: 2rem;
+  border-radius: 50%;
+  z-index: 2000;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.navigation__background {
+  z-index: 1000;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 2.5rem;
+  right: 2.5rem;
+  background-image: radial-gradient(#5b81ac, #364f6b);
+  transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+  opacity: 0.2;
+}
+.navigation__nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -7rem;
+  z-index: 1500;
+  opacity: 0;
+  width: 0;
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.navigation__list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+}
+.navigation__item {
+  margin: 1rem;
+}
+.navigation__link:link, .navigation__link:visited {
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  color: #f5f5f5;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(120deg, transparent, transparent 50%, #f5f5f5 50%);
+  background-size: 250%;
+  transition: all 0.4s;
+}
+.navigation__link:link span, .navigation__link:visited span {
+  margin-right: 2rem;
+  display: inline-block;
+}
+.navigation__link:hover, .navigation__link:active {
+  background-position: 100%;
+  color: #364f6b;
+  transform: translateX(1rem);
+}
+.navigation__checkbox:checked ~ .navigation__background {
+  opacity: 1;
+  transform: scale(80);
+}
+.navigation__checkbox:checked ~ .navigation__nav {
+  opacity: 1;
+  right: 0;
+  width: 100%;
+}
+.navigation__icon {
+  position: relative;
+  margin-top: 3rem;
+}
+.navigation__icon, .navigation__icon::before, .navigation__icon::after {
+  width: 3rem;
+  height: 2px;
+  background-color: #000;
+  display: inline-block;
+}
+.navigation__icon::before, .navigation__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.2s;
+}
+.navigation__icon::before {
+  top: -0.8rem;
+}
+.navigation__icon::after {
+  top: 0.8rem;
+}
+.navigation__button:hover .navigation__icon::before {
+  top: -1.1rem;
+}
+.navigation__button:hover .navigation__icon::after {
+  top: 1.1rem;
+}
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background-color: transparent;
+}
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
+
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(54, 79, 107, 0.8);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s;
+}
+.popup:target {
+  opacity: 1;
+  visibility: visible;
+}
+.popup.open {
+  opacity: 1;
+  visibility: visible;
+}
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3rem 5rem;
+  width: 80%;
+  background-color: #f5f5f5;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+@media screen and (max-width: 30em) {
+  .popup-content {
+    width: 100%;
+    height: 100vh;
+    padding: 3rem 1rem;
+  }
+}
+.popup-text {
+  font-size: 1.8rem;
+  margin-bottom: 4rem;
+  text-align: justify;
+  -moz-column-count: 2;
+  -moz-column-gap: 4rem;
+  -moz-column-rule: 1px solid #364f6b;
+  column-count: 2;
+  column-gap: 4rem;
+  column-rule: 1px solid #364f6b;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.popup-close:link, .popup-close:visited {
+  color: #364f6b;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 3rem;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1;
+}
+.popup-close:hover {
+  color: #e65096;
+}
+
+.bad-component {
+  color: #2ebacc;
+  font-size: 2rem;
+  font-weight: 700;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.mtext__input {
+  height: unset;
+  resize: none;
+}
+.mtext__lang {
+  top: 1.61rem;
+  border-bottom: 1px solid #f3a9cc;
+  max-width: 4rem;
+}
+.mtext__lang__list ul {
+  display: block;
+}
+@media screen and (min-width: 80em) {
+  .mtext__lang:hover > .mtext__lang__list {
+    display: block;
+  }
+  .mtext__lang:hover > .mtext__lang__icon {
+    display: none;
+  }
+}
+
+.mcheckbox, .mradiobox {
+  font-family: "Share", "Kosugi", -apple-system, sans-serif;
+  display: inline-block;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+}
+.mcheckbox__input, .mradiobox__input {
+  font-size: inherit;
+  color: inherit;
+  display: none;
+}
+.mcheckbox__label, .mradiobox__label {
+  padding-left: 2.5rem;
+  padding-right: 2rem;
+  cursor: pointer;
+  position: relative;
+}
+.mcheckbox__button, .mradiobox__button {
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  display: inline-block;
+  height: 1.8rem;
+  width: 1.8rem;
+  border-radius: 0.4rem;
+  background-color: #fff;
+  border: 2px solid #e65096;
+}
+.mcheckbox__button::after, .mradiobox__button::after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0.4rem;
+  width: 0.7rem;
+  height: 1.2rem;
+  border: solid #e65096;
+  border-width: 0 0.4rem 0.4rem 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transition: all 0.2s;
+}
+.mcheckbox__input:checked ~ .mcheckbox__label .mcheckbox__button::after, .mcheckbox__input:checked ~ .mcheckbox__label .mradiobox__button::after, .mcheckbox__input:checked ~ .mradiobox__label .mcheckbox__button::after, .mcheckbox__input:checked ~ .mradiobox__label .mradiobox__button::after, .mradiobox__input:checked ~ .mcheckbox__label .mcheckbox__button::after, .mradiobox__input:checked ~ .mcheckbox__label .mradiobox__button::after, .mradiobox__input:checked ~ .mradiobox__label .mcheckbox__button::after, .mradiobox__input:checked ~ .mradiobox__label .mradiobox__button::after {
+  opacity: 1;
+}
+.mcheckbox__group, .mradiobox__group {
+  display: flex;
+  padding: 1rem 0;
+}
+.mcheckbox__group__label, .mradiobox__group__label {
+  color: #e65096;
+  font-size: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 0.7rem;
+  padding-right: 2rem;
+}
+.mcheckbox__group.vertical, .vertical.mradiobox__group {
+  flex-direction: column;
+}
+@media screen and (max-width: 30em) {
+  .mcheckbox__group.responsive, .responsive.mradiobox__group {
+    flex-direction: column;
+  }
+}
+
+.mradiobox__button {
+  border-radius: 50%;
+}
+.mradiobox__button::after {
+  border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
+  top: 50%;
+  left: 50%;
+  background-color: #e65096;
+  transform: translate(-50%, -50%);
+}
+.stats {
+  font-family: "Share", "Kosugi", -apple-system, sans-serif;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+.stats__item {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: inherit;
+  width: 20rem;
+  line-height: 1;
+  vertical-align: top;
+}
+.stats__item.link {
+  cursor: pointer;
+}
+.stats__item__divider {
+  width: 3rem;
+  border-bottom: solid 5px #e65096;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.stats__item__divider.red {
+  border-bottom: solid 5px #e65096;
+}
+.stats__item__divider.cyan {
+  border-bottom: solid 5px #2ebacc;
+}
+.stats__item__divider.yellow {
+  border-bottom: solid 5px #ffd000;
+}
+.stats__item__value {
+  display: block;
+  position: relative;
+  height: 8rem;
+  font-size: 8rem;
+  overflow: hidden;
+  font-weight: 700;
+  color: #e65096;
+}
+.stats__item__value__num {
+  display: inline-block;
+  top: -8rem;
+  animation: slotUp 1s ease-in-out 0.5s normal both;
+}
+.stats__item__value__num.down {
+  top: calc(-100% +8rem);
+  animation: slotDown 1s ease-in-out 0.5s normal both;
+}
+.stats__item__value.red {
+  color: #e65096;
+}
+.stats__item__value.cyan {
+  color: #2ebacc;
+}
+.stats__item__label {
+  display: inline;
+  width: 8rem;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #98acc2;
+}
+.stats__item__label.link {
+  cursor: pointer;
+}
+.stats__item__label.link:hover {
+  color: #e65096;
+  text-shadow: 0 5px 8px rgba(54, 79, 107, 0.3);
+}
+
+.image-editor {
+  padding: 2rem 0 4rem 0;
+}
+.image-editor__images {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  margin-bottom: 3rem;
+}
+.image-editor__file {
+  border-bottom: 1px solid #e65096;
+  padding-bottom: 1rem;
+}
+
+.bgvideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.9;
+}
+.bgvideo__content, .bgvideo__image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  position: fixed;
+}
+@media screen and (max-width: 40em) {
+  .bgvideo.disable {
+    visibility: hidden;
+  }
+}
+
+.list-card {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.list-card__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20rem;
+  height: 20rem;
+  box-shadow: 0.5rem 0.5rem 0.6rem rgba(54, 79, 107, 0.2);
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  padding: 0.8rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+.list-card__container:not(:last-child) {
+  margin-right: 2rem;
+}
+.list-card__container:hover {
+  transform: translateY(-0.7rem);
+  box-shadow: 0.5rem 0.5rem 1rem rgba(54, 79, 107, 0.2);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.list-card__image {
+  width: 12rem;
+  height: 12rem;
+}
+.list-card__image.smaller {
+  width: 10rem;
+  height: 10rem;
+}
+.list-card__title {
+  padding-top: 1rem;
+  margin-bottom: -0.5rem;
+  color: #364f6b;
+}
+.tasks-column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  padding: 1rem;
+  border: 1px solid #e65096;
+  width: 40rem;
+  min-height: 80rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.tasks-column:not(:last-child) {
+  margin-right: 2rem;
+}
+.tasks-column-title {
+  font-size: 1.6rem;
+  color: #e65096;
+}
+.tasks-column-container {
+  flex-grow: 1;
+  padding: 0.8rem;
+}
+.tasks-column-container.drag-color {
+  background-color: #fadae9;
+}
+
+.tasks-task {
+  padding: 0.8rem;
+  border: 1px solid #e65096;
+  background-color: #f5f5f5;
+}
+.tasks-task:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+.tasks-task.drag-color {
+  background-color: #f6c0d9;
+}
+
+.grid {
+  padding: 20px;
+}
+
+.row {
+  position: relative;
+  width: 100%;
+  max-width: 140rem;
+  margin: 0 auto;
+}
+.row.full-height {
+  height: 100%;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.row [class^=col-] {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+.row [class^=col-]:not(:last-child) {
+  margin-right: 3rem;
+  margin-bottom: 3rem;
+}
+.row [class^=col-].center {
+  margin-left: auto;
+}
+@media screen and (orientation: portrait) and (max-width: 64em) {
+  .row [class^=col-] {
+    width: 100% !important;
+  }
+  .row [class^=col-]:not(:last-child) {
+    margin: 0;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 40em) {
+  .row [class^=col-] {
+    width: 100% !important;
+  }
+  .row [class^=col-]:not(:last-child) {
+    margin: 0;
+  }
+}
+.row .col-1-of-2 {
+  width: calc((100% - 3rem) / 2);
+}
+.row .col-1-of-3 {
+  width: calc((100% - 3rem * 2) / 3);
+}
+.row .col-2-of-3 {
+  width: calc(calc((100% - 3rem * 2) / 3) * 2 + 3rem);
+}
+.row .col-1-of-4 {
+  width: calc((100% - 3rem * 3) / 4);
+}
+.row .col-2-of-4 {
+  width: calc(calc((100% - 3rem * 3) / 4) * 2 + 3rem);
+}
+.row .col-3-of-4 {
+  width: calc(calc((100% - 3rem * 3) / 4) * 3 + 3rem * 2);
+}
+.row .col-1-of-5 {
+  width: calc((100% - 3rem * 4) / 5);
+}
+.row .col-2-of-5 {
+  width: calc(calc((100% - 3rem * 4) / 5) * 2 + 3rem);
+}
+.row .col-3-of-5 {
+  width: calc(calc((100% - 3rem * 4) / 5) * 3 + 3rem * 2);
+}
+.row .col-4-of-5 {
+  width: calc(calc((100% - 3rem * 4) / 5) * 4 + 3rem * 3);
+}
+.row .col-1-of-6 {
+  width: calc((100% - 3rem * 5) / 6);
+}
+.row .col-2-of-6 {
+  width: calc(calc((100% - 3rem * 5) / 6) * 2 + 3rem);
+}
+.row .col-3-of-6 {
+  width: calc(calc((100% - 3rem * 5) / 6) * 3 + 3rem * 2);
+}
+.row .col-4-of-6 {
+  width: calc(calc((100% - 3rem * 5) / 6) * 4 + 3rem * 3);
+}
+.row .col-5-of-6 {
+  width: calc(calc((100% - 3rem * 5) / 6) * 5 + 3rem * 4);
+}
+.row .col-1-of-7 {
+  width: calc((100% - 3rem * 6) / 7);
+}
+.row .col-2-of-7 {
+  width: calc(calc((100% - 3rem * 6) / 7) * 2 + 3rem);
+}
+.row .col-3-of-7 {
+  width: calc(calc((100% - 3rem * 6) / 7) * 3 + 3rem * 2);
+}
+.row .col-4-of-7 {
+  width: calc(calc((100% - 3rem * 6) / 7) * 4 + 3rem * 3);
+}
+.row .col-5-of-7 {
+  width: calc(calc((100% - 3rem * 6) / 7) * 5 + 3rem * 4);
+}
+.row .col-6-of-7 {
+  width: calc(calc((100% - 3rem * 6) / 7) * 6 + 3rem * 5);
+}
+.row .col-1-of-8 {
+  width: calc((100% - 3rem * 7) / 8);
+}
+.row .col-2-of-8 {
+  width: calc(calc((100% - 3rem * 7) / 8) * 2 + 3rem);
+}
+.row .col-3-of-8 {
+  width: calc(calc((100% - 3rem * 7) / 8) * 3 + 3rem * 2);
+}
+.row .col-4-of-8 {
+  width: calc(calc((100% - 3rem * 7) / 8) * 4 + 3rem * 3);
+}
+.row .col-5-of-8 {
+  width: calc(calc((100% - 3rem * 7) / 8) * 5 + 3rem * 4);
+}
+.row .col-6-of-8 {
+  width: calc(calc((100% - 3rem * 7) / 8) * 6 + 3rem * 5);
+}
+.row .col-7-of-8 {
+  width: calc(calc((100% - 3rem * 7) / 8) * 7 + 3rem * 6);
+}
+.row .col-1-of-9 {
+  width: calc((100% - 3rem * 8) / 9);
+}
+.row .col-2-of-9 {
+  width: calc(calc((100% - 3rem * 8) / 9) * 2 + 3rem);
+}
+.row .col-3-of-9 {
+  width: calc(calc((100% - 3rem * 8) / 9) * 3 + 3rem * 2);
+}
+.row .col-4-of-9 {
+  width: calc(calc((100% - 3rem * 8) / 9) * 4 + 3rem * 3);
+}
+.row .col-5-of-9 {
+  width: calc(calc((100% - 3rem * 8) / 9) * 5 + 3rem * 4);
+}
+.row .col-6-of-9 {
+  width: calc(calc((100% - 3rem * 8) / 9) * 6 + 3rem * 5);
+}
+.row .col-7-of-9 {
+  width: calc(calc((100% - 3rem * 8) / 9) * 7 + 3rem * 6);
+}
+.row .col-8-of-9 {
+  width: calc(calc((100% - 3rem * 8) / 9) * 8 + 3rem * 7);
+}
+.row .col-1-of-10 {
+  width: calc((100% - 3rem * 9) / 10);
+}
+.row .col-2-of-10 {
+  width: calc(calc((100% - 3rem * 9) / 10) * 2 + 3rem);
+}
+.row .col-3-of-10 {
+  width: calc(calc((100% - 3rem * 9) / 10) * 3 + 3rem * 2);
+}
+.row .col-4-of-10 {
+  width: calc(calc((100% - 3rem * 9) / 10) * 4 + 3rem * 3);
+}
+.row .col-5-of-10 {
+  width: calc(calc((100% - 3rem * 9) / 10) * 5 + 3rem * 4);
+}
+.row .col-6-of-10 {
+  width: calc(calc((100% - 3rem * 9) / 10) * 6 + 3rem * 5);
+}
+.row .col-7-of-10 {
+  width: calc(calc((100% - 3rem * 9) / 10) * 7 + 3rem * 6);
+}
+.row .col-8-of-10 {
+  width: calc(calc((100% - 3rem * 9) / 10) * 8 + 3rem * 7);
+}
+.row .col-9-of-10 {
+  width: calc(calc((100% - 3rem * 9) / 10) * 9 + 3rem * 8);
+}
+.row .col-1-of-11 {
+  width: calc((100% - 3rem * 10) / 11);
+}
+.row .col-2-of-11 {
+  width: calc(calc((100% - 3rem * 10) / 11) * 2 + 3rem);
+}
+.row .col-3-of-11 {
+  width: calc(calc((100% - 3rem * 10) / 11) * 3 + 3rem * 2);
+}
+.row .col-4-of-11 {
+  width: calc(calc((100% - 3rem * 10) / 11) * 4 + 3rem * 3);
+}
+.row .col-5-of-11 {
+  width: calc(calc((100% - 3rem * 10) / 11) * 5 + 3rem * 4);
+}
+.row .col-6-of-11 {
+  width: calc(calc((100% - 3rem * 10) / 11) * 6 + 3rem * 5);
+}
+.row .col-7-of-11 {
+  width: calc(calc((100% - 3rem * 10) / 11) * 7 + 3rem * 6);
+}
+.row .col-8-of-11 {
+  width: calc(calc((100% - 3rem * 10) / 11) * 8 + 3rem * 7);
+}
+.row .col-9-of-11 {
+  width: calc(calc((100% - 3rem * 10) / 11) * 9 + 3rem * 8);
+}
+.row .col-10-of-11 {
+  width: calc(calc((100% - 3rem * 10) / 11) * 10 + 3rem * 9);
+}
+.row .col-1-of-12 {
+  width: calc((100% - 3rem * 11) / 12);
+}
+.row .col-2-of-12 {
+  width: calc(calc((100% - 3rem * 11) / 12) * 2 + 3rem);
+}
+.row .col-3-of-12 {
+  width: calc(calc((100% - 3rem * 11) / 12) * 3 + 3rem * 2);
+}
+.row .col-4-of-12 {
+  width: calc(calc((100% - 3rem * 11) / 12) * 4 + 3rem * 3);
+}
+.row .col-5-of-12 {
+  width: calc(calc((100% - 3rem * 11) / 12) * 5 + 3rem * 4);
+}
+.row .col-6-of-12 {
+  width: calc(calc((100% - 3rem * 11) / 12) * 6 + 3rem * 5);
+}
+.row .col-7-of-12 {
+  width: calc(calc((100% - 3rem * 11) / 12) * 7 + 3rem * 6);
+}
+.row .col-8-of-12 {
+  width: calc(calc((100% - 3rem * 11) / 12) * 8 + 3rem * 7);
+}
+.row .col-9-of-12 {
+  width: calc(calc((100% - 3rem * 11) / 12) * 9 + 3rem * 8);
+}
+.row .col-10-of-12 {
+  width: calc(calc((100% - 3rem * 11) / 12) * 10 + 3rem * 9);
+}
+.row .col-11-of-12 {
+  width: calc(calc((100% - 3rem * 11) / 12) * 11 + 3rem * 10);
+}
+
+.container, .page-layout, .full-page {
+  font-size: 2rem;
+}
+.container.with-padding, .with-padding.page-layout, .with-padding.full-page {
+  padding: 5rem 2rem;
+}
+@media screen and (max-width: 64em) {
+  .container.with-padding, .with-padding.page-layout, .with-padding.full-page {
+    padding: 0;
+  }
+}
+.container.with-flex, .with-flex.page-layout, .with-flex.full-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.container.with-flex.center, .with-flex.center.page-layout, .with-flex.center.full-page {
+  align-items: center;
+}
+.container.with-flex.middle, .with-flex.middle.page-layout, .with-flex.middle.full-page {
+  justify-content: center;
+}
+
+.with-menubar {
+  margin-top: 5rem;
+}
+
+.full-page {
+  position: relative;
+  min-height: 100vh;
+}
+.full-page .padding {
+  padding: 0 3rem;
+}
+
+.layout__header {
+  padding: 10rem 3rem 0;
+}
+@media screen and (max-width: 30em) {
+  .layout__header {
+    padding: 7rem 0.8rem 0;
+  }
+}
+.layout__header__button {
+  padding-right: 1rem;
+}
+@media screen and (max-width: 30em) {
+  .layout__header__button {
+    font-size: 3.6rem;
+  }
+}
+@media screen and (max-width: 30em) {
+  .layout__header__title {
+    font-size: 3.6rem;
+  }
+}
+.layout__body {
+  position: relative;
+  flex-grow: 1;
+}
+
+.footer {
+  background-color: #364f6b;
+  padding: 10rem 0;
+  color: #f5f5f5;
+  bottom: 0;
+}
+@media screen and (max-width: 64em) {
+  .footer {
+    padding: 2rem;
+  }
+}
+.footer__language {
+  display: block;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.footer__logo-box {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.footer__logo-box__image {
+  width: 12rem;
+  height: auto;
+}
+.footer__logo-box__image path {
+  fill: #e65096;
+}
+@media screen and (max-width: 64em) {
+  .footer__logo-box {
+    display: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+.footer_nav {
+  padding-top: 2rem;
+  display: block;
+  width: 100%;
+}
+@media screen and (max-width: 64em) {
+  .footer_nav {
+    border-top: none;
+    display: block;
+    text-align: center;
+  }
+}
+.footer__list {
+  list-style-type: none;
+  text-align: center;
+}
+.footer__item {
+  display: inline-block;
+}
+.footer__item:not(:last-child) {
+  margin-right: 1.5rem;
+}
+.footer__link {
+  color: #f5f5f5;
+  font-size: 2rem;
+}
+@media screen and (max-width: 30em) {
+  .footer__link {
+    font-size: 1.4rem;
+  }
+}
+.footer__link:visited, .footer__link:link {
+  color: gainsboro;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: all 0.2s;
+}
+.footer__link:hover, .footer__link:active {
+  color: #e65096;
+  text-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+}
+.footer__copyright {
+  display: block;
+  padding-top: 2rem;
+  text-align: center;
+}
+.footer__copyright-text {
+  font-size: 1.6rem;
+  width: 80%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 30em) {
+  .footer__copyright-text {
+    font-size: 1.2rem;
+  }
+}
+.footer__copyright-links {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  text-transform: uppercase;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.about {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+.about.right {
+  background-image: linear-gradient(to right, rgba(245, 245, 245, 0.7), rgba(245, 245, 245, 0.83)), url("/img/woman_working.jpg");
+}
+.about.left {
+  background-image: linear-gradient(to right, rgba(245, 245, 245, 0.7), rgba(245, 245, 245, 0.83)), url("/img/guy1.jpg");
+}
+@media screen and (max-width: 64em) {
+  .about {
+    background-attachment: scroll;
+  }
+}
+@media screen and (max-width: 64em) {
+  .about {
+    background-position: 70%;
+  }
+}
+.about__container {
+  padding: 3rem;
+  text-align: center;
+  display: inline-block;
+}
+.about__image {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media screen and (max-width: 64em) {
+  .about__image {
+    width: 80%;
+    max-width: 50rem;
+    height: auto;
+    margin: 3rem auto;
+  }
+}
+.about__header {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #364f6b;
+  text-align: left;
+}
+@media screen and (max-width: 40em) {
+  .about__header {
+    font-size: 2.2rem;
+  }
+}
+@media screen and (max-width: 30em) {
+  .about__header {
+    font-size: 1.8rem;
+  }
+}
+.about__header:not(:last-child) {
+  padding-bottom: 3rem;
+}
+.about__description {
+  text-align: justify;
+  font-size: 2.4rem;
+}
+@media screen and (max-width: 40em) {
+  .about__description {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 30em) {
+  .about__description {
+    font-size: 1.8rem;
+  }
+}
+.about__description:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.features {
+  position: relative;
+  padding: 6rem 0 0 0;
+}
+.features__header {
+  text-align: center;
+  padding-bottom: 6rem;
+}
+.features__title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #e65096;
+  text-transform: uppercase;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 3rem;
+}
+@media screen and (max-width: 40em) {
+  .features__title {
+    font-size: 2.5rem;
+  }
+}
+.features__description {
+  display: inline-block;
+  font-size: 2.2rem;
+  font-weight: 400;
+  max-width: 100rem;
+  padding: 0 3rem;
+}
+.features__description:not(:last-child) {
+  padding-bottom: 10px;
+}
+@media screen and (max-width: 40em) {
+  .features__description {
+    font-size: 1.8rem;
+    text-align: justify;
+  }
+}
+
+.header {
+  background-image: linear-gradient(to bottom, rgba(54, 79, 107, 0.95), rgba(54, 79, 107, 0.8)), url("/img/header_background.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media screen and (max-width: 64em) {
+  .header {
+    background-attachment: scroll;
+  }
+}
+.header__block {
+  position: absolute;
+  top: 45%;
+  /* position in relation to parent*/
+  left: 50%;
+  /* position in relation to parent*/
+  transform: translate(-50%, -50%);
+  /* adjust position to center in relation to itself*/
+  text-align: center;
+}
+.header__logo-box {
+  width: 100%;
+  text-align: center;
+}
+.header__logo-box__logo {
+  width: 20rem;
+}
+@media screen and (max-width: 40em) {
+  .header__logo-box__logo {
+    width: 15rem;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 40em) {
+  .header__logo-box__logo {
+    display: none;
+  }
+}
+.header__logo-box__logo path {
+  fill: #e65096;
+}
+.header__heading {
+  font-weight: 700;
+}
+.header__heading-primary {
+  color: #f5f5f5;
+  text-transform: uppercase;
+  margin: 6rem 0 6rem 0;
+  text-align: left;
+  white-space: nowrap;
+}
+.header__heading-primary__main {
+  display: block;
+  font-size: 6.2rem;
+  letter-spacing: 0;
+  animation-name: fromLeft;
+  animation-duration: 1s;
+}
+@media screen and (min-width: 80em) {
+  .header__heading-primary__main.en {
+    letter-spacing: 2rem;
+  }
+  .header__heading-primary__main.ja {
+    letter-spacing: 0.5rem;
+  }
+}
+@media screen and (max-width: 80em) {
+  .header__heading-primary__main {
+    font-size: 4.8rem;
+  }
+  .header__heading-primary__main.en {
+    letter-spacing: 1.85rem;
+  }
+  .header__heading-primary__main.ja {
+    letter-spacing: 0.5rem;
+  }
+}
+@media screen and (max-width: 64em) {
+  .header__heading-primary__main {
+    font-size: 4rem;
+  }
+  .header__heading-primary__main.en {
+    letter-spacing: 1.8rem;
+  }
+  .header__heading-primary__main.ja {
+    letter-spacing: 0.5rem;
+  }
+}
+@media screen and (max-width: 40em) {
+  .header__heading-primary__main {
+    font-size: 3.8rem;
+  }
+  .header__heading-primary__main.en {
+    letter-spacing: 0.5rem;
+  }
+  .header__heading-primary__main.ja {
+    letter-spacing: 0.5rem;
+  }
+}
+@media screen and (max-width: 30em) {
+  .header__heading-primary__main {
+    font-size: 2.6rem;
+  }
+}
+.header__heading-primary__sub {
+  display: block;
+  font-size: 3rem;
+  letter-spacing: 0;
+  animation-name: fromRight;
+  animation-duration: 1s;
+}
+@media screen and (min-width: 80em) {
+  .header__heading-primary__sub.en {
+    letter-spacing: 1.28rem;
+  }
+  .header__heading-primary__sub.ja {
+    letter-spacing: 0.3rem;
+  }
+}
+@media screen and (max-width: 80em) {
+  .header__heading-primary__sub {
+    font-size: 2.5rem;
+  }
+  .header__heading-primary__sub.en {
+    letter-spacing: 1.07rem;
+  }
+  .header__heading-primary__sub.ja {
+    letter-spacing: 0.05rem;
+  }
+}
+@media screen and (max-width: 64em) {
+  .header__heading-primary__sub {
+    font-size: 2.5rem;
+  }
+  .header__heading-primary__sub.en {
+    letter-spacing: 0.75rem;
+  }
+  .header__heading-primary__sub.ja {
+    letter-spacing: 0.05rem;
+  }
+}
+@media screen and (max-width: 40em) {
+  .header__heading-primary__sub {
+    display: none;
+  }
+}
+
+.login__container, .login__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30rem;
+}
+@media screen and (max-width: 20em) {
+  .login__container, .login__form {
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
+.login__logo__box {
+  width: 15rem;
+}
+@media screen and (max-width: 20em) {
+  .login__logo__box {
+    width: 10rem;
+  }
+}
+.login__logo__image {
+  width: 100%;
+}
+.login__logo__image path {
+  fill: #e65096;
+}
+.login__form {
+  width: 100%;
+}
+.login__title {
+  text-align: center;
+  font-size: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+.login__info {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.my__view {
+  position: relative;
+}
+.my__title {
+  font-size: 1.4rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  color: #7d9bbd;
+  text-align: left;
+}
+
+.my__image {
+  object-fit: cover;
+}
+@media screen and (max-width: 30em) {
+  .my__image {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 31em) and (max-width: 64em) {
+  .my__image {
+    width: 100%;
+  }
+}
+
+.my__identity {
+  padding-bottom: 5rem;
+}
+.my__name {
+  color: #e65096;
+  font-size: 5rem;
+}
+@media screen and (max-width: 64em) {
+  .my__name {
+    padding: 3rem;
+    line-height: 1;
+  }
+}
+.my__profession {
+  font-size: 2rem;
+}
+.my__location {
+  font-size: 1.4rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+@media screen and (max-width: 64em) {
+  .my__location__icon {
+    visibility: hidden;
+    width: 0;
+  }
+}
+.my__language {
+  padding-top: 1rem;
+  font-size: 1.4rem;
+  color: #364f6b;
+  display: flex;
+  align-items: baseline;
+}
+@media screen and (max-width: 64em) {
+  .my__language {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 64em) {
+  .my__language__icon {
+    visibility: hidden;
+    width: 0;
+  }
+}
+@media screen and (max-width: 64em) {
+  .my__language a {
+    font-size: 1.8rem;
+  }
+}
+.my__social {
+  padding-top: 1rem;
+  font-size: 2rem;
+}
+.my__social a {
+  color: #364f6b;
+  font-size: 2.5rem;
+}
+@media screen and (max-width: 64em) {
+  .my__social a {
+    font-size: 4rem;
+  }
+}
+.my__social a:not(:last-child) {
+  margin-right: 1rem;
+}
+.my__social a:visited, .my__social a:active {
+  color: #364f6b;
+}
+
+@media screen and (max-width: 64em) {
+  .my__expertise {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 64em) {
+  .my__pr {
+    padding: 0 30px;
+  }
+}
+.my__text {
+  text-align: justify;
+  margin-top: 1rem;
+  font-size: 1.7rem;
+}
+
+@media screen and (max-width: 64em) {
+  .my__circles {
+    padding: 0 30px;
+  }
+}
+.my__circles__container {
+  overflow: auto;
+}
+.my__circle__logo {
+  width: 40px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+@media screen and (max-width: 64em) {
+  .my__services {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 64em) {
+  .my__courses {
+    padding: 0 30px;
+  }
+}
+
+.profile__view {
+  position: relative;
+  margin: 10rem auto;
+  min-height: calc(100vh - 12rem);
+  max-width: 120rem;
+  width: 80vw;
+  padding: 2rem 3rem;
+  box-shadow: 0rem 1rem 1.8rem rgba(0, 0, 0, 0.35);
+  background-color: #fff;
+  animation-name: fromBottom;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+}
+@media screen and (max-width: 64em) {
+  .profile__view {
+    min-width: 32rem;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+  }
+}
+.profile__loader {
+  display: block;
+  text-align: center;
+}
+.profile__settings {
+  display: block;
+  text-align: right;
+  color: #e65096;
+}
+.profile__info {
+  text-align: left;
+  padding-left: 15rem;
+  padding-top: 3rem;
+}
+@media screen and (max-width: 64em) {
+  .profile__info {
+    padding-left: 0;
+    padding-top: 0;
+    text-align: center;
+  }
+}
+.profile__info__image {
+  position: absolute;
+  overflow: hidden;
+  height: 36rem;
+  width: 20rem;
+  top: -3rem;
+  left: -4rem;
+  box-shadow: 0rem 1rem 1.8rem rgba(0, 0, 0, 0.35);
+  outline-offset: 1rem;
+  transition-property: all;
+  transition-duration: 0.2s;
+  animation-name: fromLeft;
+  animation-duration: 0.5s;
+  animation-timing-funtion: ease-out;
+  animation-fill-mode: backwards;
+}
+.profile__info__image__edit {
+  position: absolute;
+  padding-right: 1rem;
+  padding-bottom: 0.6rem;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  visibility: hidden;
+}
+@media screen and (max-width: 64em) {
+  .profile__info__image__edit {
+    visibility: visible;
+  }
+}
+.profile__info__image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+  outline: 1.2rem solid #e65096;
+}
+.profile__info__image:hover > .profile__info__image__edit {
+  visibility: visible;
+}
+@media screen and (max-width: 64em) {
+  .profile__info__image:hover {
+    transform: none;
+    box-shadow: none;
+    outline: none;
+  }
+}
+@media screen and (max-width: 80em) {
+  .profile__info__image {
+    width: 20rem;
+  }
+}
+@media screen and (max-width: 64em) {
+  .profile__info__image {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: none;
+    outline: none;
+    transition: none;
+    animation: none;
+  }
+}
+
+.register {
+  align-self: center;
+  background-color: #fff;
+  width: 80vw;
+  text-align: center;
+  margin: 5rem 0;
+  max-width: 120rem;
+  min-height: calc(100vh - 12rem);
+  box-shadow: 0rem 1rem 1.8rem rgba(0, 0, 0, 0.35);
+  padding: 30px;
+  animation-name: fromBottom;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+}
+@media screen and (max-width: 64em) {
+  .register {
+    min-height: 100vh;
+    min-width: 32rem;
+    width: 100%;
+    padding: 3rem 0;
+    margin: 0;
+  }
+}
+.register__container {
+  width: 60%;
+  display: inline-block;
+  text-align: center;
+}
+@media screen and (max-width: 64em) {
+  .register__container {
+    width: 90%;
+  }
+}
+.register__submit {
+  padding-top: 2rem;
+}
+
+.about-more__container, .about-more__story, .about-more__quote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-more__quote {
+  background-color: #2ebacc;
+  max-height: 25rem;
+  padding-top: 6rem;
+}
+@media screen and (max-width: 40em) {
+  .about-more__quote {
+    padding-top: 1rem;
+  }
+}
+.about-more__story {
+  max-width: 140rem;
+  align-self: center;
+}
+@media screen and (max-width: 64em) {
+  .about-more__story {
+    flex-direction: column-reverse;
+  }
+}
+.about-more__vision {
+  width: 50%;
+  padding: 3rem;
+}
+@media screen and (max-width: 64em) {
+  .about-more__vision {
+    width: 100%;
+  }
+}
+.about-more__vision h1 {
+  padding-bottom: 3rem;
+}
+.about-more__vision p {
+  font-size: 2rem;
+  text-align: justify;
+}
+.about-more__vision p:not(:last-child) {
+  padding-bottom: 1rem;
+}
+.about-more__image {
+  padding: 3rem;
+  width: 50%;
+  text-align: center;
+}
+@media screen and (max-width: 64em) {
+  .about-more__image {
+    width: 100%;
+    padding-bottom: 5rem;
+  }
+}
+.about-more__image__vision {
+  max-width: 50rem;
+}
+.about-more__function {
+  position: relative;
+  width: 80%;
+}
+
+.jobs-container {
+  display: block;
+}
+@media screen and (max-width: 64em) {
+  .jobs-container {
+    max-width: unset;
+    margin: 0;
+  }
+}
+
+.job-post {
+  display: block;
+  padding: 3rem 0;
+}
+@media screen and (max-width: 30em) {
+  .job-post {
+    padding: 0;
+  }
+}
+.job-post__info {
+  display: table-cell;
+}
+.job-post__container {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 64em) {
+  .job-post__container {
+    max-width: unset;
+    margin: 0;
+    padding: 5rem 3rem;
+  }
+}
+@media screen and (max-width: 30em) {
+  .job-post__container {
+    padding: 1rem;
+  }
+}
+.job-post__header {
+  padding: 0 3rem;
+}
+@media screen and (max-width: 30em) {
+  .job-post__header {
+    padding: 4rem 0 0;
+  }
+}
+.job-post__id {
+  display: inline-block;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid #e65096;
+  border-radius: 0.4rem;
+}
+.job-post__id span:first-child {
+  color: #e65096;
+}
+.job-post__id span:nth-child(2) {
+  padding-left: 3rem;
+}
+
+.job-detail__container {
+  display: table;
+  padding-top: 2.5rem;
+}
+.job-detail__element {
+  display: table-row;
+  border-bottom: 1px solid #e65096;
+  line-height: 1.5;
+}
+.job-detail__label {
+  display: table-cell;
+  font-weight: 700;
+  color: #e65096;
+  text-transform: uppercase;
+  text-align: right;
+  padding-right: 2rem;
+  word-break: keep-all;
+  min-width: 10rem;
+}
+@media screen and (max-width: 30em) {
+  .job-detail__label {
+    text-align: left;
+    padding-right: 0;
+    width: 8rem;
+  }
+}
+
+.job-search__container {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.job-search__search, .job-search__results {
+  width: 100%;
+  max-width: 140rem;
+  padding: 0 1rem;
+  text-align: center;
+}
+.job-search__results {
+  padding-top: 4rem;
+}
+
+.work__container, .work__home {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 64em) {
+  .work__container, .work__home {
+    max-width: unset;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 30em) {
+  .work__container, .work__home {
+    padding: 0;
+  }
+}
+.work__home {
+  background-image: linear-gradient(to top, rgba(54, 79, 107, 0.2), rgba(54, 79, 107, 0.95));
+}
+@media screen and (min-width: 30em) {
+  .work__home {
+    background-image: linear-gradient(to top, rgba(54, 79, 107, 0.2), rgba(54, 79, 107, 0.95)), url("/img/freelance_scene.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+@media screen and (min-width: 30em) and (max-width: 64em) {
+  .work__home {
+    background-attachment: scroll;
+  }
+}
+.work__header {
+  padding: 10rem 3rem 5rem 3rem;
+}
+@media screen and (max-width: 64em) {
+  .work__header {
+    padding: 4rem 2rem 1rem;
+  }
+}
+.work__description {
+  text-align: center;
+  padding: 17rem 0 15rem 0;
+}
+.work__description h1 {
+  font-size: 4.5rem;
+  padding-bottom: 2.5rem;
+}
+@media screen and (max-width: 45em) {
+  .work__description h1 {
+    font-size: 3.4rem;
+    padding-bottom: 1rem;
+  }
+}
+.work__description p {
+  color: #fff;
+  font-weight: 700;
+  font-size: 3rem;
+  max-width: 80rem;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media screen and (max-width: 45em) {
+  .work__description p {
+    font-size: 2.2rem;
+    text-align: justify;
+    padding-bottom: 1.5rem;
+  }
+}
+@media screen and (max-width: 45em) {
+  .work__description {
+    font-size: 2rem;
+    padding: 10rem 2rem 5rem 2rem;
+    text-align: justify;
+  }
+}
+.work__content {
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 45em) {
+  .work__content {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+}
+.work__card {
+  max-width: 40rem;
+  width: 100%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+@media screen and (max-width: 30em) {
+  .work__card {
+    margin: 0;
+  }
+}
+.work__icon__job {
+  display: block;
+  height: 18rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.work__icon__job.find {
+  padding: 0;
+}
+.work__icon__job.post {
+  padding: 1.4rem;
+}
+.work__icon__job path {
+  stroke: #fff;
+}
+.work__list {
+  padding: 0 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.work__footer {
+  display: block;
+  text-align: center;
+}
+@media screen and (max-width: 30em) {
+  .work__footer {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+.work__job-list {
+  position: relative;
+  width: 100%;
+  padding: 0 0.5rem;
+  overflow-x: scroll;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 5rem 3rem 0;
+}
+.messages__editor, .messages__list {
+  padding-bottom: 2rem;
+}
+.messages__list {
+  text-align: left;
+}
+.messages__list__title {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.circle-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 12rem 3rem 0;
+  display: relative;
+  color: #f5f5f5;
+  background-color: rgba(54, 79, 107, 0.5);
+}
+@media screen and (max-width: 40em) {
+  .circle-container {
+    background-color: rgba(54, 79, 107, 0.9);
+  }
+}
+.circle-container__header {
+  display: block;
+}
+.circle-container__title {
+  font-weight: 700;
+  font-size: 4.5rem;
+  text-align: center;
+  padding-top: 4rem;
+  padding-bottom: 1.4rem;
+}
+@media screen and (max-width: 40em) {
+  .circle-container__title {
+    text-align: left;
+    padding-top: 0rem;
+    font-size: 4rem;
+  }
+}
+.circle-container__description {
+  font-size: 3rem;
+  text-align: center;
+  max-width: 100rem;
+  margin: 0 auto;
+  padding-bottom: 5rem;
+}
+@media screen and (max-width: 64em) {
+  .circle-container__description {
+    text-align: justify;
+  }
+}
+@media screen and (max-width: 40em) {
+  .circle-container__description {
+    font-size: 2rem;
+  }
+}
+.circle-container__my {
+  padding-top: 3rem;
+  max-width: 140rem;
+  margin: 0 auto;
+}
+.circle-container__my__title {
+  font-size: 4rem;
+}
+
+/*!
+ * Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+.fa,
+.fas,
+.far,
+.fal,
+.fad,
+.fab {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+.fa-lg {
+  font-size: 1.3333333333em;
+  line-height: 0.75em;
+  vertical-align: -0.0667em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: 2.5em;
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: -2em;
+  position: absolute;
+  text-align: center;
+  width: 2em;
+  line-height: inherit;
+}
+
+.fa-border {
+  border: solid 0.08em #eee;
+  border-radius: 0.1em;
+  padding: 0.2em 0.25em 0.15em;
+}
+
+.fa-pull-left {
+  float: left;
+}
+
+.fa-pull-right {
+  float: right;
+}
+
+.fa.fa-pull-left,
+.fas.fa-pull-left,
+.far.fa-pull-left,
+.fal.fa-pull-left,
+.fab.fa-pull-left {
+  margin-right: 0.3em;
+}
+.fa.fa-pull-right,
+.fas.fa-pull-right,
+.far.fa-pull-right,
+.fal.fa-pull-right,
+.fab.fa-pull-right {
+  margin-left: 0.3em;
+}
+
+.fa-spin {
+  animation: fa-spin 2s infinite linear;
+}
+
+.fa-pulse {
+  animation: fa-spin 1s infinite steps(8);
+}
+
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  transform: scale(1, -1);
+}
+
+.fa-flip-both, .fa-flip-horizontal.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  transform: scale(-1, -1);
+}
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical,
+:root .fa-flip-both {
+  filter: none;
+}
+
+.fa-stack {
+  display: inline-block;
+  height: 2em;
+  line-height: 2em;
+  position: relative;
+  vertical-align: middle;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  left: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.fa-stack-1x {
+  line-height: inherit;
+}
+
+.fa-stack-2x {
+  font-size: 2em;
+}
+
+.fa-inverse {
+  color: #fff;
+}
+
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+readers do not read off random characters that represent icons */
+.fa-500px:before {
+  content: "";
+}
+
+.fa-accessible-icon:before {
+  content: "";
+}
+
+.fa-accusoft:before {
+  content: "";
+}
+
+.fa-acquisitions-incorporated:before {
+  content: "";
+}
+
+.fa-ad:before {
+  content: "";
+}
+
+.fa-address-book:before {
+  content: "";
+}
+
+.fa-address-card:before {
+  content: "";
+}
+
+.fa-adjust:before {
+  content: "";
+}
+
+.fa-adn:before {
+  content: "";
+}
+
+.fa-adversal:before {
+  content: "";
+}
+
+.fa-affiliatetheme:before {
+  content: "";
+}
+
+.fa-air-freshener:before {
+  content: "";
+}
+
+.fa-airbnb:before {
+  content: "";
+}
+
+.fa-algolia:before {
+  content: "";
+}
+
+.fa-align-center:before {
+  content: "";
+}
+
+.fa-align-justify:before {
+  content: "";
+}
+
+.fa-align-left:before {
+  content: "";
+}
+
+.fa-align-right:before {
+  content: "";
+}
+
+.fa-alipay:before {
+  content: "";
+}
+
+.fa-allergies:before {
+  content: "";
+}
+
+.fa-amazon:before {
+  content: "";
+}
+
+.fa-amazon-pay:before {
+  content: "";
+}
+
+.fa-ambulance:before {
+  content: "";
+}
+
+.fa-american-sign-language-interpreting:before {
+  content: "";
+}
+
+.fa-amilia:before {
+  content: "";
+}
+
+.fa-anchor:before {
+  content: "";
+}
+
+.fa-android:before {
+  content: "";
+}
+
+.fa-angellist:before {
+  content: "";
+}
+
+.fa-angle-double-down:before {
+  content: "";
+}
+
+.fa-angle-double-left:before {
+  content: "";
+}
+
+.fa-angle-double-right:before {
+  content: "";
+}
+
+.fa-angle-double-up:before {
+  content: "";
+}
+
+.fa-angle-down:before {
+  content: "";
+}
+
+.fa-angle-left:before {
+  content: "";
+}
+
+.fa-angle-right:before {
+  content: "";
+}
+
+.fa-angle-up:before {
+  content: "";
+}
+
+.fa-angry:before {
+  content: "";
+}
+
+.fa-angrycreative:before {
+  content: "";
+}
+
+.fa-angular:before {
+  content: "";
+}
+
+.fa-ankh:before {
+  content: "";
+}
+
+.fa-app-store:before {
+  content: "";
+}
+
+.fa-app-store-ios:before {
+  content: "";
+}
+
+.fa-apper:before {
+  content: "";
+}
+
+.fa-apple:before {
+  content: "";
+}
+
+.fa-apple-alt:before {
+  content: "";
+}
+
+.fa-apple-pay:before {
+  content: "";
+}
+
+.fa-archive:before {
+  content: "";
+}
+
+.fa-archway:before {
+  content: "";
+}
+
+.fa-arrow-alt-circle-down:before {
+  content: "";
+}
+
+.fa-arrow-alt-circle-left:before {
+  content: "";
+}
+
+.fa-arrow-alt-circle-right:before {
+  content: "";
+}
+
+.fa-arrow-alt-circle-up:before {
+  content: "";
+}
+
+.fa-arrow-circle-down:before {
+  content: "";
+}
+
+.fa-arrow-circle-left:before {
+  content: "";
+}
+
+.fa-arrow-circle-right:before {
+  content: "";
+}
+
+.fa-arrow-circle-up:before {
+  content: "";
+}
+
+.fa-arrow-down:before {
+  content: "";
+}
+
+.fa-arrow-left:before {
+  content: "";
+}
+
+.fa-arrow-right:before {
+  content: "";
+}
+
+.fa-arrow-up:before {
+  content: "";
+}
+
+.fa-arrows-alt:before {
+  content: "";
+}
+
+.fa-arrows-alt-h:before {
+  content: "";
+}
+
+.fa-arrows-alt-v:before {
+  content: "";
+}
+
+.fa-artstation:before {
+  content: "";
+}
+
+.fa-assistive-listening-systems:before {
+  content: "";
+}
+
+.fa-asterisk:before {
+  content: "";
+}
+
+.fa-asymmetrik:before {
+  content: "";
+}
+
+.fa-at:before {
+  content: "";
+}
+
+.fa-atlas:before {
+  content: "";
+}
+
+.fa-atlassian:before {
+  content: "";
+}
+
+.fa-atom:before {
+  content: "";
+}
+
+.fa-audible:before {
+  content: "";
+}
+
+.fa-audio-description:before {
+  content: "";
+}
+
+.fa-autoprefixer:before {
+  content: "";
+}
+
+.fa-avianex:before {
+  content: "";
+}
+
+.fa-aviato:before {
+  content: "";
+}
+
+.fa-award:before {
+  content: "";
+}
+
+.fa-aws:before {
+  content: "";
+}
+
+.fa-baby:before {
+  content: "";
+}
+
+.fa-baby-carriage:before {
+  content: "";
+}
+
+.fa-backspace:before {
+  content: "";
+}
+
+.fa-backward:before {
+  content: "";
+}
+
+.fa-bacon:before {
+  content: "";
+}
+
+.fa-bacteria:before {
+  content: "";
+}
+
+.fa-bacterium:before {
+  content: "";
+}
+
+.fa-bahai:before {
+  content: "";
+}
+
+.fa-balance-scale:before {
+  content: "";
+}
+
+.fa-balance-scale-left:before {
+  content: "";
+}
+
+.fa-balance-scale-right:before {
+  content: "";
+}
+
+.fa-ban:before {
+  content: "";
+}
+
+.fa-band-aid:before {
+  content: "";
+}
+
+.fa-bandcamp:before {
+  content: "";
+}
+
+.fa-barcode:before {
+  content: "";
+}
+
+.fa-bars:before {
+  content: "";
+}
+
+.fa-baseball-ball:before {
+  content: "";
+}
+
+.fa-basketball-ball:before {
+  content: "";
+}
+
+.fa-bath:before {
+  content: "";
+}
+
+.fa-battery-empty:before {
+  content: "";
+}
+
+.fa-battery-full:before {
+  content: "";
+}
+
+.fa-battery-half:before {
+  content: "";
+}
+
+.fa-battery-quarter:before {
+  content: "";
+}
+
+.fa-battery-three-quarters:before {
+  content: "";
+}
+
+.fa-battle-net:before {
+  content: "";
+}
+
+.fa-bed:before {
+  content: "";
+}
+
+.fa-beer:before {
+  content: "";
+}
+
+.fa-behance:before {
+  content: "";
+}
+
+.fa-behance-square:before {
+  content: "";
+}
+
+.fa-bell:before {
+  content: "";
+}
+
+.fa-bell-slash:before {
+  content: "";
+}
+
+.fa-bezier-curve:before {
+  content: "";
+}
+
+.fa-bible:before {
+  content: "";
+}
+
+.fa-bicycle:before {
+  content: "";
+}
+
+.fa-biking:before {
+  content: "";
+}
+
+.fa-bimobject:before {
+  content: "";
+}
+
+.fa-binoculars:before {
+  content: "";
+}
+
+.fa-biohazard:before {
+  content: "";
+}
+
+.fa-birthday-cake:before {
+  content: "";
+}
+
+.fa-bitbucket:before {
+  content: "";
+}
+
+.fa-bitcoin:before {
+  content: "";
+}
+
+.fa-bity:before {
+  content: "";
+}
+
+.fa-black-tie:before {
+  content: "";
+}
+
+.fa-blackberry:before {
+  content: "";
+}
+
+.fa-blender:before {
+  content: "";
+}
+
+.fa-blender-phone:before {
+  content: "";
+}
+
+.fa-blind:before {
+  content: "";
+}
+
+.fa-blog:before {
+  content: "";
+}
+
+.fa-blogger:before {
+  content: "";
+}
+
+.fa-blogger-b:before {
+  content: "";
+}
+
+.fa-bluetooth:before {
+  content: "";
+}
+
+.fa-bluetooth-b:before {
+  content: "";
+}
+
+.fa-bold:before {
+  content: "";
+}
+
+.fa-bolt:before {
+  content: "";
+}
+
+.fa-bomb:before {
+  content: "";
+}
+
+.fa-bone:before {
+  content: "";
+}
+
+.fa-bong:before {
+  content: "";
+}
+
+.fa-book:before {
+  content: "";
+}
+
+.fa-book-dead:before {
+  content: "";
+}
+
+.fa-book-medical:before {
+  content: "";
+}
+
+.fa-book-open:before {
+  content: "";
+}
+
+.fa-book-reader:before {
+  content: "";
+}
+
+.fa-bookmark:before {
+  content: "";
+}
+
+.fa-bootstrap:before {
+  content: "";
+}
+
+.fa-border-all:before {
+  content: "";
+}
+
+.fa-border-none:before {
+  content: "";
+}
+
+.fa-border-style:before {
+  content: "";
+}
+
+.fa-bowling-ball:before {
+  content: "";
+}
+
+.fa-box:before {
+  content: "";
+}
+
+.fa-box-open:before {
+  content: "";
+}
+
+.fa-box-tissue:before {
+  content: "";
+}
+
+.fa-boxes:before {
+  content: "";
+}
+
+.fa-braille:before {
+  content: "";
+}
+
+.fa-brain:before {
+  content: "";
+}
+
+.fa-bread-slice:before {
+  content: "";
+}
+
+.fa-briefcase:before {
+  content: "";
+}
+
+.fa-briefcase-medical:before {
+  content: "";
+}
+
+.fa-broadcast-tower:before {
+  content: "";
+}
+
+.fa-broom:before {
+  content: "";
+}
+
+.fa-brush:before {
+  content: "";
+}
+
+.fa-btc:before {
+  content: "";
+}
+
+.fa-buffer:before {
+  content: "";
+}
+
+.fa-bug:before {
+  content: "";
+}
+
+.fa-building:before {
+  content: "";
+}
+
+.fa-bullhorn:before {
+  content: "";
+}
+
+.fa-bullseye:before {
+  content: "";
+}
+
+.fa-burn:before {
+  content: "";
+}
+
+.fa-buromobelexperte:before {
+  content: "";
+}
+
+.fa-bus:before {
+  content: "";
+}
+
+.fa-bus-alt:before {
+  content: "";
+}
+
+.fa-business-time:before {
+  content: "";
+}
+
+.fa-buy-n-large:before {
+  content: "";
+}
+
+.fa-buysellads:before {
+  content: "";
+}
+
+.fa-calculator:before {
+  content: "";
+}
+
+.fa-calendar:before {
+  content: "";
+}
+
+.fa-calendar-alt:before {
+  content: "";
+}
+
+.fa-calendar-check:before {
+  content: "";
+}
+
+.fa-calendar-day:before {
+  content: "";
+}
+
+.fa-calendar-minus:before {
+  content: "";
+}
+
+.fa-calendar-plus:before {
+  content: "";
+}
+
+.fa-calendar-times:before {
+  content: "";
+}
+
+.fa-calendar-week:before {
+  content: "";
+}
+
+.fa-camera:before {
+  content: "";
+}
+
+.fa-camera-retro:before {
+  content: "";
+}
+
+.fa-campground:before {
+  content: "";
+}
+
+.fa-canadian-maple-leaf:before {
+  content: "";
+}
+
+.fa-candy-cane:before {
+  content: "";
+}
+
+.fa-cannabis:before {
+  content: "";
+}
+
+.fa-capsules:before {
+  content: "";
+}
+
+.fa-car:before {
+  content: "";
+}
+
+.fa-car-alt:before {
+  content: "";
+}
+
+.fa-car-battery:before {
+  content: "";
+}
+
+.fa-car-crash:before {
+  content: "";
+}
+
+.fa-car-side:before {
+  content: "";
+}
+
+.fa-caravan:before {
+  content: "";
+}
+
+.fa-caret-down:before {
+  content: "";
+}
+
+.fa-caret-left:before {
+  content: "";
+}
+
+.fa-caret-right:before {
+  content: "";
+}
+
+.fa-caret-square-down:before {
+  content: "";
+}
+
+.fa-caret-square-left:before {
+  content: "";
+}
+
+.fa-caret-square-right:before {
+  content: "";
+}
+
+.fa-caret-square-up:before {
+  content: "";
+}
+
+.fa-caret-up:before {
+  content: "";
+}
+
+.fa-carrot:before {
+  content: "";
+}
+
+.fa-cart-arrow-down:before {
+  content: "";
+}
+
+.fa-cart-plus:before {
+  content: "";
+}
+
+.fa-cash-register:before {
+  content: "";
+}
+
+.fa-cat:before {
+  content: "";
+}
+
+.fa-cc-amazon-pay:before {
+  content: "";
+}
+
+.fa-cc-amex:before {
+  content: "";
+}
+
+.fa-cc-apple-pay:before {
+  content: "";
+}
+
+.fa-cc-diners-club:before {
+  content: "";
+}
+
+.fa-cc-discover:before {
+  content: "";
+}
+
+.fa-cc-jcb:before {
+  content: "";
+}
+
+.fa-cc-mastercard:before {
+  content: "";
+}
+
+.fa-cc-paypal:before {
+  content: "";
+}
+
+.fa-cc-stripe:before {
+  content: "";
+}
+
+.fa-cc-visa:before {
+  content: "";
+}
+
+.fa-centercode:before {
+  content: "";
+}
+
+.fa-centos:before {
+  content: "";
+}
+
+.fa-certificate:before {
+  content: "";
+}
+
+.fa-chair:before {
+  content: "";
+}
+
+.fa-chalkboard:before {
+  content: "";
+}
+
+.fa-chalkboard-teacher:before {
+  content: "";
+}
+
+.fa-charging-station:before {
+  content: "";
+}
+
+.fa-chart-area:before {
+  content: "";
+}
+
+.fa-chart-bar:before {
+  content: "";
+}
+
+.fa-chart-line:before {
+  content: "";
+}
+
+.fa-chart-pie:before {
+  content: "";
+}
+
+.fa-check:before {
+  content: "";
+}
+
+.fa-check-circle:before {
+  content: "";
+}
+
+.fa-check-double:before {
+  content: "";
+}
+
+.fa-check-square:before {
+  content: "";
+}
+
+.fa-cheese:before {
+  content: "";
+}
+
+.fa-chess:before {
+  content: "";
+}
+
+.fa-chess-bishop:before {
+  content: "";
+}
+
+.fa-chess-board:before {
+  content: "";
+}
+
+.fa-chess-king:before {
+  content: "";
+}
+
+.fa-chess-knight:before {
+  content: "";
+}
+
+.fa-chess-pawn:before {
+  content: "";
+}
+
+.fa-chess-queen:before {
+  content: "";
+}
+
+.fa-chess-rook:before {
+  content: "";
+}
+
+.fa-chevron-circle-down:before {
+  content: "";
+}
+
+.fa-chevron-circle-left:before {
+  content: "";
+}
+
+.fa-chevron-circle-right:before {
+  content: "";
+}
+
+.fa-chevron-circle-up:before {
+  content: "";
+}
+
+.fa-chevron-down:before {
+  content: "";
+}
+
+.fa-chevron-left:before {
+  content: "";
+}
+
+.fa-chevron-right:before {
+  content: "";
+}
+
+.fa-chevron-up:before {
+  content: "";
+}
+
+.fa-child:before {
+  content: "";
+}
+
+.fa-chrome:before {
+  content: "";
+}
+
+.fa-chromecast:before {
+  content: "";
+}
+
+.fa-church:before {
+  content: "";
+}
+
+.fa-circle:before {
+  content: "";
+}
+
+.fa-circle-notch:before {
+  content: "";
+}
+
+.fa-city:before {
+  content: "";
+}
+
+.fa-clinic-medical:before {
+  content: "";
+}
+
+.fa-clipboard:before {
+  content: "";
+}
+
+.fa-clipboard-check:before {
+  content: "";
+}
+
+.fa-clipboard-list:before {
+  content: "";
+}
+
+.fa-clock:before {
+  content: "";
+}
+
+.fa-clone:before {
+  content: "";
+}
+
+.fa-closed-captioning:before {
+  content: "";
+}
+
+.fa-cloud:before {
+  content: "";
+}
+
+.fa-cloud-download-alt:before {
+  content: "";
+}
+
+.fa-cloud-meatball:before {
+  content: "";
+}
+
+.fa-cloud-moon:before {
+  content: "";
+}
+
+.fa-cloud-moon-rain:before {
+  content: "";
+}
+
+.fa-cloud-rain:before {
+  content: "";
+}
+
+.fa-cloud-showers-heavy:before {
+  content: "";
+}
+
+.fa-cloud-sun:before {
+  content: "";
+}
+
+.fa-cloud-sun-rain:before {
+  content: "";
+}
+
+.fa-cloud-upload-alt:before {
+  content: "";
+}
+
+.fa-cloudflare:before {
+  content: "";
+}
+
+.fa-cloudscale:before {
+  content: "";
+}
+
+.fa-cloudsmith:before {
+  content: "";
+}
+
+.fa-cloudversify:before {
+  content: "";
+}
+
+.fa-cocktail:before {
+  content: "";
+}
+
+.fa-code:before {
+  content: "";
+}
+
+.fa-code-branch:before {
+  content: "";
+}
+
+.fa-codepen:before {
+  content: "";
+}
+
+.fa-codiepie:before {
+  content: "";
+}
+
+.fa-coffee:before {
+  content: "";
+}
+
+.fa-cog:before {
+  content: "";
+}
+
+.fa-cogs:before {
+  content: "";
+}
+
+.fa-coins:before {
+  content: "";
+}
+
+.fa-columns:before {
+  content: "";
+}
+
+.fa-comment:before {
+  content: "";
+}
+
+.fa-comment-alt:before {
+  content: "";
+}
+
+.fa-comment-dollar:before {
+  content: "";
+}
+
+.fa-comment-dots:before {
+  content: "";
+}
+
+.fa-comment-medical:before {
+  content: "";
+}
+
+.fa-comment-slash:before {
+  content: "";
+}
+
+.fa-comments:before {
+  content: "";
+}
+
+.fa-comments-dollar:before {
+  content: "";
+}
+
+.fa-compact-disc:before {
+  content: "";
+}
+
+.fa-compass:before {
+  content: "";
+}
+
+.fa-compress:before {
+  content: "";
+}
+
+.fa-compress-alt:before {
+  content: "";
+}
+
+.fa-compress-arrows-alt:before {
+  content: "";
+}
+
+.fa-concierge-bell:before {
+  content: "";
+}
+
+.fa-confluence:before {
+  content: "";
+}
+
+.fa-connectdevelop:before {
+  content: "";
+}
+
+.fa-contao:before {
+  content: "";
+}
+
+.fa-cookie:before {
+  content: "";
+}
+
+.fa-cookie-bite:before {
+  content: "";
+}
+
+.fa-copy:before {
+  content: "";
+}
+
+.fa-copyright:before {
+  content: "";
+}
+
+.fa-cotton-bureau:before {
+  content: "";
+}
+
+.fa-couch:before {
+  content: "";
+}
+
+.fa-cpanel:before {
+  content: "";
+}
+
+.fa-creative-commons:before {
+  content: "";
+}
+
+.fa-creative-commons-by:before {
+  content: "";
+}
+
+.fa-creative-commons-nc:before {
+  content: "";
+}
+
+.fa-creative-commons-nc-eu:before {
+  content: "";
+}
+
+.fa-creative-commons-nc-jp:before {
+  content: "";
+}
+
+.fa-creative-commons-nd:before {
+  content: "";
+}
+
+.fa-creative-commons-pd:before {
+  content: "";
+}
+
+.fa-creative-commons-pd-alt:before {
+  content: "";
+}
+
+.fa-creative-commons-remix:before {
+  content: "";
+}
+
+.fa-creative-commons-sa:before {
+  content: "";
+}
+
+.fa-creative-commons-sampling:before {
+  content: "";
+}
+
+.fa-creative-commons-sampling-plus:before {
+  content: "";
+}
+
+.fa-creative-commons-share:before {
+  content: "";
+}
+
+.fa-creative-commons-zero:before {
+  content: "";
+}
+
+.fa-credit-card:before {
+  content: "";
+}
+
+.fa-critical-role:before {
+  content: "";
+}
+
+.fa-crop:before {
+  content: "";
+}
+
+.fa-crop-alt:before {
+  content: "";
+}
+
+.fa-cross:before {
+  content: "";
+}
+
+.fa-crosshairs:before {
+  content: "";
+}
+
+.fa-crow:before {
+  content: "";
+}
+
+.fa-crown:before {
+  content: "";
+}
+
+.fa-crutch:before {
+  content: "";
+}
+
+.fa-css3:before {
+  content: "";
+}
+
+.fa-css3-alt:before {
+  content: "";
+}
+
+.fa-cube:before {
+  content: "";
+}
+
+.fa-cubes:before {
+  content: "";
+}
+
+.fa-cut:before {
+  content: "";
+}
+
+.fa-cuttlefish:before {
+  content: "";
+}
+
+.fa-d-and-d:before {
+  content: "";
+}
+
+.fa-d-and-d-beyond:before {
+  content: "";
+}
+
+.fa-dailymotion:before {
+  content: "";
+}
+
+.fa-dashcube:before {
+  content: "";
+}
+
+.fa-database:before {
+  content: "";
+}
+
+.fa-deaf:before {
+  content: "";
+}
+
+.fa-deezer:before {
+  content: "";
+}
+
+.fa-delicious:before {
+  content: "";
+}
+
+.fa-democrat:before {
+  content: "";
+}
+
+.fa-deploydog:before {
+  content: "";
+}
+
+.fa-deskpro:before {
+  content: "";
+}
+
+.fa-desktop:before {
+  content: "";
+}
+
+.fa-dev:before {
+  content: "";
+}
+
+.fa-deviantart:before {
+  content: "";
+}
+
+.fa-dharmachakra:before {
+  content: "";
+}
+
+.fa-dhl:before {
+  content: "";
+}
+
+.fa-diagnoses:before {
+  content: "";
+}
+
+.fa-diaspora:before {
+  content: "";
+}
+
+.fa-dice:before {
+  content: "";
+}
+
+.fa-dice-d20:before {
+  content: "";
+}
+
+.fa-dice-d6:before {
+  content: "";
+}
+
+.fa-dice-five:before {
+  content: "";
+}
+
+.fa-dice-four:before {
+  content: "";
+}
+
+.fa-dice-one:before {
+  content: "";
+}
+
+.fa-dice-six:before {
+  content: "";
+}
+
+.fa-dice-three:before {
+  content: "";
+}
+
+.fa-dice-two:before {
+  content: "";
+}
+
+.fa-digg:before {
+  content: "";
+}
+
+.fa-digital-ocean:before {
+  content: "";
+}
+
+.fa-digital-tachograph:before {
+  content: "";
+}
+
+.fa-directions:before {
+  content: "";
+}
+
+.fa-discord:before {
+  content: "";
+}
+
+.fa-discourse:before {
+  content: "";
+}
+
+.fa-disease:before {
+  content: "";
+}
+
+.fa-divide:before {
+  content: "";
+}
+
+.fa-dizzy:before {
+  content: "";
+}
+
+.fa-dna:before {
+  content: "";
+}
+
+.fa-dochub:before {
+  content: "";
+}
+
+.fa-docker:before {
+  content: "";
+}
+
+.fa-dog:before {
+  content: "";
+}
+
+.fa-dollar-sign:before {
+  content: "";
+}
+
+.fa-dolly:before {
+  content: "";
+}
+
+.fa-dolly-flatbed:before {
+  content: "";
+}
+
+.fa-donate:before {
+  content: "";
+}
+
+.fa-door-closed:before {
+  content: "";
+}
+
+.fa-door-open:before {
+  content: "";
+}
+
+.fa-dot-circle:before {
+  content: "";
+}
+
+.fa-dove:before {
+  content: "";
+}
+
+.fa-download:before {
+  content: "";
+}
+
+.fa-draft2digital:before {
+  content: "";
+}
+
+.fa-drafting-compass:before {
+  content: "";
+}
+
+.fa-dragon:before {
+  content: "";
+}
+
+.fa-draw-polygon:before {
+  content: "";
+}
+
+.fa-dribbble:before {
+  content: "";
+}
+
+.fa-dribbble-square:before {
+  content: "";
+}
+
+.fa-dropbox:before {
+  content: "";
+}
+
+.fa-drum:before {
+  content: "";
+}
+
+.fa-drum-steelpan:before {
+  content: "";
+}
+
+.fa-drumstick-bite:before {
+  content: "";
+}
+
+.fa-drupal:before {
+  content: "";
+}
+
+.fa-dumbbell:before {
+  content: "";
+}
+
+.fa-dumpster:before {
+  content: "";
+}
+
+.fa-dumpster-fire:before {
+  content: "";
+}
+
+.fa-dungeon:before {
+  content: "";
+}
+
+.fa-dyalog:before {
+  content: "";
+}
+
+.fa-earlybirds:before {
+  content: "";
+}
+
+.fa-ebay:before {
+  content: "";
+}
+
+.fa-edge:before {
+  content: "";
+}
+
+.fa-edge-legacy:before {
+  content: "";
+}
+
+.fa-edit:before {
+  content: "";
+}
+
+.fa-egg:before {
+  content: "";
+}
+
+.fa-eject:before {
+  content: "";
+}
+
+.fa-elementor:before {
+  content: "";
+}
+
+.fa-ellipsis-h:before {
+  content: "";
+}
+
+.fa-ellipsis-v:before {
+  content: "";
+}
+
+.fa-ello:before {
+  content: "";
+}
+
+.fa-ember:before {
+  content: "";
+}
+
+.fa-empire:before {
+  content: "";
+}
+
+.fa-envelope:before {
+  content: "";
+}
+
+.fa-envelope-open:before {
+  content: "";
+}
+
+.fa-envelope-open-text:before {
+  content: "";
+}
+
+.fa-envelope-square:before {
+  content: "";
+}
+
+.fa-envira:before {
+  content: "";
+}
+
+.fa-equals:before {
+  content: "";
+}
+
+.fa-eraser:before {
+  content: "";
+}
+
+.fa-erlang:before {
+  content: "";
+}
+
+.fa-ethereum:before {
+  content: "";
+}
+
+.fa-ethernet:before {
+  content: "";
+}
+
+.fa-etsy:before {
+  content: "";
+}
+
+.fa-euro-sign:before {
+  content: "";
+}
+
+.fa-evernote:before {
+  content: "";
+}
+
+.fa-exchange-alt:before {
+  content: "";
+}
+
+.fa-exclamation:before {
+  content: "";
+}
+
+.fa-exclamation-circle:before {
+  content: "";
+}
+
+.fa-exclamation-triangle:before {
+  content: "";
+}
+
+.fa-expand:before {
+  content: "";
+}
+
+.fa-expand-alt:before {
+  content: "";
+}
+
+.fa-expand-arrows-alt:before {
+  content: "";
+}
+
+.fa-expeditedssl:before {
+  content: "";
+}
+
+.fa-external-link-alt:before {
+  content: "";
+}
+
+.fa-external-link-square-alt:before {
+  content: "";
+}
+
+.fa-eye:before {
+  content: "";
+}
+
+.fa-eye-dropper:before {
+  content: "";
+}
+
+.fa-eye-slash:before {
+  content: "";
+}
+
+.fa-facebook:before {
+  content: "";
+}
+
+.fa-facebook-f:before {
+  content: "";
+}
+
+.fa-facebook-messenger:before {
+  content: "";
+}
+
+.fa-facebook-square:before {
+  content: "";
+}
+
+.fa-fan:before {
+  content: "";
+}
+
+.fa-fantasy-flight-games:before {
+  content: "";
+}
+
+.fa-fast-backward:before {
+  content: "";
+}
+
+.fa-fast-forward:before {
+  content: "";
+}
+
+.fa-faucet:before {
+  content: "";
+}
+
+.fa-fax:before {
+  content: "";
+}
+
+.fa-feather:before {
+  content: "";
+}
+
+.fa-feather-alt:before {
+  content: "";
+}
+
+.fa-fedex:before {
+  content: "";
+}
+
+.fa-fedora:before {
+  content: "";
+}
+
+.fa-female:before {
+  content: "";
+}
+
+.fa-fighter-jet:before {
+  content: "";
+}
+
+.fa-figma:before {
+  content: "";
+}
+
+.fa-file:before {
+  content: "";
+}
+
+.fa-file-alt:before {
+  content: "";
+}
+
+.fa-file-archive:before {
+  content: "";
+}
+
+.fa-file-audio:before {
+  content: "";
+}
+
+.fa-file-code:before {
+  content: "";
+}
+
+.fa-file-contract:before {
+  content: "";
+}
+
+.fa-file-csv:before {
+  content: "";
+}
+
+.fa-file-download:before {
+  content: "";
+}
+
+.fa-file-excel:before {
+  content: "";
+}
+
+.fa-file-export:before {
+  content: "";
+}
+
+.fa-file-image:before {
+  content: "";
+}
+
+.fa-file-import:before {
+  content: "";
+}
+
+.fa-file-invoice:before {
+  content: "";
+}
+
+.fa-file-invoice-dollar:before {
+  content: "";
+}
+
+.fa-file-medical:before {
+  content: "";
+}
+
+.fa-file-medical-alt:before {
+  content: "";
+}
+
+.fa-file-pdf:before {
+  content: "";
+}
+
+.fa-file-powerpoint:before {
+  content: "";
+}
+
+.fa-file-prescription:before {
+  content: "";
+}
+
+.fa-file-signature:before {
+  content: "";
+}
+
+.fa-file-upload:before {
+  content: "";
+}
+
+.fa-file-video:before {
+  content: "";
+}
+
+.fa-file-word:before {
+  content: "";
+}
+
+.fa-fill:before {
+  content: "";
+}
+
+.fa-fill-drip:before {
+  content: "";
+}
+
+.fa-film:before {
+  content: "";
+}
+
+.fa-filter:before {
+  content: "";
+}
+
+.fa-fingerprint:before {
+  content: "";
+}
+
+.fa-fire:before {
+  content: "";
+}
+
+.fa-fire-alt:before {
+  content: "";
+}
+
+.fa-fire-extinguisher:before {
+  content: "";
+}
+
+.fa-firefox:before {
+  content: "";
+}
+
+.fa-firefox-browser:before {
+  content: "";
+}
+
+.fa-first-aid:before {
+  content: "";
+}
+
+.fa-first-order:before {
+  content: "";
+}
+
+.fa-first-order-alt:before {
+  content: "";
+}
+
+.fa-firstdraft:before {
+  content: "";
+}
+
+.fa-fish:before {
+  content: "";
+}
+
+.fa-fist-raised:before {
+  content: "";
+}
+
+.fa-flag:before {
+  content: "";
+}
+
+.fa-flag-checkered:before {
+  content: "";
+}
+
+.fa-flag-usa:before {
+  content: "";
+}
+
+.fa-flask:before {
+  content: "";
+}
+
+.fa-flickr:before {
+  content: "";
+}
+
+.fa-flipboard:before {
+  content: "";
+}
+
+.fa-flushed:before {
+  content: "";
+}
+
+.fa-fly:before {
+  content: "";
+}
+
+.fa-folder:before {
+  content: "";
+}
+
+.fa-folder-minus:before {
+  content: "";
+}
+
+.fa-folder-open:before {
+  content: "";
+}
+
+.fa-folder-plus:before {
+  content: "";
+}
+
+.fa-font:before {
+  content: "";
+}
+
+.fa-font-awesome:before {
+  content: "";
+}
+
+.fa-font-awesome-alt:before {
+  content: "";
+}
+
+.fa-font-awesome-flag:before {
+  content: "";
+}
+
+.fa-font-awesome-logo-full:before {
+  content: "";
+}
+
+.fa-fonticons:before {
+  content: "";
+}
+
+.fa-fonticons-fi:before {
+  content: "";
+}
+
+.fa-football-ball:before {
+  content: "";
+}
+
+.fa-fort-awesome:before {
+  content: "";
+}
+
+.fa-fort-awesome-alt:before {
+  content: "";
+}
+
+.fa-forumbee:before {
+  content: "";
+}
+
+.fa-forward:before {
+  content: "";
+}
+
+.fa-foursquare:before {
+  content: "";
+}
+
+.fa-free-code-camp:before {
+  content: "";
+}
+
+.fa-freebsd:before {
+  content: "";
+}
+
+.fa-frog:before {
+  content: "";
+}
+
+.fa-frown:before {
+  content: "";
+}
+
+.fa-frown-open:before {
+  content: "";
+}
+
+.fa-fulcrum:before {
+  content: "";
+}
+
+.fa-funnel-dollar:before {
+  content: "";
+}
+
+.fa-futbol:before {
+  content: "";
+}
+
+.fa-galactic-republic:before {
+  content: "";
+}
+
+.fa-galactic-senate:before {
+  content: "";
+}
+
+.fa-gamepad:before {
+  content: "";
+}
+
+.fa-gas-pump:before {
+  content: "";
+}
+
+.fa-gavel:before {
+  content: "";
+}
+
+.fa-gem:before {
+  content: "";
+}
+
+.fa-genderless:before {
+  content: "";
+}
+
+.fa-get-pocket:before {
+  content: "";
+}
+
+.fa-gg:before {
+  content: "";
+}
+
+.fa-gg-circle:before {
+  content: "";
+}
+
+.fa-ghost:before {
+  content: "";
+}
+
+.fa-gift:before {
+  content: "";
+}
+
+.fa-gifts:before {
+  content: "";
+}
+
+.fa-git:before {
+  content: "";
+}
+
+.fa-git-alt:before {
+  content: "";
+}
+
+.fa-git-square:before {
+  content: "";
+}
+
+.fa-github:before {
+  content: "";
+}
+
+.fa-github-alt:before {
+  content: "";
+}
+
+.fa-github-square:before {
+  content: "";
+}
+
+.fa-gitkraken:before {
+  content: "";
+}
+
+.fa-gitlab:before {
+  content: "";
+}
+
+.fa-gitter:before {
+  content: "";
+}
+
+.fa-glass-cheers:before {
+  content: "";
+}
+
+.fa-glass-martini:before {
+  content: "";
+}
+
+.fa-glass-martini-alt:before {
+  content: "";
+}
+
+.fa-glass-whiskey:before {
+  content: "";
+}
+
+.fa-glasses:before {
+  content: "";
+}
+
+.fa-glide:before {
+  content: "";
+}
+
+.fa-glide-g:before {
+  content: "";
+}
+
+.fa-globe:before {
+  content: "";
+}
+
+.fa-globe-africa:before {
+  content: "";
+}
+
+.fa-globe-americas:before {
+  content: "";
+}
+
+.fa-globe-asia:before {
+  content: "";
+}
+
+.fa-globe-europe:before {
+  content: "";
+}
+
+.fa-gofore:before {
+  content: "";
+}
+
+.fa-golf-ball:before {
+  content: "";
+}
+
+.fa-goodreads:before {
+  content: "";
+}
+
+.fa-goodreads-g:before {
+  content: "";
+}
+
+.fa-google:before {
+  content: "";
+}
+
+.fa-google-drive:before {
+  content: "";
+}
+
+.fa-google-pay:before {
+  content: "";
+}
+
+.fa-google-play:before {
+  content: "";
+}
+
+.fa-google-plus:before {
+  content: "";
+}
+
+.fa-google-plus-g:before {
+  content: "";
+}
+
+.fa-google-plus-square:before {
+  content: "";
+}
+
+.fa-google-wallet:before {
+  content: "";
+}
+
+.fa-gopuram:before {
+  content: "";
+}
+
+.fa-graduation-cap:before {
+  content: "";
+}
+
+.fa-gratipay:before {
+  content: "";
+}
+
+.fa-grav:before {
+  content: "";
+}
+
+.fa-greater-than:before {
+  content: "";
+}
+
+.fa-greater-than-equal:before {
+  content: "";
+}
+
+.fa-grimace:before {
+  content: "";
+}
+
+.fa-grin:before {
+  content: "";
+}
+
+.fa-grin-alt:before {
+  content: "";
+}
+
+.fa-grin-beam:before {
+  content: "";
+}
+
+.fa-grin-beam-sweat:before {
+  content: "";
+}
+
+.fa-grin-hearts:before {
+  content: "";
+}
+
+.fa-grin-squint:before {
+  content: "";
+}
+
+.fa-grin-squint-tears:before {
+  content: "";
+}
+
+.fa-grin-stars:before {
+  content: "";
+}
+
+.fa-grin-tears:before {
+  content: "";
+}
+
+.fa-grin-tongue:before {
+  content: "";
+}
+
+.fa-grin-tongue-squint:before {
+  content: "";
+}
+
+.fa-grin-tongue-wink:before {
+  content: "";
+}
+
+.fa-grin-wink:before {
+  content: "";
+}
+
+.fa-grip-horizontal:before {
+  content: "";
+}
+
+.fa-grip-lines:before {
+  content: "";
+}
+
+.fa-grip-lines-vertical:before {
+  content: "";
+}
+
+.fa-grip-vertical:before {
+  content: "";
+}
+
+.fa-gripfire:before {
+  content: "";
+}
+
+.fa-grunt:before {
+  content: "";
+}
+
+.fa-guilded:before {
+  content: "";
+}
+
+.fa-guitar:before {
+  content: "";
+}
+
+.fa-gulp:before {
+  content: "";
+}
+
+.fa-h-square:before {
+  content: "";
+}
+
+.fa-hacker-news:before {
+  content: "";
+}
+
+.fa-hacker-news-square:before {
+  content: "";
+}
+
+.fa-hackerrank:before {
+  content: "";
+}
+
+.fa-hamburger:before {
+  content: "";
+}
+
+.fa-hammer:before {
+  content: "";
+}
+
+.fa-hamsa:before {
+  content: "";
+}
+
+.fa-hand-holding:before {
+  content: "";
+}
+
+.fa-hand-holding-heart:before {
+  content: "";
+}
+
+.fa-hand-holding-medical:before {
+  content: "";
+}
+
+.fa-hand-holding-usd:before {
+  content: "";
+}
+
+.fa-hand-holding-water:before {
+  content: "";
+}
+
+.fa-hand-lizard:before {
+  content: "";
+}
+
+.fa-hand-middle-finger:before {
+  content: "";
+}
+
+.fa-hand-paper:before {
+  content: "";
+}
+
+.fa-hand-peace:before {
+  content: "";
+}
+
+.fa-hand-point-down:before {
+  content: "";
+}
+
+.fa-hand-point-left:before {
+  content: "";
+}
+
+.fa-hand-point-right:before {
+  content: "";
+}
+
+.fa-hand-point-up:before {
+  content: "";
+}
+
+.fa-hand-pointer:before {
+  content: "";
+}
+
+.fa-hand-rock:before {
+  content: "";
+}
+
+.fa-hand-scissors:before {
+  content: "";
+}
+
+.fa-hand-sparkles:before {
+  content: "";
+}
+
+.fa-hand-spock:before {
+  content: "";
+}
+
+.fa-hands:before {
+  content: "";
+}
+
+.fa-hands-helping:before {
+  content: "";
+}
+
+.fa-hands-wash:before {
+  content: "";
+}
+
+.fa-handshake:before {
+  content: "";
+}
+
+.fa-handshake-alt-slash:before {
+  content: "";
+}
+
+.fa-handshake-slash:before {
+  content: "";
+}
+
+.fa-hanukiah:before {
+  content: "";
+}
+
+.fa-hard-hat:before {
+  content: "";
+}
+
+.fa-hashtag:before {
+  content: "";
+}
+
+.fa-hat-cowboy:before {
+  content: "";
+}
+
+.fa-hat-cowboy-side:before {
+  content: "";
+}
+
+.fa-hat-wizard:before {
+  content: "";
+}
+
+.fa-hdd:before {
+  content: "";
+}
+
+.fa-head-side-cough:before {
+  content: "";
+}
+
+.fa-head-side-cough-slash:before {
+  content: "";
+}
+
+.fa-head-side-mask:before {
+  content: "";
+}
+
+.fa-head-side-virus:before {
+  content: "";
+}
+
+.fa-heading:before {
+  content: "";
+}
+
+.fa-headphones:before {
+  content: "";
+}
+
+.fa-headphones-alt:before {
+  content: "";
+}
+
+.fa-headset:before {
+  content: "";
+}
+
+.fa-heart:before {
+  content: "";
+}
+
+.fa-heart-broken:before {
+  content: "";
+}
+
+.fa-heartbeat:before {
+  content: "";
+}
+
+.fa-helicopter:before {
+  content: "";
+}
+
+.fa-highlighter:before {
+  content: "";
+}
+
+.fa-hiking:before {
+  content: "";
+}
+
+.fa-hippo:before {
+  content: "";
+}
+
+.fa-hips:before {
+  content: "";
+}
+
+.fa-hire-a-helper:before {
+  content: "";
+}
+
+.fa-history:before {
+  content: "";
+}
+
+.fa-hive:before {
+  content: "";
+}
+
+.fa-hockey-puck:before {
+  content: "";
+}
+
+.fa-holly-berry:before {
+  content: "";
+}
+
+.fa-home:before {
+  content: "";
+}
+
+.fa-hooli:before {
+  content: "";
+}
+
+.fa-hornbill:before {
+  content: "";
+}
+
+.fa-horse:before {
+  content: "";
+}
+
+.fa-horse-head:before {
+  content: "";
+}
+
+.fa-hospital:before {
+  content: "";
+}
+
+.fa-hospital-alt:before {
+  content: "";
+}
+
+.fa-hospital-symbol:before {
+  content: "";
+}
+
+.fa-hospital-user:before {
+  content: "";
+}
+
+.fa-hot-tub:before {
+  content: "";
+}
+
+.fa-hotdog:before {
+  content: "";
+}
+
+.fa-hotel:before {
+  content: "";
+}
+
+.fa-hotjar:before {
+  content: "";
+}
+
+.fa-hourglass:before {
+  content: "";
+}
+
+.fa-hourglass-end:before {
+  content: "";
+}
+
+.fa-hourglass-half:before {
+  content: "";
+}
+
+.fa-hourglass-start:before {
+  content: "";
+}
+
+.fa-house-damage:before {
+  content: "";
+}
+
+.fa-house-user:before {
+  content: "";
+}
+
+.fa-houzz:before {
+  content: "";
+}
+
+.fa-hryvnia:before {
+  content: "";
+}
+
+.fa-html5:before {
+  content: "";
+}
+
+.fa-hubspot:before {
+  content: "";
+}
+
+.fa-i-cursor:before {
+  content: "";
+}
+
+.fa-ice-cream:before {
+  content: "";
+}
+
+.fa-icicles:before {
+  content: "";
+}
+
+.fa-icons:before {
+  content: "";
+}
+
+.fa-id-badge:before {
+  content: "";
+}
+
+.fa-id-card:before {
+  content: "";
+}
+
+.fa-id-card-alt:before {
+  content: "";
+}
+
+.fa-ideal:before {
+  content: "";
+}
+
+.fa-igloo:before {
+  content: "";
+}
+
+.fa-image:before {
+  content: "";
+}
+
+.fa-images:before {
+  content: "";
+}
+
+.fa-imdb:before {
+  content: "";
+}
+
+.fa-inbox:before {
+  content: "";
+}
+
+.fa-indent:before {
+  content: "";
+}
+
+.fa-industry:before {
+  content: "";
+}
+
+.fa-infinity:before {
+  content: "";
+}
+
+.fa-info:before {
+  content: "";
+}
+
+.fa-info-circle:before {
+  content: "";
+}
+
+.fa-innosoft:before {
+  content: "";
+}
+
+.fa-instagram:before {
+  content: "";
+}
+
+.fa-instagram-square:before {
+  content: "";
+}
+
+.fa-instalod:before {
+  content: "";
+}
+
+.fa-intercom:before {
+  content: "";
+}
+
+.fa-internet-explorer:before {
+  content: "";
+}
+
+.fa-invision:before {
+  content: "";
+}
+
+.fa-ioxhost:before {
+  content: "";
+}
+
+.fa-italic:before {
+  content: "";
+}
+
+.fa-itch-io:before {
+  content: "";
+}
+
+.fa-itunes:before {
+  content: "";
+}
+
+.fa-itunes-note:before {
+  content: "";
+}
+
+.fa-java:before {
+  content: "";
+}
+
+.fa-jedi:before {
+  content: "";
+}
+
+.fa-jedi-order:before {
+  content: "";
+}
+
+.fa-jenkins:before {
+  content: "";
+}
+
+.fa-jira:before {
+  content: "";
+}
+
+.fa-joget:before {
+  content: "";
+}
+
+.fa-joint:before {
+  content: "";
+}
+
+.fa-joomla:before {
+  content: "";
+}
+
+.fa-journal-whills:before {
+  content: "";
+}
+
+.fa-js:before {
+  content: "";
+}
+
+.fa-js-square:before {
+  content: "";
+}
+
+.fa-jsfiddle:before {
+  content: "";
+}
+
+.fa-kaaba:before {
+  content: "";
+}
+
+.fa-kaggle:before {
+  content: "";
+}
+
+.fa-key:before {
+  content: "";
+}
+
+.fa-keybase:before {
+  content: "";
+}
+
+.fa-keyboard:before {
+  content: "";
+}
+
+.fa-keycdn:before {
+  content: "";
+}
+
+.fa-khanda:before {
+  content: "";
+}
+
+.fa-kickstarter:before {
+  content: "";
+}
+
+.fa-kickstarter-k:before {
+  content: "";
+}
+
+.fa-kiss:before {
+  content: "";
+}
+
+.fa-kiss-beam:before {
+  content: "";
+}
+
+.fa-kiss-wink-heart:before {
+  content: "";
+}
+
+.fa-kiwi-bird:before {
+  content: "";
+}
+
+.fa-korvue:before {
+  content: "";
+}
+
+.fa-landmark:before {
+  content: "";
+}
+
+.fa-language:before {
+  content: "";
+}
+
+.fa-laptop:before {
+  content: "";
+}
+
+.fa-laptop-code:before {
+  content: "";
+}
+
+.fa-laptop-house:before {
+  content: "";
+}
+
+.fa-laptop-medical:before {
+  content: "";
+}
+
+.fa-laravel:before {
+  content: "";
+}
+
+.fa-lastfm:before {
+  content: "";
+}
+
+.fa-lastfm-square:before {
+  content: "";
+}
+
+.fa-laugh:before {
+  content: "";
+}
+
+.fa-laugh-beam:before {
+  content: "";
+}
+
+.fa-laugh-squint:before {
+  content: "";
+}
+
+.fa-laugh-wink:before {
+  content: "";
+}
+
+.fa-layer-group:before {
+  content: "";
+}
+
+.fa-leaf:before {
+  content: "";
+}
+
+.fa-leanpub:before {
+  content: "";
+}
+
+.fa-lemon:before {
+  content: "";
+}
+
+.fa-less:before {
+  content: "";
+}
+
+.fa-less-than:before {
+  content: "";
+}
+
+.fa-less-than-equal:before {
+  content: "";
+}
+
+.fa-level-down-alt:before {
+  content: "";
+}
+
+.fa-level-up-alt:before {
+  content: "";
+}
+
+.fa-life-ring:before {
+  content: "";
+}
+
+.fa-lightbulb:before {
+  content: "";
+}
+
+.fa-line:before {
+  content: "";
+}
+
+.fa-link:before {
+  content: "";
+}
+
+.fa-linkedin:before {
+  content: "";
+}
+
+.fa-linkedin-in:before {
+  content: "";
+}
+
+.fa-linode:before {
+  content: "";
+}
+
+.fa-linux:before {
+  content: "";
+}
+
+.fa-lira-sign:before {
+  content: "";
+}
+
+.fa-list:before {
+  content: "";
+}
+
+.fa-list-alt:before {
+  content: "";
+}
+
+.fa-list-ol:before {
+  content: "";
+}
+
+.fa-list-ul:before {
+  content: "";
+}
+
+.fa-location-arrow:before {
+  content: "";
+}
+
+.fa-lock:before {
+  content: "";
+}
+
+.fa-lock-open:before {
+  content: "";
+}
+
+.fa-long-arrow-alt-down:before {
+  content: "";
+}
+
+.fa-long-arrow-alt-left:before {
+  content: "";
+}
+
+.fa-long-arrow-alt-right:before {
+  content: "";
+}
+
+.fa-long-arrow-alt-up:before {
+  content: "";
+}
+
+.fa-low-vision:before {
+  content: "";
+}
+
+.fa-luggage-cart:before {
+  content: "";
+}
+
+.fa-lungs:before {
+  content: "";
+}
+
+.fa-lungs-virus:before {
+  content: "";
+}
+
+.fa-lyft:before {
+  content: "";
+}
+
+.fa-magento:before {
+  content: "";
+}
+
+.fa-magic:before {
+  content: "";
+}
+
+.fa-magnet:before {
+  content: "";
+}
+
+.fa-mail-bulk:before {
+  content: "";
+}
+
+.fa-mailchimp:before {
+  content: "";
+}
+
+.fa-male:before {
+  content: "";
+}
+
+.fa-mandalorian:before {
+  content: "";
+}
+
+.fa-map:before {
+  content: "";
+}
+
+.fa-map-marked:before {
+  content: "";
+}
+
+.fa-map-marked-alt:before {
+  content: "";
+}
+
+.fa-map-marker:before {
+  content: "";
+}
+
+.fa-map-marker-alt:before {
+  content: "";
+}
+
+.fa-map-pin:before {
+  content: "";
+}
+
+.fa-map-signs:before {
+  content: "";
+}
+
+.fa-markdown:before {
+  content: "";
+}
+
+.fa-marker:before {
+  content: "";
+}
+
+.fa-mars:before {
+  content: "";
+}
+
+.fa-mars-double:before {
+  content: "";
+}
+
+.fa-mars-stroke:before {
+  content: "";
+}
+
+.fa-mars-stroke-h:before {
+  content: "";
+}
+
+.fa-mars-stroke-v:before {
+  content: "";
+}
+
+.fa-mask:before {
+  content: "";
+}
+
+.fa-mastodon:before {
+  content: "";
+}
+
+.fa-maxcdn:before {
+  content: "";
+}
+
+.fa-mdb:before {
+  content: "";
+}
+
+.fa-medal:before {
+  content: "";
+}
+
+.fa-medapps:before {
+  content: "";
+}
+
+.fa-medium:before {
+  content: "";
+}
+
+.fa-medium-m:before {
+  content: "";
+}
+
+.fa-medkit:before {
+  content: "";
+}
+
+.fa-medrt:before {
+  content: "";
+}
+
+.fa-meetup:before {
+  content: "";
+}
+
+.fa-megaport:before {
+  content: "";
+}
+
+.fa-meh:before {
+  content: "";
+}
+
+.fa-meh-blank:before {
+  content: "";
+}
+
+.fa-meh-rolling-eyes:before {
+  content: "";
+}
+
+.fa-memory:before {
+  content: "";
+}
+
+.fa-mendeley:before {
+  content: "";
+}
+
+.fa-menorah:before {
+  content: "";
+}
+
+.fa-mercury:before {
+  content: "";
+}
+
+.fa-meteor:before {
+  content: "";
+}
+
+.fa-microblog:before {
+  content: "";
+}
+
+.fa-microchip:before {
+  content: "";
+}
+
+.fa-microphone:before {
+  content: "";
+}
+
+.fa-microphone-alt:before {
+  content: "";
+}
+
+.fa-microphone-alt-slash:before {
+  content: "";
+}
+
+.fa-microphone-slash:before {
+  content: "";
+}
+
+.fa-microscope:before {
+  content: "";
+}
+
+.fa-microsoft:before {
+  content: "";
+}
+
+.fa-minus:before {
+  content: "";
+}
+
+.fa-minus-circle:before {
+  content: "";
+}
+
+.fa-minus-square:before {
+  content: "";
+}
+
+.fa-mitten:before {
+  content: "";
+}
+
+.fa-mix:before {
+  content: "";
+}
+
+.fa-mixcloud:before {
+  content: "";
+}
+
+.fa-mixer:before {
+  content: "";
+}
+
+.fa-mizuni:before {
+  content: "";
+}
+
+.fa-mobile:before {
+  content: "";
+}
+
+.fa-mobile-alt:before {
+  content: "";
+}
+
+.fa-modx:before {
+  content: "";
+}
+
+.fa-monero:before {
+  content: "";
+}
+
+.fa-money-bill:before {
+  content: "";
+}
+
+.fa-money-bill-alt:before {
+  content: "";
+}
+
+.fa-money-bill-wave:before {
+  content: "";
+}
+
+.fa-money-bill-wave-alt:before {
+  content: "";
+}
+
+.fa-money-check:before {
+  content: "";
+}
+
+.fa-money-check-alt:before {
+  content: "";
+}
+
+.fa-monument:before {
+  content: "";
+}
+
+.fa-moon:before {
+  content: "";
+}
+
+.fa-mortar-pestle:before {
+  content: "";
+}
+
+.fa-mosque:before {
+  content: "";
+}
+
+.fa-motorcycle:before {
+  content: "";
+}
+
+.fa-mountain:before {
+  content: "";
+}
+
+.fa-mouse:before {
+  content: "";
+}
+
+.fa-mouse-pointer:before {
+  content: "";
+}
+
+.fa-mug-hot:before {
+  content: "";
+}
+
+.fa-music:before {
+  content: "";
+}
+
+.fa-napster:before {
+  content: "";
+}
+
+.fa-neos:before {
+  content: "";
+}
+
+.fa-network-wired:before {
+  content: "";
+}
+
+.fa-neuter:before {
+  content: "";
+}
+
+.fa-newspaper:before {
+  content: "";
+}
+
+.fa-nimblr:before {
+  content: "";
+}
+
+.fa-node:before {
+  content: "";
+}
+
+.fa-node-js:before {
+  content: "";
+}
+
+.fa-not-equal:before {
+  content: "";
+}
+
+.fa-notes-medical:before {
+  content: "";
+}
+
+.fa-npm:before {
+  content: "";
+}
+
+.fa-ns8:before {
+  content: "";
+}
+
+.fa-nutritionix:before {
+  content: "";
+}
+
+.fa-object-group:before {
+  content: "";
+}
+
+.fa-object-ungroup:before {
+  content: "";
+}
+
+.fa-octopus-deploy:before {
+  content: "";
+}
+
+.fa-odnoklassniki:before {
+  content: "";
+}
+
+.fa-odnoklassniki-square:before {
+  content: "";
+}
+
+.fa-oil-can:before {
+  content: "";
+}
+
+.fa-old-republic:before {
+  content: "";
+}
+
+.fa-om:before {
+  content: "";
+}
+
+.fa-opencart:before {
+  content: "";
+}
+
+.fa-openid:before {
+  content: "";
+}
+
+.fa-opera:before {
+  content: "";
+}
+
+.fa-optin-monster:before {
+  content: "";
+}
+
+.fa-orcid:before {
+  content: "";
+}
+
+.fa-osi:before {
+  content: "";
+}
+
+.fa-otter:before {
+  content: "";
+}
+
+.fa-outdent:before {
+  content: "";
+}
+
+.fa-page4:before {
+  content: "";
+}
+
+.fa-pagelines:before {
+  content: "";
+}
+
+.fa-pager:before {
+  content: "";
+}
+
+.fa-paint-brush:before {
+  content: "";
+}
+
+.fa-paint-roller:before {
+  content: "";
+}
+
+.fa-palette:before {
+  content: "";
+}
+
+.fa-palfed:before {
+  content: "";
+}
+
+.fa-pallet:before {
+  content: "";
+}
+
+.fa-paper-plane:before {
+  content: "";
+}
+
+.fa-paperclip:before {
+  content: "";
+}
+
+.fa-parachute-box:before {
+  content: "";
+}
+
+.fa-paragraph:before {
+  content: "";
+}
+
+.fa-parking:before {
+  content: "";
+}
+
+.fa-passport:before {
+  content: "";
+}
+
+.fa-pastafarianism:before {
+  content: "";
+}
+
+.fa-paste:before {
+  content: "";
+}
+
+.fa-patreon:before {
+  content: "";
+}
+
+.fa-pause:before {
+  content: "";
+}
+
+.fa-pause-circle:before {
+  content: "";
+}
+
+.fa-paw:before {
+  content: "";
+}
+
+.fa-paypal:before {
+  content: "";
+}
+
+.fa-peace:before {
+  content: "";
+}
+
+.fa-pen:before {
+  content: "";
+}
+
+.fa-pen-alt:before {
+  content: "";
+}
+
+.fa-pen-fancy:before {
+  content: "";
+}
+
+.fa-pen-nib:before {
+  content: "";
+}
+
+.fa-pen-square:before {
+  content: "";
+}
+
+.fa-pencil-alt:before {
+  content: "";
+}
+
+.fa-pencil-ruler:before {
+  content: "";
+}
+
+.fa-penny-arcade:before {
+  content: "";
+}
+
+.fa-people-arrows:before {
+  content: "";
+}
+
+.fa-people-carry:before {
+  content: "";
+}
+
+.fa-pepper-hot:before {
+  content: "";
+}
+
+.fa-perbyte:before {
+  content: "";
+}
+
+.fa-percent:before {
+  content: "";
+}
+
+.fa-percentage:before {
+  content: "";
+}
+
+.fa-periscope:before {
+  content: "";
+}
+
+.fa-person-booth:before {
+  content: "";
+}
+
+.fa-phabricator:before {
+  content: "";
+}
+
+.fa-phoenix-framework:before {
+  content: "";
+}
+
+.fa-phoenix-squadron:before {
+  content: "";
+}
+
+.fa-phone:before {
+  content: "";
+}
+
+.fa-phone-alt:before {
+  content: "";
+}
+
+.fa-phone-slash:before {
+  content: "";
+}
+
+.fa-phone-square:before {
+  content: "";
+}
+
+.fa-phone-square-alt:before {
+  content: "";
+}
+
+.fa-phone-volume:before {
+  content: "";
+}
+
+.fa-photo-video:before {
+  content: "";
+}
+
+.fa-php:before {
+  content: "";
+}
+
+.fa-pied-piper:before {
+  content: "";
+}
+
+.fa-pied-piper-alt:before {
+  content: "";
+}
+
+.fa-pied-piper-hat:before {
+  content: "";
+}
+
+.fa-pied-piper-pp:before {
+  content: "";
+}
+
+.fa-pied-piper-square:before {
+  content: "";
+}
+
+.fa-piggy-bank:before {
+  content: "";
+}
+
+.fa-pills:before {
+  content: "";
+}
+
+.fa-pinterest:before {
+  content: "";
+}
+
+.fa-pinterest-p:before {
+  content: "";
+}
+
+.fa-pinterest-square:before {
+  content: "";
+}
+
+.fa-pizza-slice:before {
+  content: "";
+}
+
+.fa-place-of-worship:before {
+  content: "";
+}
+
+.fa-plane:before {
+  content: "";
+}
+
+.fa-plane-arrival:before {
+  content: "";
+}
+
+.fa-plane-departure:before {
+  content: "";
+}
+
+.fa-plane-slash:before {
+  content: "";
+}
+
+.fa-play:before {
+  content: "";
+}
+
+.fa-play-circle:before {
+  content: "";
+}
+
+.fa-playstation:before {
+  content: "";
+}
+
+.fa-plug:before {
+  content: "";
+}
+
+.fa-plus:before {
+  content: "";
+}
+
+.fa-plus-circle:before {
+  content: "";
+}
+
+.fa-plus-square:before {
+  content: "";
+}
+
+.fa-podcast:before {
+  content: "";
+}
+
+.fa-poll:before {
+  content: "";
+}
+
+.fa-poll-h:before {
+  content: "";
+}
+
+.fa-poo:before {
+  content: "";
+}
+
+.fa-poo-storm:before {
+  content: "";
+}
+
+.fa-poop:before {
+  content: "";
+}
+
+.fa-portrait:before {
+  content: "";
+}
+
+.fa-pound-sign:before {
+  content: "";
+}
+
+.fa-power-off:before {
+  content: "";
+}
+
+.fa-pray:before {
+  content: "";
+}
+
+.fa-praying-hands:before {
+  content: "";
+}
+
+.fa-prescription:before {
+  content: "";
+}
+
+.fa-prescription-bottle:before {
+  content: "";
+}
+
+.fa-prescription-bottle-alt:before {
+  content: "";
+}
+
+.fa-print:before {
+  content: "";
+}
+
+.fa-procedures:before {
+  content: "";
+}
+
+.fa-product-hunt:before {
+  content: "";
+}
+
+.fa-project-diagram:before {
+  content: "";
+}
+
+.fa-pump-medical:before {
+  content: "";
+}
+
+.fa-pump-soap:before {
+  content: "";
+}
+
+.fa-pushed:before {
+  content: "";
+}
+
+.fa-puzzle-piece:before {
+  content: "";
+}
+
+.fa-python:before {
+  content: "";
+}
+
+.fa-qq:before {
+  content: "";
+}
+
+.fa-qrcode:before {
+  content: "";
+}
+
+.fa-question:before {
+  content: "";
+}
+
+.fa-question-circle:before {
+  content: "";
+}
+
+.fa-quidditch:before {
+  content: "";
+}
+
+.fa-quinscape:before {
+  content: "";
+}
+
+.fa-quora:before {
+  content: "";
+}
+
+.fa-quote-left:before {
+  content: "";
+}
+
+.fa-quote-right:before {
+  content: "";
+}
+
+.fa-quran:before {
+  content: "";
+}
+
+.fa-r-project:before {
+  content: "";
+}
+
+.fa-radiation:before {
+  content: "";
+}
+
+.fa-radiation-alt:before {
+  content: "";
+}
+
+.fa-rainbow:before {
+  content: "";
+}
+
+.fa-random:before {
+  content: "";
+}
+
+.fa-raspberry-pi:before {
+  content: "";
+}
+
+.fa-ravelry:before {
+  content: "";
+}
+
+.fa-react:before {
+  content: "";
+}
+
+.fa-reacteurope:before {
+  content: "";
+}
+
+.fa-readme:before {
+  content: "";
+}
+
+.fa-rebel:before {
+  content: "";
+}
+
+.fa-receipt:before {
+  content: "";
+}
+
+.fa-record-vinyl:before {
+  content: "";
+}
+
+.fa-recycle:before {
+  content: "";
+}
+
+.fa-red-river:before {
+  content: "";
+}
+
+.fa-reddit:before {
+  content: "";
+}
+
+.fa-reddit-alien:before {
+  content: "";
+}
+
+.fa-reddit-square:before {
+  content: "";
+}
+
+.fa-redhat:before {
+  content: "";
+}
+
+.fa-redo:before {
+  content: "";
+}
+
+.fa-redo-alt:before {
+  content: "";
+}
+
+.fa-registered:before {
+  content: "";
+}
+
+.fa-remove-format:before {
+  content: "";
+}
+
+.fa-renren:before {
+  content: "";
+}
+
+.fa-reply:before {
+  content: "";
+}
+
+.fa-reply-all:before {
+  content: "";
+}
+
+.fa-replyd:before {
+  content: "";
+}
+
+.fa-republican:before {
+  content: "";
+}
+
+.fa-researchgate:before {
+  content: "";
+}
+
+.fa-resolving:before {
+  content: "";
+}
+
+.fa-restroom:before {
+  content: "";
+}
+
+.fa-retweet:before {
+  content: "";
+}
+
+.fa-rev:before {
+  content: "";
+}
+
+.fa-ribbon:before {
+  content: "";
+}
+
+.fa-ring:before {
+  content: "";
+}
+
+.fa-road:before {
+  content: "";
+}
+
+.fa-robot:before {
+  content: "";
+}
+
+.fa-rocket:before {
+  content: "";
+}
+
+.fa-rocketchat:before {
+  content: "";
+}
+
+.fa-rockrms:before {
+  content: "";
+}
+
+.fa-route:before {
+  content: "";
+}
+
+.fa-rss:before {
+  content: "";
+}
+
+.fa-rss-square:before {
+  content: "";
+}
+
+.fa-ruble-sign:before {
+  content: "";
+}
+
+.fa-ruler:before {
+  content: "";
+}
+
+.fa-ruler-combined:before {
+  content: "";
+}
+
+.fa-ruler-horizontal:before {
+  content: "";
+}
+
+.fa-ruler-vertical:before {
+  content: "";
+}
+
+.fa-running:before {
+  content: "";
+}
+
+.fa-rupee-sign:before {
+  content: "";
+}
+
+.fa-rust:before {
+  content: "";
+}
+
+.fa-sad-cry:before {
+  content: "";
+}
+
+.fa-sad-tear:before {
+  content: "";
+}
+
+.fa-safari:before {
+  content: "";
+}
+
+.fa-salesforce:before {
+  content: "";
+}
+
+.fa-sass:before {
+  content: "";
+}
+
+.fa-satellite:before {
+  content: "";
+}
+
+.fa-satellite-dish:before {
+  content: "";
+}
+
+.fa-save:before {
+  content: "";
+}
+
+.fa-schlix:before {
+  content: "";
+}
+
+.fa-school:before {
+  content: "";
+}
+
+.fa-screwdriver:before {
+  content: "";
+}
+
+.fa-scribd:before {
+  content: "";
+}
+
+.fa-scroll:before {
+  content: "";
+}
+
+.fa-sd-card:before {
+  content: "";
+}
+
+.fa-search:before {
+  content: "";
+}
+
+.fa-search-dollar:before {
+  content: "";
+}
+
+.fa-search-location:before {
+  content: "";
+}
+
+.fa-search-minus:before {
+  content: "";
+}
+
+.fa-search-plus:before {
+  content: "";
+}
+
+.fa-searchengin:before {
+  content: "";
+}
+
+.fa-seedling:before {
+  content: "";
+}
+
+.fa-sellcast:before {
+  content: "";
+}
+
+.fa-sellsy:before {
+  content: "";
+}
+
+.fa-server:before {
+  content: "";
+}
+
+.fa-servicestack:before {
+  content: "";
+}
+
+.fa-shapes:before {
+  content: "";
+}
+
+.fa-share:before {
+  content: "";
+}
+
+.fa-share-alt:before {
+  content: "";
+}
+
+.fa-share-alt-square:before {
+  content: "";
+}
+
+.fa-share-square:before {
+  content: "";
+}
+
+.fa-shekel-sign:before {
+  content: "";
+}
+
+.fa-shield-alt:before {
+  content: "";
+}
+
+.fa-shield-virus:before {
+  content: "";
+}
+
+.fa-ship:before {
+  content: "";
+}
+
+.fa-shipping-fast:before {
+  content: "";
+}
+
+.fa-shirtsinbulk:before {
+  content: "";
+}
+
+.fa-shoe-prints:before {
+  content: "";
+}
+
+.fa-shopify:before {
+  content: "";
+}
+
+.fa-shopping-bag:before {
+  content: "";
+}
+
+.fa-shopping-basket:before {
+  content: "";
+}
+
+.fa-shopping-cart:before {
+  content: "";
+}
+
+.fa-shopware:before {
+  content: "";
+}
+
+.fa-shower:before {
+  content: "";
+}
+
+.fa-shuttle-van:before {
+  content: "";
+}
+
+.fa-sign:before {
+  content: "";
+}
+
+.fa-sign-in-alt:before {
+  content: "";
+}
+
+.fa-sign-language:before {
+  content: "";
+}
+
+.fa-sign-out-alt:before {
+  content: "";
+}
+
+.fa-signal:before {
+  content: "";
+}
+
+.fa-signature:before {
+  content: "";
+}
+
+.fa-sim-card:before {
+  content: "";
+}
+
+.fa-simplybuilt:before {
+  content: "";
+}
+
+.fa-sink:before {
+  content: "";
+}
+
+.fa-sistrix:before {
+  content: "";
+}
+
+.fa-sitemap:before {
+  content: "";
+}
+
+.fa-sith:before {
+  content: "";
+}
+
+.fa-skating:before {
+  content: "";
+}
+
+.fa-sketch:before {
+  content: "";
+}
+
+.fa-skiing:before {
+  content: "";
+}
+
+.fa-skiing-nordic:before {
+  content: "";
+}
+
+.fa-skull:before {
+  content: "";
+}
+
+.fa-skull-crossbones:before {
+  content: "";
+}
+
+.fa-skyatlas:before {
+  content: "";
+}
+
+.fa-skype:before {
+  content: "";
+}
+
+.fa-slack:before {
+  content: "";
+}
+
+.fa-slack-hash:before {
+  content: "";
+}
+
+.fa-slash:before {
+  content: "";
+}
+
+.fa-sleigh:before {
+  content: "";
+}
+
+.fa-sliders-h:before {
+  content: "";
+}
+
+.fa-slideshare:before {
+  content: "";
+}
+
+.fa-smile:before {
+  content: "";
+}
+
+.fa-smile-beam:before {
+  content: "";
+}
+
+.fa-smile-wink:before {
+  content: "";
+}
+
+.fa-smog:before {
+  content: "";
+}
+
+.fa-smoking:before {
+  content: "";
+}
+
+.fa-smoking-ban:before {
+  content: "";
+}
+
+.fa-sms:before {
+  content: "";
+}
+
+.fa-snapchat:before {
+  content: "";
+}
+
+.fa-snapchat-ghost:before {
+  content: "";
+}
+
+.fa-snapchat-square:before {
+  content: "";
+}
+
+.fa-snowboarding:before {
+  content: "";
+}
+
+.fa-snowflake:before {
+  content: "";
+}
+
+.fa-snowman:before {
+  content: "";
+}
+
+.fa-snowplow:before {
+  content: "";
+}
+
+.fa-soap:before {
+  content: "";
+}
+
+.fa-socks:before {
+  content: "";
+}
+
+.fa-solar-panel:before {
+  content: "";
+}
+
+.fa-sort:before {
+  content: "";
+}
+
+.fa-sort-alpha-down:before {
+  content: "";
+}
+
+.fa-sort-alpha-down-alt:before {
+  content: "";
+}
+
+.fa-sort-alpha-up:before {
+  content: "";
+}
+
+.fa-sort-alpha-up-alt:before {
+  content: "";
+}
+
+.fa-sort-amount-down:before {
+  content: "";
+}
+
+.fa-sort-amount-down-alt:before {
+  content: "";
+}
+
+.fa-sort-amount-up:before {
+  content: "";
+}
+
+.fa-sort-amount-up-alt:before {
+  content: "";
+}
+
+.fa-sort-down:before {
+  content: "";
+}
+
+.fa-sort-numeric-down:before {
+  content: "";
+}
+
+.fa-sort-numeric-down-alt:before {
+  content: "";
+}
+
+.fa-sort-numeric-up:before {
+  content: "";
+}
+
+.fa-sort-numeric-up-alt:before {
+  content: "";
+}
+
+.fa-sort-up:before {
+  content: "";
+}
+
+.fa-soundcloud:before {
+  content: "";
+}
+
+.fa-sourcetree:before {
+  content: "";
+}
+
+.fa-spa:before {
+  content: "";
+}
+
+.fa-space-shuttle:before {
+  content: "";
+}
+
+.fa-speakap:before {
+  content: "";
+}
+
+.fa-speaker-deck:before {
+  content: "";
+}
+
+.fa-spell-check:before {
+  content: "";
+}
+
+.fa-spider:before {
+  content: "";
+}
+
+.fa-spinner:before {
+  content: "";
+}
+
+.fa-splotch:before {
+  content: "";
+}
+
+.fa-spotify:before {
+  content: "";
+}
+
+.fa-spray-can:before {
+  content: "";
+}
+
+.fa-square:before {
+  content: "";
+}
+
+.fa-square-full:before {
+  content: "";
+}
+
+.fa-square-root-alt:before {
+  content: "";
+}
+
+.fa-squarespace:before {
+  content: "";
+}
+
+.fa-stack-exchange:before {
+  content: "";
+}
+
+.fa-stack-overflow:before {
+  content: "";
+}
+
+.fa-stackpath:before {
+  content: "";
+}
+
+.fa-stamp:before {
+  content: "";
+}
+
+.fa-star:before {
+  content: "";
+}
+
+.fa-star-and-crescent:before {
+  content: "";
+}
+
+.fa-star-half:before {
+  content: "";
+}
+
+.fa-star-half-alt:before {
+  content: "";
+}
+
+.fa-star-of-david:before {
+  content: "";
+}
+
+.fa-star-of-life:before {
+  content: "";
+}
+
+.fa-staylinked:before {
+  content: "";
+}
+
+.fa-steam:before {
+  content: "";
+}
+
+.fa-steam-square:before {
+  content: "";
+}
+
+.fa-steam-symbol:before {
+  content: "";
+}
+
+.fa-step-backward:before {
+  content: "";
+}
+
+.fa-step-forward:before {
+  content: "";
+}
+
+.fa-stethoscope:before {
+  content: "";
+}
+
+.fa-sticker-mule:before {
+  content: "";
+}
+
+.fa-sticky-note:before {
+  content: "";
+}
+
+.fa-stop:before {
+  content: "";
+}
+
+.fa-stop-circle:before {
+  content: "";
+}
+
+.fa-stopwatch:before {
+  content: "";
+}
+
+.fa-stopwatch-20:before {
+  content: "";
+}
+
+.fa-store:before {
+  content: "";
+}
+
+.fa-store-alt:before {
+  content: "";
+}
+
+.fa-store-alt-slash:before {
+  content: "";
+}
+
+.fa-store-slash:before {
+  content: "";
+}
+
+.fa-strava:before {
+  content: "";
+}
+
+.fa-stream:before {
+  content: "";
+}
+
+.fa-street-view:before {
+  content: "";
+}
+
+.fa-strikethrough:before {
+  content: "";
+}
+
+.fa-stripe:before {
+  content: "";
+}
+
+.fa-stripe-s:before {
+  content: "";
+}
+
+.fa-stroopwafel:before {
+  content: "";
+}
+
+.fa-studiovinari:before {
+  content: "";
+}
+
+.fa-stumbleupon:before {
+  content: "";
+}
+
+.fa-stumbleupon-circle:before {
+  content: "";
+}
+
+.fa-subscript:before {
+  content: "";
+}
+
+.fa-subway:before {
+  content: "";
+}
+
+.fa-suitcase:before {
+  content: "";
+}
+
+.fa-suitcase-rolling:before {
+  content: "";
+}
+
+.fa-sun:before {
+  content: "";
+}
+
+.fa-superpowers:before {
+  content: "";
+}
+
+.fa-superscript:before {
+  content: "";
+}
+
+.fa-supple:before {
+  content: "";
+}
+
+.fa-surprise:before {
+  content: "";
+}
+
+.fa-suse:before {
+  content: "";
+}
+
+.fa-swatchbook:before {
+  content: "";
+}
+
+.fa-swift:before {
+  content: "";
+}
+
+.fa-swimmer:before {
+  content: "";
+}
+
+.fa-swimming-pool:before {
+  content: "";
+}
+
+.fa-symfony:before {
+  content: "";
+}
+
+.fa-synagogue:before {
+  content: "";
+}
+
+.fa-sync:before {
+  content: "";
+}
+
+.fa-sync-alt:before {
+  content: "";
+}
+
+.fa-syringe:before {
+  content: "";
+}
+
+.fa-table:before {
+  content: "";
+}
+
+.fa-table-tennis:before {
+  content: "";
+}
+
+.fa-tablet:before {
+  content: "";
+}
+
+.fa-tablet-alt:before {
+  content: "";
+}
+
+.fa-tablets:before {
+  content: "";
+}
+
+.fa-tachometer-alt:before {
+  content: "";
+}
+
+.fa-tag:before {
+  content: "";
+}
+
+.fa-tags:before {
+  content: "";
+}
+
+.fa-tape:before {
+  content: "";
+}
+
+.fa-tasks:before {
+  content: "";
+}
+
+.fa-taxi:before {
+  content: "";
+}
+
+.fa-teamspeak:before {
+  content: "";
+}
+
+.fa-teeth:before {
+  content: "";
+}
+
+.fa-teeth-open:before {
+  content: "";
+}
+
+.fa-telegram:before {
+  content: "";
+}
+
+.fa-telegram-plane:before {
+  content: "";
+}
+
+.fa-temperature-high:before {
+  content: "";
+}
+
+.fa-temperature-low:before {
+  content: "";
+}
+
+.fa-tencent-weibo:before {
+  content: "";
+}
+
+.fa-tenge:before {
+  content: "";
+}
+
+.fa-terminal:before {
+  content: "";
+}
+
+.fa-text-height:before {
+  content: "";
+}
+
+.fa-text-width:before {
+  content: "";
+}
+
+.fa-th:before {
+  content: "";
+}
+
+.fa-th-large:before {
+  content: "";
+}
+
+.fa-th-list:before {
+  content: "";
+}
+
+.fa-the-red-yeti:before {
+  content: "";
+}
+
+.fa-theater-masks:before {
+  content: "";
+}
+
+.fa-themeco:before {
+  content: "";
+}
+
+.fa-themeisle:before {
+  content: "";
+}
+
+.fa-thermometer:before {
+  content: "";
+}
+
+.fa-thermometer-empty:before {
+  content: "";
+}
+
+.fa-thermometer-full:before {
+  content: "";
+}
+
+.fa-thermometer-half:before {
+  content: "";
+}
+
+.fa-thermometer-quarter:before {
+  content: "";
+}
+
+.fa-thermometer-three-quarters:before {
+  content: "";
+}
+
+.fa-think-peaks:before {
+  content: "";
+}
+
+.fa-thumbs-down:before {
+  content: "";
+}
+
+.fa-thumbs-up:before {
+  content: "";
+}
+
+.fa-thumbtack:before {
+  content: "";
+}
+
+.fa-ticket-alt:before {
+  content: "";
+}
+
+.fa-tiktok:before {
+  content: "";
+}
+
+.fa-times:before {
+  content: "";
+}
+
+.fa-times-circle:before {
+  content: "";
+}
+
+.fa-tint:before {
+  content: "";
+}
+
+.fa-tint-slash:before {
+  content: "";
+}
+
+.fa-tired:before {
+  content: "";
+}
+
+.fa-toggle-off:before {
+  content: "";
+}
+
+.fa-toggle-on:before {
+  content: "";
+}
+
+.fa-toilet:before {
+  content: "";
+}
+
+.fa-toilet-paper:before {
+  content: "";
+}
+
+.fa-toilet-paper-slash:before {
+  content: "";
+}
+
+.fa-toolbox:before {
+  content: "";
+}
+
+.fa-tools:before {
+  content: "";
+}
+
+.fa-tooth:before {
+  content: "";
+}
+
+.fa-torah:before {
+  content: "";
+}
+
+.fa-torii-gate:before {
+  content: "";
+}
+
+.fa-tractor:before {
+  content: "";
+}
+
+.fa-trade-federation:before {
+  content: "";
+}
+
+.fa-trademark:before {
+  content: "";
+}
+
+.fa-traffic-light:before {
+  content: "";
+}
+
+.fa-trailer:before {
+  content: "";
+}
+
+.fa-train:before {
+  content: "";
+}
+
+.fa-tram:before {
+  content: "";
+}
+
+.fa-transgender:before {
+  content: "";
+}
+
+.fa-transgender-alt:before {
+  content: "";
+}
+
+.fa-trash:before {
+  content: "";
+}
+
+.fa-trash-alt:before {
+  content: "";
+}
+
+.fa-trash-restore:before {
+  content: "";
+}
+
+.fa-trash-restore-alt:before {
+  content: "";
+}
+
+.fa-tree:before {
+  content: "";
+}
+
+.fa-trello:before {
+  content: "";
+}
+
+.fa-tripadvisor:before {
+  content: "";
+}
+
+.fa-trophy:before {
+  content: "";
+}
+
+.fa-truck:before {
+  content: "";
+}
+
+.fa-truck-loading:before {
+  content: "";
+}
+
+.fa-truck-monster:before {
+  content: "";
+}
+
+.fa-truck-moving:before {
+  content: "";
+}
+
+.fa-truck-pickup:before {
+  content: "";
+}
+
+.fa-tshirt:before {
+  content: "";
+}
+
+.fa-tty:before {
+  content: "";
+}
+
+.fa-tumblr:before {
+  content: "";
+}
+
+.fa-tumblr-square:before {
+  content: "";
+}
+
+.fa-tv:before {
+  content: "";
+}
+
+.fa-twitch:before {
+  content: "";
+}
+
+.fa-twitter:before {
+  content: "";
+}
+
+.fa-twitter-square:before {
+  content: "";
+}
+
+.fa-typo3:before {
+  content: "";
+}
+
+.fa-uber:before {
+  content: "";
+}
+
+.fa-ubuntu:before {
+  content: "";
+}
+
+.fa-uikit:before {
+  content: "";
+}
+
+.fa-umbraco:before {
+  content: "";
+}
+
+.fa-umbrella:before {
+  content: "";
+}
+
+.fa-umbrella-beach:before {
+  content: "";
+}
+
+.fa-uncharted:before {
+  content: "";
+}
+
+.fa-underline:before {
+  content: "";
+}
+
+.fa-undo:before {
+  content: "";
+}
+
+.fa-undo-alt:before {
+  content: "";
+}
+
+.fa-uniregistry:before {
+  content: "";
+}
+
+.fa-unity:before {
+  content: "";
+}
+
+.fa-universal-access:before {
+  content: "";
+}
+
+.fa-university:before {
+  content: "";
+}
+
+.fa-unlink:before {
+  content: "";
+}
+
+.fa-unlock:before {
+  content: "";
+}
+
+.fa-unlock-alt:before {
+  content: "";
+}
+
+.fa-unsplash:before {
+  content: "";
+}
+
+.fa-untappd:before {
+  content: "";
+}
+
+.fa-upload:before {
+  content: "";
+}
+
+.fa-ups:before {
+  content: "";
+}
+
+.fa-usb:before {
+  content: "";
+}
+
+.fa-user:before {
+  content: "";
+}
+
+.fa-user-alt:before {
+  content: "";
+}
+
+.fa-user-alt-slash:before {
+  content: "";
+}
+
+.fa-user-astronaut:before {
+  content: "";
+}
+
+.fa-user-check:before {
+  content: "";
+}
+
+.fa-user-circle:before {
+  content: "";
+}
+
+.fa-user-clock:before {
+  content: "";
+}
+
+.fa-user-cog:before {
+  content: "";
+}
+
+.fa-user-edit:before {
+  content: "";
+}
+
+.fa-user-friends:before {
+  content: "";
+}
+
+.fa-user-graduate:before {
+  content: "";
+}
+
+.fa-user-injured:before {
+  content: "";
+}
+
+.fa-user-lock:before {
+  content: "";
+}
+
+.fa-user-md:before {
+  content: "";
+}
+
+.fa-user-minus:before {
+  content: "";
+}
+
+.fa-user-ninja:before {
+  content: "";
+}
+
+.fa-user-nurse:before {
+  content: "";
+}
+
+.fa-user-plus:before {
+  content: "";
+}
+
+.fa-user-secret:before {
+  content: "";
+}
+
+.fa-user-shield:before {
+  content: "";
+}
+
+.fa-user-slash:before {
+  content: "";
+}
+
+.fa-user-tag:before {
+  content: "";
+}
+
+.fa-user-tie:before {
+  content: "";
+}
+
+.fa-user-times:before {
+  content: "";
+}
+
+.fa-users:before {
+  content: "";
+}
+
+.fa-users-cog:before {
+  content: "";
+}
+
+.fa-users-slash:before {
+  content: "";
+}
+
+.fa-usps:before {
+  content: "";
+}
+
+.fa-ussunnah:before {
+  content: "";
+}
+
+.fa-utensil-spoon:before {
+  content: "";
+}
+
+.fa-utensils:before {
+  content: "";
+}
+
+.fa-vaadin:before {
+  content: "";
+}
+
+.fa-vector-square:before {
+  content: "";
+}
+
+.fa-venus:before {
+  content: "";
+}
+
+.fa-venus-double:before {
+  content: "";
+}
+
+.fa-venus-mars:before {
+  content: "";
+}
+
+.fa-vest:before {
+  content: "";
+}
+
+.fa-vest-patches:before {
+  content: "";
+}
+
+.fa-viacoin:before {
+  content: "";
+}
+
+.fa-viadeo:before {
+  content: "";
+}
+
+.fa-viadeo-square:before {
+  content: "";
+}
+
+.fa-vial:before {
+  content: "";
+}
+
+.fa-vials:before {
+  content: "";
+}
+
+.fa-viber:before {
+  content: "";
+}
+
+.fa-video:before {
+  content: "";
+}
+
+.fa-video-slash:before {
+  content: "";
+}
+
+.fa-vihara:before {
+  content: "";
+}
+
+.fa-vimeo:before {
+  content: "";
+}
+
+.fa-vimeo-square:before {
+  content: "";
+}
+
+.fa-vimeo-v:before {
+  content: "";
+}
+
+.fa-vine:before {
+  content: "";
+}
+
+.fa-virus:before {
+  content: "";
+}
+
+.fa-virus-slash:before {
+  content: "";
+}
+
+.fa-viruses:before {
+  content: "";
+}
+
+.fa-vk:before {
+  content: "";
+}
+
+.fa-vnv:before {
+  content: "";
+}
+
+.fa-voicemail:before {
+  content: "";
+}
+
+.fa-volleyball-ball:before {
+  content: "";
+}
+
+.fa-volume-down:before {
+  content: "";
+}
+
+.fa-volume-mute:before {
+  content: "";
+}
+
+.fa-volume-off:before {
+  content: "";
+}
+
+.fa-volume-up:before {
+  content: "";
+}
+
+.fa-vote-yea:before {
+  content: "";
+}
+
+.fa-vr-cardboard:before {
+  content: "";
+}
+
+.fa-vuejs:before {
+  content: "";
+}
+
+.fa-walking:before {
+  content: "";
+}
+
+.fa-wallet:before {
+  content: "";
+}
+
+.fa-warehouse:before {
+  content: "";
+}
+
+.fa-watchman-monitoring:before {
+  content: "";
+}
+
+.fa-water:before {
+  content: "";
+}
+
+.fa-wave-square:before {
+  content: "";
+}
+
+.fa-waze:before {
+  content: "";
+}
+
+.fa-weebly:before {
+  content: "";
+}
+
+.fa-weibo:before {
+  content: "";
+}
+
+.fa-weight:before {
+  content: "";
+}
+
+.fa-weight-hanging:before {
+  content: "";
+}
+
+.fa-weixin:before {
+  content: "";
+}
+
+.fa-whatsapp:before {
+  content: "";
+}
+
+.fa-whatsapp-square:before {
+  content: "";
+}
+
+.fa-wheelchair:before {
+  content: "";
+}
+
+.fa-whmcs:before {
+  content: "";
+}
+
+.fa-wifi:before {
+  content: "";
+}
+
+.fa-wikipedia-w:before {
+  content: "";
+}
+
+.fa-wind:before {
+  content: "";
+}
+
+.fa-window-close:before {
+  content: "";
+}
+
+.fa-window-maximize:before {
+  content: "";
+}
+
+.fa-window-minimize:before {
+  content: "";
+}
+
+.fa-window-restore:before {
+  content: "";
+}
+
+.fa-windows:before {
+  content: "";
+}
+
+.fa-wine-bottle:before {
+  content: "";
+}
+
+.fa-wine-glass:before {
+  content: "";
+}
+
+.fa-wine-glass-alt:before {
+  content: "";
+}
+
+.fa-wix:before {
+  content: "";
+}
+
+.fa-wizards-of-the-coast:before {
+  content: "";
+}
+
+.fa-wodu:before {
+  content: "";
+}
+
+.fa-wolf-pack-battalion:before {
+  content: "";
+}
+
+.fa-won-sign:before {
+  content: "";
+}
+
+.fa-wordpress:before {
+  content: "";
+}
+
+.fa-wordpress-simple:before {
+  content: "";
+}
+
+.fa-wpbeginner:before {
+  content: "";
+}
+
+.fa-wpexplorer:before {
+  content: "";
+}
+
+.fa-wpforms:before {
+  content: "";
+}
+
+.fa-wpressr:before {
+  content: "";
+}
+
+.fa-wrench:before {
+  content: "";
+}
+
+.fa-x-ray:before {
+  content: "";
+}
+
+.fa-xbox:before {
+  content: "";
+}
+
+.fa-xing:before {
+  content: "";
+}
+
+.fa-xing-square:before {
+  content: "";
+}
+
+.fa-y-combinator:before {
+  content: "";
+}
+
+.fa-yahoo:before {
+  content: "";
+}
+
+.fa-yammer:before {
+  content: "";
+}
+
+.fa-yandex:before {
+  content: "";
+}
+
+.fa-yandex-international:before {
+  content: "";
+}
+
+.fa-yarn:before {
+  content: "";
+}
+
+.fa-yelp:before {
+  content: "";
+}
+
+.fa-yen-sign:before {
+  content: "";
+}
+
+.fa-yin-yang:before {
+  content: "";
+}
+
+.fa-yoast:before {
+  content: "";
+}
+
+.fa-youtube:before {
+  content: "";
+}
+
+.fa-youtube-square:before {
+  content: "";
+}
+
+.fa-zhihu:before {
+  content: "";
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/*!
+ * Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../webfonts/fa-regular-400.eot");
+  src: url("../webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-regular-400.woff2") format("woff2"), url("../webfonts/fa-regular-400.woff") format("woff"), url("../webfonts/fa-regular-400.ttf") format("truetype"), url("../webfonts/fa-regular-400.svg#fontawesome") format("svg");
+}
+.far {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+}
+
+/*!
+ * Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("../webfonts/fa-solid-900.eot");
+  src: url("../webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-solid-900.woff2") format("woff2"), url("../webfonts/fa-solid-900.woff") format("woff"), url("../webfonts/fa-solid-900.ttf") format("truetype"), url("../webfonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+.fa,
+.fas {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+/*!
+ * Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
+  font-family: "Font Awesome 5 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../webfonts/fa-brands-400.eot");
+  src: url("../webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-brands-400.woff2") format("woff2"), url("../webfonts/fa-brands-400.woff") format("woff"), url("../webfonts/fa-brands-400.ttf") format("truetype"), url("../webfonts/fa-brands-400.svg#fontawesome") format("svg");
+}
+.fab {
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 400;
+}
+
+/*# sourceMappingURL=style.css.map */

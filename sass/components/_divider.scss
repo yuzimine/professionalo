@@ -1,0 +1,33 @@
+@mixin divider-color($color) {
+  border-bottom: 1px solid lighten($color, 20%);
+}
+
+.mdivider {
+  display:block;
+  margin: 3rem 0;
+  @include divider-color($color-primary);
+
+  @include respond(sm) {
+    margin: 1.2rem 0;
+  }
+
+  &.small {
+    margin: 1rem 0;
+  }
+
+  &.cyan {
+    @include divider-color($color-secondary);
+  }
+
+  &.black {
+    @include divider-color($color-blueblack);
+  }
+
+  &.red {
+    @include divider-color($color-primary);
+  }
+
+  &.white {
+    @include divider-color($color-white);
+  }
+}

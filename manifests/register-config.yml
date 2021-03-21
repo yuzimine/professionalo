@@ -1,0 +1,42 @@
+version: 0.0.1
+component: Register
+forms:
+  - section:
+    - Input:
+        name: firstName
+        maxLength: 64
+    - Input:
+        name: lastName
+        maxLength: 64
+    - Input:
+        name: displayName
+        maxLength: 128
+        placeholder: Enter your preferred display name
+    - Input:
+        name: title
+        maxLength: 128
+        placeholder: Enter title to be display with your name
+    - Input:
+        name: city
+        maxLength: 128
+        placeholder: Enter the city of your location
+    - Input:
+        name: state
+        maxLength: 128
+        placeholder: Enter the state, province, prefecture of your location
+    - Text:
+        name: myStory
+        rows: 10
+  - section:
+    - Input:
+        name: email
+        maxLength: 128
+        type: email
+    - Input:
+        name: password
+        maxLength: 128
+        type: password
+    - Input:
+        name: password2
+        maxLength: 128
+        type: password

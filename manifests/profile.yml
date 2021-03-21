@@ -1,0 +1,21 @@
+version: 0.0.1
+constants:
+values:
+params:
+  id: ''
+  firstName: ''
+  lastName: ''
+  displayName: ''
+  title: ''
+  languages: ''
+  city: ''
+  state: ''
+  country: ''
+  linkedin: ''
+  facebook: ''
+  twitter: ''
+  myStory: ''
+  expertise: ''
+  email: '',
+  password: ''
+  password2: ''

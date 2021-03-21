@@ -1,0 +1,70 @@
+.about-more {
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__quote {
+    @extend .about-more__container;
+    background-color: $color-secondary;
+    max-height: 25rem;
+    padding-top: 6rem;
+
+    @media screen and (max-width: $grid-width-md) {
+      padding-top: 1rem;
+    }
+  }
+
+  &__story {
+    @extend .about-more__container;
+    max-width: 140rem;
+    align-self: center;
+
+    @include respond(lg) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__vision {
+    width: 50%;
+    padding: 3rem;
+
+    @include respond(lg) {
+      width: 100%;
+    }
+
+    h1 {
+      padding-bottom: 3rem;
+    }
+
+    p {
+      font-size: 2rem;
+      text-align: justify;
+
+      &:not(:last-child) {
+        padding-bottom: 1rem;
+      }
+    }
+  }
+
+  &__image {
+    padding: 3rem;
+    width: 50%;
+    text-align: center;
+
+    @include respond(lg) {
+      width: 100%;
+      padding-bottom: 5rem;
+    }
+
+    &__vision {
+      max-width: 50rem;
+    }
+  }
+
+  &__function {
+    position: relative;
+    width: 80%;
+  }
+}

@@ -1,0 +1,11 @@
+.my__image {
+  object-fit: cover;
+
+  @media screen and (max-width: $grid-width-sm) {
+    width: 100%;
+  }
+  
+  @media screen and (min-width: $grid-width-sm + 1) and (max-width: $grid-width-lg) {
+    width: 100%;
+  }
+}

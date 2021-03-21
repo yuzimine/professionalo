@@ -1,0 +1,20 @@
+account: { provider: 'google',
+  type: 'oauth',
+  id: '114441121459257735207',
+  refreshToken: undefined,
+  accessToken:
+   'ya29.a0AfH6SMA81cpW7xiW9T7X4KuLetxbEc3VsolmRAgDlcgiXtVT2Sj1m2uuDOoHvM7EQS49TXot1IJYmfLOPDLefyD6IQNQhVe-Xlr-8X4M8GrJVw-741No6kK3DPePTX06K3IMHmI9_LoQHcKfBr6m2gN4lOKlnWD_vqVoP0dxleYh',
+  accessTokenExpires: null }
+profile: { id: '114441121459257735207',
+  email: 'yuzi.minegishi@gmail.com',
+  verified_email: true,
+  name: 'Yuzi Minegishi',
+  given_name: 'Yuzi',
+  family_name: 'Minegishi',
+  picture:
+   'https://lh3.googleusercontent.com/a-/AOh14GiE0BCMTrKxtSLFnbHco5b9wzdG2NyeNuLljhBh=s96-c',
+  locale: 'en' }
+user { name: 'Yuzi Minegishi',
+  email: 'yuzi.minegishi@gmail.com',
+  image:
+   'https://lh3.googleusercontent.com/a-/AOh14GiE0BCMTrKxtSLFnbHco5b9wzdG2NyeNuLljhBh=s96-c' }

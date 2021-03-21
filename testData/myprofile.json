@@ -1,0 +1,55 @@
+{
+  "pLang": ["en", "jp"],
+  "en": {
+    "info": {
+      "firstName": "Yuji",
+      "lastName": "Minegishi",
+      "middleName": "",
+      "title": "Web Platform Visioneer",
+      "location": "Yokohama, Japan"
+    },
+    "story": "Over the past 30+ years I have navigated down the tech world river starting from the pre-internet, 9600 baud modem origins to today&apos;s 10Gbps fiber optic connection writing this web site in React. I suppose I can say that most of my professional and private years has been spent as a software engineer. My inspiration to become one (like so many others) was none other than the Godfather of all hacker movies - War Games. I can still remember the excitement that engulfed me when I got my hands on my very own computer. Naturally, it was the Commodore 64. Fast forward to today, my passions for developing software has fortuantely kept me in the orbit of companies in the IT sector while having the opportunity to perform in numerous capacities including software development (of course), sales, planning, program management, busines development, mareketing, and design.",
+    "experience": [
+      "Web Development",
+      "Web Design",
+      "Market Strategy Consultation",
+      "Language Translation"
+    ],
+    "courses": [
+      "course-1",
+      "course-2",
+      "course-3"
+    ],
+    "circles": [
+      "circle-1",
+      "circle-2",
+      "circle-3"
+    ]
+  },
+  "jp": {
+    "info": {
+      "firstName": "裕司",
+      "lastName": "峰岸",
+      "middleName": "",
+      "title": "Webプラットフォーム・イノベータ",
+      "location": "横浜市"
+    },
+    "story": "Over the past 30+ years I have navigated down the tech world river starting from the pre-internet, 9600 baud modem origins to today&apos;s 10Gbps fiber optic connection writing this web site in React. I suppose I can say that most of my professional and private years has been spent as a software engineer. My inspiration to become one (like so many others) was none other than the Godfather of all hacker movies - War Games. I can still remember the excitement that engulfed me when I got my hands on my very own computer. Naturally, it was the Commodore 64. Fast forward to today, my passions for developing software has fortuantely kept me in the orbit of companies in the IT sector while having the opportunity to perform in numerous capacities including software development (of course), sales, planning, program management, busines development, mareketing, and design.",
+    "experience": [
+      "Web開発",
+      "Webデザイン",
+      "マーケティング戦略コンサルティング",
+      "日英翻訳"
+    ],
+    "courses": [
+      "course-1",
+      "course-2",
+      "course-3"
+    ],
+    "circles": [
+      "circle-1",
+      "circle-2",
+      "circle-3"
+    ]
+  }
+}

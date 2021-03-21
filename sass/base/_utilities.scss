@@ -1,0 +1,33 @@
+.u-center {
+  align-items: center;
+}
+
+.u-text {
+  &-red {
+    color: $color-primary;
+  }
+  &-cyan {
+    color: $color-secondary;
+  }
+  &-blueblack {
+    color: $color-blueblack;
+  }
+  &-pureblack {
+    color: $color-pureblack;
+  }
+  &-white {
+    color: $color-white;
+  }
+  &-purewhite {
+    color: $color-purewhite;
+  }
+  &-yellow {
+    color: $color-accent;
+  }
+  &-bold {
+    font-weight: 700;
+  }
+  &-center {
+    text-align: center;
+  }
+}
