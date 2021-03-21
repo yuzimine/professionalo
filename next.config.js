@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  distDir: 'out',
   i18n: {
     locales: ['en', 'ja'],
     defaultLocale: 'en',
